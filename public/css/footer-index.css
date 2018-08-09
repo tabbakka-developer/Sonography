@@ -1,0 +1,26 @@
+footer.footer-index {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #857b26;
+}
+
+.footer-wrapper {
+    padding: 5px 15px 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.f-item {
+    width: 30vw;
+}
+
+.f-item-2, .f-item-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
