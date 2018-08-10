@@ -3,9 +3,9 @@
 @section('index')
 
     <div class="wrapper">
-        <div class="item item-1">
-            Отступ
-        </div>
+        {{--<div class="item item-1">--}}
+            {{--Отступ--}}
+        {{--</div>--}}
 
         <div class="item item-2">
             <div>
@@ -34,9 +34,9 @@
             </div>
         </div>
 
-        <div class="item item-5">
-            Отступ и кнопка
-        </div>
+        {{--<div class="item item-5">--}}
+            {{--Отступ и кнопка--}}
+        {{--</div>--}}
     </div>
 
 @endsection

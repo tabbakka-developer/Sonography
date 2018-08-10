@@ -21,10 +21,10 @@ body .body-wrapper {
     text-align: center;
 }
 
-.item-1 {
-    background-color: blue;
-    grid-column: col-start / span 2;
-}
+/*.item-1 {*/
+    /*background-color: blue;*/
+    /*grid-column: col-start / span 2;*/
+/*}*/
 
 .item-2 {
     background-color: yellow;
@@ -42,7 +42,7 @@ body .body-wrapper {
 }
 
 .item-2, .item-3, .item-4 {
-    transition: filter .5s ease-in-out;
+    transition: filter .3s ease-in-out;
     -webkit-filter: grayscale(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
     filter: grayscale(100%); /* FF 35+ */
 }
@@ -52,7 +52,7 @@ body .body-wrapper {
     filter: grayscale(0%); /* FF 35+ */
 }
 
-.item-5 {
-    background-color: blue;
-    grid-column: col-start 11 / span 2;
-}
+/*.item-5 {*/
+    /*background-color: blue;*/
+    /*grid-column: col-start 11 / span 2;*/
+/*}*/
