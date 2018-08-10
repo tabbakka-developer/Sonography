@@ -2,7 +2,14 @@ body {
     height: 100vh;
 }
 
+body .body-wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 .wrapper {
+    flex: 1 0 auto;
     margin-top: 25px;
     display: grid;
     grid-template-columns: repeat(12, [col-start] 1fr);
@@ -22,19 +29,27 @@ body {
 .item-2 {
     background-color: yellow;
     grid-column: col-start 3 / span 2 ;
-    /*width: 150px;*/
 }
 
 .item-3 {
     background-color: yellow;
     grid-column: col-start 6 / span 2 ;
-    /*width: 150px;*/
 }
 
 .item-4 {
     background-color: yellow;
     grid-column: col-start 9 / span 2 ;
-    /*width: 150px;*/
+}
+
+.item-2, .item-3, .item-4 {
+    transition: filter .5s ease-in-out;
+    -webkit-filter: grayscale(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+    filter: grayscale(100%); /* FF 35+ */
+}
+
+.item-2:hover, .item-3:hover, .item-4:hover {
+    -webkit-filter: grayscale(0%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+    filter: grayscale(0%); /* FF 35+ */
 }
 
 .item-5 {

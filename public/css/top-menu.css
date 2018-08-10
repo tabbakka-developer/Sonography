@@ -8,6 +8,7 @@ body {
     background-color: #4dc0b5;
     margin: 0 auto;
     padding: 0;
+    width: 100%;
 }
 
 .top-nav ul {
@@ -17,4 +18,8 @@ body {
     list-style: none;
     margin: 0;
     padding: 10px;
+}
+
+.top-nav a {
+    text-decoration: none;
 }
