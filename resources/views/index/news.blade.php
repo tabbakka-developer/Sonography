@@ -1,5 +1,9 @@
 @extends('main')
 
+@section('title')
+    Новости
+@endsection
+
 @section('index')
 
     <div class="news-wrapper">
