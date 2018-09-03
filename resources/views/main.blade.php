@@ -7,7 +7,7 @@
 <div class="body-wrapper">
     @include('additional.top_menu')
     @yield('index')
-    @include('additional.footer_index')
+    @yield('footer')
 </div>
 </body>
 </html>

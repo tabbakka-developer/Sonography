@@ -1,0 +1,108 @@
+@import "global";
+
+@mixin gradient($from, $to, $stop: 100%) {
+	/* fallback/image non-cover color */
+	background-color: $from;
+
+	/* Firefox 3.6+ */
+	background-image: -moz-linear-gradient(left, $from 0%, $to $stop);
+
+	/* Safari 4+, Chrome 1+ */
+	background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, $from), color-stop($stop, $to));
+
+	/* Safari 5.1+, Chrome 10+ */
+	background-image: -webkit-linear-gradient(left, $from 0%, $to $stop);
+
+	/* Opera 11.10+ */
+	background-image: -o-linear-gradient(left, $from 0%, $to $stop);
+
+	/* IE10+ */
+	background: -ms-linear-gradient(left, $from 0%, $to $stop);
+
+	/* Standard */
+	background: linear-gradient(to right, $from 0%, $to $stop);
+
+	/* IE6-9 */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$from', endColorstr='$to', GradientType=1);
+}
+
+.news-wrapper {
+
+	margin-top: 25px;
+
+	.news-header {
+
+		display: grid;
+		grid-template-columns: repeat(12, [col-start] 1fr);
+		grid-gap: 0px;
+		color: white;
+
+		.nw-tl {
+			grid-column: col-start 2 / span 1;
+			text-align: center;
+			width: 345px;
+			height: 23px;
+			padding-top: 7px;
+			padding-bottom: 7px;
+			@include gradient(#49BDA9, #5FA3A8)
+		}
+
+		.nw-dsc {
+			grid-column: col-start 6 / span 1;
+			text-align: center;
+			width: 686px;
+			height: 23px;
+			padding-top: 7px;
+			padding-bottom: 7px;
+			@include gradient(#60A1A8, #8D6BA6)
+		}
+	}
+
+	.news-item {
+
+		margin-top: 25px;
+		display: grid;
+		grid-template-columns: repeat(12, [col-start] 1fr);
+		grid-gap: 0px;
+		height: 210px;
+
+		.news-image {
+			grid-column: col-start 2 / span 1;
+			width: 345px;
+			height: 100%;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+				display: block;
+			}
+		}
+
+		.news-body {
+			grid-column: col-start 6 / span 1;
+			width: 686px;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+
+			.news-title {
+				font-size: 30px;
+			}
+
+			.news-description {
+				font-size: 16px;
+			}
+
+			a {
+				text-decoration: none;
+				color: #49BDA9;
+			}
+
+			a:visited {
+				text-decoration: none;
+			}
+		}
+	}
+}
