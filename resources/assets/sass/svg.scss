@@ -1,0 +1,91 @@
+
+
+$height-mask: 250px;
+
+// To regulate alpha is recommended to use gray scale.
+// Recomiendo utilizar escala de grises
+
+$darken: 60%;
+
+$color: rgb(255,255,255);
+//$color: rgb(73, 189, 169);
+$color-alpha: darken( $color, $darken );
+
+// Apply color here!
+// Todo el color que quieras!
+$color-base: rgb(0,0,0);
+
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizelegibility;
+}
+
+html,
+body{
+	height: 100%;
+}
+
+body{
+	font-family: 'Open Sans', sans-serif;
+}
+
+.text{
+	position: fixed;
+	top: 28px;
+	left: 0;
+	width: 100%;
+	height: 200px !important;
+	z-index: 10;
+}
+
+section {
+	height: 289px !important;
+}
+
+section.intro{
+	background: url('/img/about/1.jpg') no-repeat center center;
+	background-size: cover;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+svg{
+	width: 100%;
+	height: 200px !important;
+	text{
+		// svg center text.
+		// centar text svg.
+		text-anchor: middle;
+	}
+	#alpha{
+		fill: $color-alpha;
+		//animation: alpha 10s ease infinite;
+	}
+	#title{
+		letter-spacing: -2px;
+		font-size: 6em;
+		font-weight: 800;
+	}
+	#subtitle{
+		letter-spacing: 8px;
+		font-size: 1.2em;
+		font-weight: 300;
+		text-transform: uppercase;
+	}
+	#base{
+		fill: $color-base;
+		// add the mask.
+		// aplicar máscara.
+		mask: url(#mask);
+	}
+}
+
+.top-nav {
+	height: 43px !important;
+}
+
+/*@keyframes alpha {
+  50%{fill: #000;}
+}*/

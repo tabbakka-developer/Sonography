@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('index.index');
+})->name('main');
+
+Route::get('/news', function () {
+	return view('index.news');
+})->name('news');
+
+Route::get('/about', function () {
+	return view('index.about');
+})->name('about');

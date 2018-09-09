@@ -1,0 +1,115 @@
+@import "global";
+
+@mixin gradient($from, $to, $stop: 100%) {
+	/* fallback/image non-cover color */
+	background-color: $from;
+
+	/* Firefox 3.6+ */
+	background-image: -moz-linear-gradient(left, $from 0%, $to $stop);
+
+	/* Safari 4+, Chrome 1+ */
+	background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, $from), color-stop($stop, $to));
+
+	/* Safari 5.1+, Chrome 10+ */
+	background-image: -webkit-linear-gradient(left, $from 0%, $to $stop);
+
+	/* Opera 11.10+ */
+	background-image: -o-linear-gradient(left, $from 0%, $to $stop);
+
+	/* IE10+ */
+	background: -ms-linear-gradient(left, $from 0%, $to $stop);
+
+	/* Standard */
+	background: linear-gradient(to right, $from 0%, $to $stop);
+
+	/* IE6-9 */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$from', endColorstr='$to', GradientType=1);
+}
+
+footer.footer-index {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	background-color: #ffffff;
+	height: 248px;
+	-webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+
+	.footer-wrapper {
+		display: grid;
+		grid-template-columns: repeat(12, [col-start] 1fr);
+		grid-gap: 0px;
+
+
+		padding: 30px 15px 30px;
+		//display: flex;
+		//flex-direction: row;
+		//justify-content: space-between;
+		height: 100%;
+		box-sizing: border-box;
+
+		.f-item {
+			//width: 30vw;
+			width: 350px;
+			height: 100%;
+
+			h2 {
+				font-family: $font;
+				font-size: 60px;
+				font-weight: bold;
+				margin: 0 auto;
+			}
+
+			h4 {
+				font-family: $font;
+				font-size: 30px;
+				font-weight: bold;
+				margin: 0 auto;
+			}
+
+			.link {
+				background-color: black;
+				width: 356px;
+				height: 30px;
+				text-align: center; //6997A8
+				margin: 0 auto;
+
+				a {
+					font-family: $font;
+					font-size: 18px;
+					font-weight: 400;
+					color: white;
+					text-decoration: none;
+				}
+			}
+
+			.link:hover {
+				cursor: pointer;
+			}
+		}
+
+		.f-item-1 {
+			grid-column: col-start 2 / span 1;
+			text-align: center;
+		}
+
+		.f-item-2 {
+			grid-column: col-start 6 / span 1;
+		}
+
+		.f-item-3 {
+			grid-column: col-start 9 / span 1;
+			.link {
+				@include gradient(#49BDA9, #6997A8);
+			}
+		}
+
+		.f-item-2, .f-item-3 {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+	}
+}
