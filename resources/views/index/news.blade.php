@@ -4,6 +4,10 @@
     Новости
 @endsection
 
+@section('css')
+    <link href="{{ asset('css/index/news.css') }}" rel="stylesheet">
+@endsection
+
 @section('index')
 
     <div class="news-wrapper">

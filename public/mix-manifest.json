@@ -7,5 +7,6 @@
     "/css/top/top.css": "/css/top/top.css",
     "/css/index/news.css": "/css/index/news.css",
     "/css/index/about.css": "/css/index/about.css",
-    "/css/svg.css": "/css/svg.css"
+    "/css/index/category.css": "/css/index/category.css",
+    "/css/index/sidebar.css": "/css/index/sidebar.css"
 }

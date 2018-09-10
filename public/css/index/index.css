@@ -1,7 +1,40 @@
+ul.breadcrumb {
+  margin-left: calc(25% + 35px);
+  margin-top: 25px;
+  padding: 10px 16px;
+  list-style: none;
+  background-color: transparent;
+}
+
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+  color: black;
+}
+
+ul.breadcrumb li a {
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+}
+
+ul.breadcrumb li a:hover {
+  color: rgba(0, 0, 0, 0.3);
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+  text-decoration: none;
+}
+
+ul.breadcrumb li + li:before {
+  padding: 8px;
+  color: black;
+  content: ">";
+}
+
 body {
   height: 100vh;
   margin: 0;
   padding: 0;
+  background-color: white !important;
 }
 
 body .body-wrapper {
@@ -15,7 +48,7 @@ body .body-wrapper {
           flex-direction: column;
 }
 
-body .body-wrapper .wrapper {
+body .wrapper {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
@@ -25,13 +58,13 @@ body .body-wrapper .wrapper {
   grid-gap: 0px;
 }
 
-body .body-wrapper .wrapper .item {
+body .wrapper .item {
   height: auto;
   text-align: center;
   width: 350px;
 }
 
-body .body-wrapper .wrapper .item .item-header {
+body .wrapper .item .item-header {
   /* fallback/image non-cover color */
   background-color: #49BDA9;
   /* Firefox 3.6+ */
@@ -51,7 +84,7 @@ body .body-wrapper .wrapper .item .item-header {
   color: white;
 }
 
-body .body-wrapper .wrapper .item .item-image {
+body .wrapper .item .item-image {
   height: 300px;
   text-align: center;
   margin-top: 25px;
@@ -65,7 +98,7 @@ body .body-wrapper .wrapper .item .item-image {
   /* FF 35+ */
 }
 
-body .body-wrapper .wrapper .item .item-image img {
+body .wrapper .item .item-image img {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
@@ -73,22 +106,22 @@ body .body-wrapper .wrapper .item .item-image img {
   display: block;
 }
 
-body .body-wrapper .wrapper .item .item-image:hover {
+body .wrapper .item .item-image:hover {
   -webkit-filter: grayscale(0%);
   /* Ch 23+, Saf 6.0+, BB 10.0+ */
   filter: grayscale(0%);
   /* FF 35+ */
 }
 
-body .body-wrapper .wrapper .item:hover {
+body .wrapper .item:hover {
   cursor: pointer;
 }
 
-body .body-wrapper .wrapper .item-2 {
+body .wrapper .item-2 {
   grid-column: col-start 2 / span 1;
 }
 
-body .body-wrapper .wrapper .item-2 .item-header {
+body .wrapper .item-2 .item-header {
   /* fallback/image non-cover color */
   background-color: #49BDA9;
   /* Firefox 3.6+ */
@@ -104,11 +137,11 @@ body .body-wrapper .wrapper .item-2 .item-header {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$from', endColorstr='$to', GradientType=1);
 }
 
-body .body-wrapper .wrapper .item-3 {
+body .wrapper .item-3 {
   grid-column: col-start 6 / span 1;
 }
 
-body .body-wrapper .wrapper .item-3 .item-header {
+body .wrapper .item-3 .item-header {
   /* fallback/image non-cover color */
   background-color: #629FA8;
   /* Firefox 3.6+ */
@@ -124,11 +157,11 @@ body .body-wrapper .wrapper .item-3 .item-header {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$from', endColorstr='$to', GradientType=1);
 }
 
-body .body-wrapper .wrapper .item-4 {
+body .wrapper .item-4 {
   grid-column: col-start 9 / span 1;
 }
 
-body .body-wrapper .wrapper .item-4 .item-header {
+body .wrapper .item-4 .item-header {
   /* fallback/image non-cover color */
   background-color: #7884A7;
   /* Firefox 3.6+ */
