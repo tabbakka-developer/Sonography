@@ -26,7 +26,7 @@
                             Название
                         </div>
                         <img src="{{ asset('img/toshibamedicalaplioi600ultrasound-2.png')}}" class="element-img">
-                        <a href="#" class="element-url">Подробнее</a>
+                        <a href="/item" class="element-url">Подробнее</a>
                     </div>
 
                     <div class="element">
@@ -34,7 +34,7 @@
                             Название
                         </div>
                         <img src="{{ asset('img/toshibamedicalaplioi600ultrasound-2.png')}}" class="element-img">
-                        <a href="#" class="element-url">Подробнее</a>
+                        <a href="/item" class="element-url">Подробнее</a>
                     </div>
 
                     <div class="element">
@@ -42,7 +42,7 @@
                             Название
                         </div>
                         <img src="{{ asset('img/toshibamedicalaplioi600ultrasound-2.png')}}" class="element-img">
-                        <a href="#" class="element-url">Подробнее</a>
+                        <a href="/item" class="element-url">Подробнее</a>
                     </div>
 
                     <div class="element">
@@ -50,7 +50,7 @@
                             Название
                         </div>
                         <img src="{{ asset('img/toshibamedicalaplioi600ultrasound-2.png')}}" class="element-img">
-                        <a href="#" class="element-url">Подробнее</a>
+                        <a href="/item" class="element-url">Подробнее</a>
                     </div>
 
                     <div class="element">
@@ -58,7 +58,7 @@
                             Название
                         </div>
                         <img src="{{ asset('img/toshibamedicalaplioi600ultrasound-2.png')}}" class="element-img">
-                        <a href="#" class="element-url">Подробнее</a>
+                        <a href="/item" class="element-url">Подробнее</a>
                     </div>
 
                     <div class="element">
@@ -66,7 +66,7 @@
                             Название
                         </div>
                         <img src="{{ asset('img/toshibamedicalaplioi600ultrasound-2.png')}}" class="element-img">
-                        <a href="#" class="element-url">Подробнее</a>
+                        <a href="/item" class="element-url">Подробнее</a>
                     </div>
 
                     <div class="element">
@@ -74,7 +74,7 @@
                             Название
                         </div>
                         <img src="{{ asset('img/toshibamedicalaplioi600ultrasound-2.png')}}" class="element-img">
-                        <a href="#" class="element-url">Подробнее</a>
+                        <a href="/item" class="element-url">Подробнее</a>
                     </div>
 
                     <div class="element">
@@ -82,7 +82,7 @@
                             Название
                         </div>
                         <img src="{{ asset('img/toshibamedicalaplioi600ultrasound-2.png')}}" class="element-img">
-                        <a href="#" class="element-url">Подробнее</a>
+                        <a href="/item" class="element-url">Подробнее</a>
                     </div>
 
                     <div class="element">
@@ -90,7 +90,7 @@
                             Название
                         </div>
                         <img src="{{ asset('img/toshibamedicalaplioi600ultrasound-2.png')}}" class="element-img">
-                        <a href="#" class="element-url">Подробнее</a>
+                        <a href="/item" class="element-url">Подробнее</a>
                     </div>
 
                     <div class="element">
@@ -98,7 +98,7 @@
                             Название
                         </div>
                         <img src="{{ asset('img/toshibamedicalaplioi600ultrasound-2.png')}}" class="element-img">
-                        <a href="#" class="element-url">Подробнее</a>
+                        <a href="/item" class="element-url">Подробнее</a>
                     </div>
 
                     <div class="element">
@@ -106,7 +106,7 @@
                             Название
                         </div>
                         <img src="{{ asset('img/toshibamedicalaplioi600ultrasound-2.png')}}" class="element-img">
-                        <a href="#" class="element-url">Подробнее</a>
+                        <a href="/item" class="element-url">Подробнее</a>
                     </div>
 
                 </div>

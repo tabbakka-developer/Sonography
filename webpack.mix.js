@@ -20,4 +20,5 @@ mix.js('resources/assets/js/app.js', 'public/js')
     .sass('resources/assets/sass/news.scss', 'public/css/index')
     .sass('resources/assets/sass/about.scss', 'public/css/index')
     .sass('resources/assets/sass/category.scss', 'public/css/index')
-    .sass('resources/assets/sass/sidebar.scss', 'public/css/index');
+    .sass('resources/assets/sass/sidebar.scss', 'public/css/index')
+    .sass('resources/assets/sass/ipage.scss', 'public/css/index');

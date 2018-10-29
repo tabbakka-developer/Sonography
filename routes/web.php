@@ -26,3 +26,7 @@ Route::get('/about', function () {
 Route::get('/category', function () {
 	return view('index.category');
 });
+
+Route::get('/item', function () {
+	return view('index.item');
+});
