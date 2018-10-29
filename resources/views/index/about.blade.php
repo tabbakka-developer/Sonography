@@ -4,6 +4,10 @@
         О нас
 @endsection
 
+@section('css')
+    <link href="{{ asset('css/index/about.css') }}" rel="stylesheet">
+@endsection
+
 @section('scripts')
     <script src="{{ asset('js/about.js') }}" type="text/javascript"></script>
 @endsection

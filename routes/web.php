@@ -22,3 +22,11 @@ Route::get('/news', function () {
 Route::get('/about', function () {
 	return view('index.about');
 })->name('about');
+
+Route::get('/category', function () {
+	return view('index.category');
+});
+
+Route::get('/item', function () {
+	return view('index.item');
+});

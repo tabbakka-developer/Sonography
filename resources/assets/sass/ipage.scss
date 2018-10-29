@@ -1,0 +1,116 @@
+@mixin gradient($from, $to, $stop: 100%) {
+	/* fallback/image non-cover color */
+	background-color: $from;
+
+	/* Firefox 3.6+ */
+	background-image: -moz-linear-gradient(left, $from 0%, $to $stop);
+
+	/* Safari 4+, Chrome 1+ */
+	background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, $from), color-stop($stop, $to));
+
+	/* Safari 5.1+, Chrome 10+ */
+	background-image: -webkit-linear-gradient(left, $from 0%, $to $stop);
+
+	/* Opera 11.10+ */
+	background-image: -o-linear-gradient(left, $from 0%, $to $stop);
+
+	/* IE10+ */
+	background: -ms-linear-gradient(left, $from 0%, $to $stop);
+
+	/* Standard */
+	background: linear-gradient(to right, $from 0%, $to $stop);
+
+	/* IE6-9 */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$from', endColorstr='$to', GradientType=1);
+}
+
+body {
+	background-color: #F5F5F5;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+
+.ipage-wrapper {
+	//padding: 5px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+
+	.ipage {
+		width: 75%;
+		padding-top: 5px;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+		justify-content: flex-start;
+
+		.my-gallery {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: justify;
+			-ms-flex-pack: justify;
+			justify-content: flex-start !important;
+
+			.all-images {
+				max-height: 400px;
+				width: 100%;
+				padding-left: 5px !important;
+				margin-top: 0 !important;
+				overflow-x: hidden;
+				overflow-y: auto;
+				list-style-type: none;
+
+				li {
+					padding: 10px;
+					height: 110px;
+					width: 110px;
+				}
+			}
+
+			.all-images img {
+				width: 100%;
+				height: 110px;
+				webkit-filter: grayscale(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+				filter: grayscale(100%); /* FF 35+ */
+			}
+
+			.all-images img:hover {
+				-webkit-filter: grayscale(0%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+				filter: grayscale(0%); /* FF 35+ */
+			}
+
+			.active-image {
+				margin-top: 10px;
+				margin-left: 10px;
+
+				img {
+					width: 50%;
+				}
+
+				.item-name {
+					@include gradient(#49BDA9, #6E90A7);
+					color: white;
+					font-size: larger;
+					text-align: center;
+					padding-top: 15px;
+					padding-bottom: 15px;
+					width: 50%;
+				}
+			}
+		}
+
+		.item-description {
+
+		}
+	}
+}
+
+@import "sidebar";
+@import "breadcrumb";

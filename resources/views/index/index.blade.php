@@ -1,5 +1,13 @@
 @extends('main')
 
+@section('css')
+    <link href="{{ asset('css/index/index.css') }}" rel="stylesheet">
+@endsection
+
+@section('scripts')
+    <script src="{{ asset('js/main.js') }}"></script>
+@endsection
+
 @section('index')
 
     <div class="wrapper">
@@ -7,7 +15,7 @@
             {{--Отступ--}}
         {{--</div>--}}
 
-        <div class="item item-2">
+        <div class="item item-2" data-url="/category">
             <div class="item-header">
                 УЗИ Аппараты
             </div>
@@ -16,7 +24,7 @@
             </div>
         </div>
 
-        <div class="item item-3">
+        <div class="item item-3"  data-url="/category">
             <div class="item-header">
                 Рентгены
             </div>
@@ -25,7 +33,7 @@
             </div>
         </div>
 
-        <div class="item item-4">
+        <div class="item item-4"  data-url="/category">
             <div class="item-header">
                 Эндоскопы
             </div>
