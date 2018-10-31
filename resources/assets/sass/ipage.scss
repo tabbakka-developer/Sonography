@@ -43,40 +43,40 @@ body {
 	.ipage {
 		width: 75%;
 		padding-top: 5px;
-		display: -webkit-box;
-		display: -ms-flexbox;
 		display: flex;
-		-webkit-box-pack: justify;
-		-ms-flex-pack: justify;
 		justify-content: flex-start;
+		align-items: flex-start;
 
 		.my-gallery {
-			display: -webkit-box;
-			display: -ms-flexbox;
 			display: flex;
-			-webkit-box-pack: justify;
-			-ms-flex-pack: justify;
-			justify-content: flex-start !important;
+			justify-content: flex-start;
+			width: 60%;
 
 			.all-images {
 				max-height: 400px;
-				width: 100%;
 				padding-left: 5px !important;
 				margin-top: 0 !important;
 				overflow-x: hidden;
 				overflow-y: auto;
 				list-style-type: none;
+				width: 130px;
 
 				li {
 					padding: 10px;
 					height: 110px;
 					width: 110px;
+
+					img {
+						display: block;
+						width: 100%;
+						height: 100%;
+						object-fit: contain;
+						background-color: #fff;
+					}
 				}
 			}
 
 			.all-images img {
-				width: 100%;
-				height: 110px;
 				webkit-filter: grayscale(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
 				filter: grayscale(100%); /* FF 35+ */
 			}
@@ -89,9 +89,19 @@ body {
 			.active-image {
 				margin-top: 10px;
 				margin-left: 10px;
+				width: calc(100% - 140px);
 
-				img {
-					width: 50%;
+				.img-wrapper {
+					width: 100%;
+					height: 320px;
+					background-color: #fff;
+
+					img {
+						display: block;
+						height: 100%;
+						width: 100%;
+						object-fit: contain;
+					}
 				}
 
 				.item-name {
@@ -99,15 +109,53 @@ body {
 					color: white;
 					font-size: larger;
 					text-align: center;
-					padding-top: 15px;
-					padding-bottom: 15px;
-					width: 50%;
+					line-height: 50px;
+					height: 50px;
 				}
 			}
 		}
 
-		.item-description {
+		.item-description-column {
+			width: 40%;
+			margin-top: 10px;
+			margin-left: 10px;
 
+			.item-description {
+				background-color: #fff;
+				min-height: 254px;
+
+				.description-header {
+					padding-left: 10px;
+					padding-top: 5px;
+					padding-bottom: 5px;
+					border-bottom: #F5F5F5 solid 3px;
+				}
+
+				.description {
+					padding-left: 10px;
+					padding-top: 5px;
+					padding-bottom: 5px;
+				}
+			}
+
+			.compare {
+				text-align: center;
+
+				.compare-text {
+					height: 50px;
+					line-height: 50px;
+					background-color: #fff;
+					margin: 0 auto;
+				}
+
+				.compare-btn {
+					height: 50px;
+					line-height: 50px;
+					color: white;
+					cursor: pointer;
+					@include gradient(#6E90A7, #8D6BA6);
+				}
+			}
 		}
 	}
 }

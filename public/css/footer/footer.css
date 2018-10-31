@@ -24,14 +24,14 @@ footer.footer-index .footer-wrapper .f-item {
 }
 
 footer.footer-index .footer-wrapper .f-item h2 {
-  font-family: Segoue UI;
+  font-family: "Segoue UI", sans-serif;
   font-size: 60px;
   font-weight: bold;
   margin: 0 auto;
 }
 
 footer.footer-index .footer-wrapper .f-item h4 {
-  font-family: Segoue UI;
+  font-family: "Segoue UI", sans-serif;
   font-size: 30px;
   font-weight: bold;
   margin: 0 auto;
@@ -46,7 +46,7 @@ footer.footer-index .footer-wrapper .f-item .link {
 }
 
 footer.footer-index .footer-wrapper .f-item .link a {
-  font-family: Segoue UI;
+  font-family: "Segoue UI", sans-serif;
   font-size: 18px;
   font-weight: 400;
   color: white;

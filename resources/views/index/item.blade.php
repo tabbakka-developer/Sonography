@@ -30,13 +30,22 @@
                         <li><img class="thumb" src="{{ asset('img/global_DGR-C2BB2J-US_001_Front_white.png') }}"></li>
                     </ul>
                     <div class="active-image">
-                        <img src="{{ asset('img/toshibamedicalaplioi600ultrasound-2.png') }}" class="img-active">
+                        <div class="img-wrapper">
+                            <img src="{{ asset('img/toshibamedicalaplioi600ultrasound-2.png') }}" class="img-active">
+                        </div>
                         <div class="item-name">SG Healthcare Jumong E</div>
                     </div>
                 </div>
-                <div class="item-description">
-                    <p>Описание</p>
-                    <p>Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст </p>
+                <div class="item-description-column">
+                    <div class="item-description">
+                        <div class="description-header">Описание</div>
+                        <p class="description">Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст </p>
+                    </div>
+
+                    <div class="compare">
+                        <p class="compare-text">Добавить в сравнение</p>
+                        <div class="compare-btn">УЗНАТЬ КП</div>
+                    </div>
                 </div>
             </div>
 
