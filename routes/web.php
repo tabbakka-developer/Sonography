@@ -11,22 +11,54 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index.index');
-})->name('main');
+function checkAdminDomain() {
+	$host = Request::getHost();
+	if ($host === 'xn--80aimpg.xn--80afqrebpd7a.xn--p1ai') {
 
-Route::get('/news', function () {
-	return view('index.news');
-})->name('news');
+		Route::get('/', function() {
+			return view('admin.auth.login');
+		});
 
-Route::get('/about', function () {
-	return view('index.about');
-})->name('about');
+	} elseif ($host === 'xn--80afqrebpd7a.xn--p1ai') {
 
-Route::get('/category', function () {
-	return view('index.category');
-});
+		Route::get('/', function() {
+			return Redirect::to('https://xn--80aimpg.xn--80afqrebpd7a.xn--p1ai/');
+		});
 
-Route::get('/item', function () {
-	return view('index.item');
-});
+	}
+}
+
+checkAdminDomain();
+
+//Route::group(array('domain' => 'https://xn--80afqrebpd7a.xn--p1ai/'), function() {
+//	dd(123);
+//});
+
+
+//Route::get('/admin', function () {
+//	return view('admin.dashboard');
+//});
+//
+//Route::get('/pre', function () {
+//	return view('pre.index');
+//});
+//
+//Route::get('/', function () {
+//    return view('index.index');
+//})->name('main');
+//
+//Route::get('/news', function () {
+//	return view('index.news');
+//})->name('news');
+//
+//Route::get('/about', function () {
+//	return view('index.about');
+//})->name('about');
+//
+//Route::get('/category', function () {
+//	return view('index.category');
+//});
+//
+//Route::get('/item', function () {
+//	return view('index.item');
+//});
