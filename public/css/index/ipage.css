@@ -1,0 +1,269 @@
+body {
+  background-color: #F5F5F5;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.ipage-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.ipage-wrapper .ipage {
+  width: 75%;
+  padding-top: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.ipage-wrapper .ipage .my-gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 60%;
+}
+
+.ipage-wrapper .ipage .my-gallery .all-images {
+  max-height: 400px;
+  padding-left: 5px !important;
+  margin-top: 0 !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+  list-style-type: none;
+  width: 130px;
+}
+
+.ipage-wrapper .ipage .my-gallery .all-images li {
+  padding: 10px;
+  height: 110px;
+  width: 110px;
+}
+
+.ipage-wrapper .ipage .my-gallery .all-images li img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-color: #fff;
+}
+
+.ipage-wrapper .ipage .my-gallery .all-images img {
+  webkit-filter: grayscale(100%);
+  /* Ch 23+, Saf 6.0+, BB 10.0+ */
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  /* FF 35+ */
+}
+
+.ipage-wrapper .ipage .my-gallery .all-images img:hover {
+  -webkit-filter: grayscale(0%);
+  /* Ch 23+, Saf 6.0+, BB 10.0+ */
+  filter: grayscale(0%);
+  /* FF 35+ */
+}
+
+.ipage-wrapper .ipage .my-gallery .active-image {
+  margin-top: 10px;
+  margin-left: 10px;
+  width: calc(100% - 140px);
+}
+
+.ipage-wrapper .ipage .my-gallery .active-image .img-wrapper {
+  width: 100%;
+  height: 320px;
+  background-color: #fff;
+}
+
+.ipage-wrapper .ipage .my-gallery .active-image .img-wrapper img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.ipage-wrapper .ipage .my-gallery .active-image .item-name {
+  /* fallback/image non-cover color */
+  background-color: #49BDA9;
+  /* Firefox 3.6+ */
+  /* Safari 4+, Chrome 1+ */
+  /* Safari 5.1+, Chrome 10+ */
+  /* Opera 11.10+ */
+  background-image: -o-linear-gradient(left, #49BDA9 0%, #6E90A7 100%);
+  /* IE10+ */
+  /* Standard */
+  background: -webkit-gradient(linear, left top, right top, from(#49BDA9), to(#6E90A7));
+  background: linear-gradient(to right, #49BDA9 0%, #6E90A7 100%);
+  /* IE6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$from', endColorstr='$to', GradientType=1);
+  color: white;
+  font-size: larger;
+  text-align: center;
+  line-height: 50px;
+  height: 50px;
+}
+
+.ipage-wrapper .ipage .item-description-column {
+  width: 40%;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.ipage-wrapper .ipage .item-description-column .item-description {
+  background-color: #fff;
+  min-height: 254px;
+}
+
+.ipage-wrapper .ipage .item-description-column .item-description .description-header {
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: #F5F5F5 solid 3px;
+}
+
+.ipage-wrapper .ipage .item-description-column .item-description .description {
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.ipage-wrapper .ipage .item-description-column .compare {
+  text-align: center;
+}
+
+.ipage-wrapper .ipage .item-description-column .compare .compare-text {
+  height: 50px;
+  line-height: 50px;
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+.ipage-wrapper .ipage .item-description-column .compare .compare-btn {
+  height: 50px;
+  line-height: 50px;
+  color: white;
+  cursor: pointer;
+  /* fallback/image non-cover color */
+  background-color: #6E90A7;
+  /* Firefox 3.6+ */
+  /* Safari 4+, Chrome 1+ */
+  /* Safari 5.1+, Chrome 10+ */
+  /* Opera 11.10+ */
+  background-image: -o-linear-gradient(left, #6E90A7 0%, #8D6BA6 100%);
+  /* IE10+ */
+  /* Standard */
+  background: -webkit-gradient(linear, left top, right top, from(#6E90A7), to(#8D6BA6));
+  background: linear-gradient(to right, #6E90A7 0%, #8D6BA6 100%);
+  /* IE6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$from', endColorstr='$to', GradientType=1);
+}
+
+.sidebar {
+  height: 100%;
+  background-color: transparent;
+  width: 25%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 5px;
+}
+
+.sidebar button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+  background-color: white;
+  color: #49BDA9;
+  border: none;
+  margin-top: 10px;
+}
+
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  display: block;
+  border: none;
+  background: white;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.sidebar a:hover {
+  color: #49BDA9;
+}
+
+.dropdown-container {
+  display: none;
+  background-color: white;
+  padding-left: 8px;
+}
+
+.fa-plus {
+  font-size: 10px;
+}
+
+ul.breadcrumb {
+  margin-left: calc(25% + 35px);
+  margin-top: 25px;
+  padding: 10px 16px;
+  list-style: none;
+  background-color: transparent;
+}
+
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+  color: black;
+}
+
+ul.breadcrumb li a {
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+}
+
+ul.breadcrumb li a:hover {
+  color: rgba(0, 0, 0, 0.3);
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+  text-decoration: none;
+}
+
+ul.breadcrumb li + li:before {
+  padding: 8px;
+  color: black;
+  content: ">";
+}
+
