@@ -28,11 +28,18 @@ function checkAdminDomain() {
 	}
 }
 
-//checkAdminDomain();
 
-//Route::group(array('domain' => 'https://xn--80afqrebpd7a.xn--p1ai/'), function() {
-//	dd(123);
-//});
+//admin
+
+Route::get('/login', "Admin\Auth\LoginController@showForm");
+
+Route::group(['middleware' => 'auth:admin'], function () {
+
+	Route::get('/dashboard', "Admin\DashBoardController@index");
+
+});
+
+//checkAdminDomain();
 
 
 Route::get('/admin', function () {
@@ -65,6 +72,6 @@ Route::get('/item', function () {
 
 
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+//Auth::routes();
+//
+//Route::get('/home', 'HomeController@index')->name('home');
