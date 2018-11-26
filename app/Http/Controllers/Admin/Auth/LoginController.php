@@ -24,11 +24,13 @@ class LoginController extends Controller {
 			'password' => 'required|min:3'
 		]);
 
+		dd($request);
+
 		if (Auth::guard()->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
 			return redirect()->action('Admin\DashboardController@index');
 		}
 
-		$errors = new MessageBag(['password' => ['Email and/or password invalid.']]);
+		$errors = new MessageBag(['password' => ['Email или пароль неверные.']]);
 		return redirect()->back()->withErrors($errors)->withInput($request->only('email', 'remember'));
 	}
 

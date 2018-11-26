@@ -32,6 +32,7 @@ function checkAdminDomain() {
 //admin
 
 Route::get('/login', "Admin\Auth\LoginController@showForm");
+Route::post('/login', "Admin\Auth\LoginController@login");
 
 Route::group(['middleware' => 'auth:admin'], function () {
 
@@ -42,33 +43,33 @@ Route::group(['middleware' => 'auth:admin'], function () {
 //checkAdminDomain();
 
 
-Route::get('/admin', function () {
-	return view('admin.dashboard');
-});
+//Route::get('/admin', function () {
+//	return view('admin.dashboard');
+//});
 
-Route::get('/pre', function () {
-	return view('pre.index');
-});
-
-Route::get('/', function () {
-    return view('index.index');
-})->name('main');
-
-Route::get('/news', function () {
-	return view('index.news');
-})->name('news');
-
-Route::get('/about', function () {
-	return view('index.about');
-})->name('about');
-
-Route::get('/category', function () {
-	return view('index.category');
-});
-
-Route::get('/item', function () {
-	return view('index.item');
-});
+//Route::get('/pre', function () {
+//	return view('pre.index');
+//});
+//
+//Route::get('/', function () {
+//    return view('index.index');
+//})->name('main');
+//
+//Route::get('/news', function () {
+//	return view('index.news');
+//})->name('news');
+//
+//Route::get('/about', function () {
+//	return view('index.about');
+//})->name('about');
+//
+//Route::get('/category', function () {
+//	return view('index.category');
+//});
+//
+//Route::get('/item', function () {
+//	return view('index.item');
+//});
 
 
 
