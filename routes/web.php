@@ -63,6 +63,8 @@ Route::get('/item', function () {
 	return view('index.item');
 });
 
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
