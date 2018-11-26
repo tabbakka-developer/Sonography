@@ -28,37 +28,41 @@ function checkAdminDomain() {
 	}
 }
 
-checkAdminDomain();
+//checkAdminDomain();
 
 //Route::group(array('domain' => 'https://xn--80afqrebpd7a.xn--p1ai/'), function() {
 //	dd(123);
 //});
 
 
-//Route::get('/admin', function () {
-//	return view('admin.dashboard');
-//});
-//
-//Route::get('/pre', function () {
-//	return view('pre.index');
-//});
-//
-//Route::get('/', function () {
-//    return view('index.index');
-//})->name('main');
-//
-//Route::get('/news', function () {
-//	return view('index.news');
-//})->name('news');
-//
-//Route::get('/about', function () {
-//	return view('index.about');
-//})->name('about');
-//
-//Route::get('/category', function () {
-//	return view('index.category');
-//});
-//
-//Route::get('/item', function () {
-//	return view('index.item');
-//});
+Route::get('/admin', function () {
+	return view('admin.dashboard');
+});
+
+Route::get('/pre', function () {
+	return view('pre.index');
+});
+
+Route::get('/', function () {
+    return view('index.index');
+})->name('main');
+
+Route::get('/news', function () {
+	return view('index.news');
+})->name('news');
+
+Route::get('/about', function () {
+	return view('index.about');
+})->name('about');
+
+Route::get('/category', function () {
+	return view('index.category');
+});
+
+Route::get('/item', function () {
+	return view('index.item');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

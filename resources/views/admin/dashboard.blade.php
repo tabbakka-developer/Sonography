@@ -1,320 +1,927 @@
 @extends('admin.additional.main')
 
+@section('title')
+    Главная
+@endsection
+
 @section('app-content')
-    @parent
-    <div>
-        @include('admin.additional.sidebar')
-    </div>
 
-
-    <div class="page-container">
-        <!-- ### $Topbar ### -->
-        <div class="header navbar">
-            <div class="header-container">
-                <ul class="nav-left">
-                    <li>
-                        <a id='sidebar-toggle' class="sidebar-toggle" href="javascript:void(0);">
-                            <i class="ti-menu"></i>
-                        </a>
-                    </li>
-                    <li class="search-box">
-                        <a class="search-toggle no-pdd-right" href="javascript:void(0);">
-                            <i class="search-icon ti-search pdd-right-10"></i>
-                            <i class="search-icon-close ti-close pdd-right-10"></i>
-                        </a>
-                    </li>
-                    <li class="search-input">
-                        <input class="form-control" type="text" placeholder="Search...">
-                    </li>
-                </ul>
-                <ul class="nav-right">
-                    <li class="notifications dropdown">
-                        <span class="counter bgc-red">3</span>
-                        <a href="" class="dropdown-toggle no-after" data-toggle="dropdown">
-                            <i class="ti-bell"></i>
-                        </a>
-
-                        <ul class="dropdown-menu">
-                            <li class="pX-20 pY-15 bdB">
-                                <i class="ti-bell pR-10"></i>
-                                <span class="fsz-sm fw-600 c-grey-900">Notifications</span>
+<!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <!-- Start Header Top Area -->
+    <div class="header-top-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="logo-area">
+                        <a href="#"><img src="img/logo/logo.png" alt="" /></a>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                    <div class="header-top-menu">
+                        <ul class="nav navbar-nav notika-top-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-search"></i></span></a>
+                                <div role="menu" class="dropdown-menu search-dd animated flipInX">
+                                    <div class="search-input">
+                                        <i class="notika-icon notika-left-arrow"></i>
+                                        <input type="text" />
+                                    </div>
+                                </div>
                             </li>
-                            <li>
-                                <ul class="ovY-a pos-r scrollable lis-n p-0 m-0 fsz-sm">
-                                    <li>
-                                        <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
-                                            <div class="peer mR-15">
-                                                <img class="w-3r bdrs-50p"
-                                                     src="https://randomuser.me/api/portraits/men/1.jpg" alt="">
-                                            </div>
-                                            <div class="peer peer-greed">
-                            <span>
-                              <span class="fw-500">John Doe</span>
-                              <span class="c-grey-600">liked your <span class="text-dark">post</span>
-                              </span>
-                            </span>
-                                                <p class="m-0">
-                                                    <small class="fsz-xs">5 mins ago</small>
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
-                                            <div class="peer mR-15">
-                                                <img class="w-3r bdrs-50p"
-                                                     src="https://randomuser.me/api/portraits/men/2.jpg" alt="">
-                                            </div>
-                                            <div class="peer peer-greed">
-                            <span>
-                              <span class="fw-500">Moo Doe</span>
-                              <span class="c-grey-600">liked your <span class="text-dark">cover image</span>
-                              </span>
-                            </span>
-                                                <p class="m-0">
-                                                    <small class="fsz-xs">7 mins ago</small>
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
-                                            <div class="peer mR-15">
-                                                <img class="w-3r bdrs-50p"
-                                                     src="https://randomuser.me/api/portraits/men/3.jpg" alt="">
-                                            </div>
-                                            <div class="peer peer-greed">
-                            <span>
-                              <span class="fw-500">Lee Doe</span>
-                              <span class="c-grey-600">commented on your <span class="text-dark">video</span>
-                              </span>
-                            </span>
-                                                <p class="m-0">
-                                                    <small class="fsz-xs">10 mins ago</small>
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="pX-20 pY-15 ta-c bdT">
-                    <span>
-                      <a href="" class="c-grey-600 cH-blue fsz-sm td-n">View All Notifications <i
-                                  class="ti-angle-right fsz-xs mL-10"></i></a>
-                    </span>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="notifications dropdown">
-                        <span class="counter bgc-blue">3</span>
-                        <a href="" class="dropdown-toggle no-after" data-toggle="dropdown">
-                            <i class="ti-email"></i>
-                        </a>
-
-                        <ul class="dropdown-menu">
-                            <li class="pX-20 pY-15 bdB">
-                                <i class="ti-email pR-10"></i>
-                                <span class="fsz-sm fw-600 c-grey-900">Emails</span>
-                            </li>
-                            <li>
-                                <ul class="ovY-a pos-r scrollable lis-n p-0 m-0 fsz-sm">
-                                    <li>
-                                        <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
-                                            <div class="peer mR-15">
-                                                <img class="w-3r bdrs-50p"
-                                                     src="https://randomuser.me/api/portraits/men/1.jpg" alt="">
-                                            </div>
-                                            <div class="peer peer-greed">
-                                                <div>
-                                                    <div class="peers jc-sb fxw-nw mB-5">
-                                                        <div class="peer">
-                                                            <p class="fw-500 mB-0">John Doe</p>
-                                                        </div>
-                                                        <div class="peer">
-                                                            <small class="fsz-xs">5 mins ago</small>
-                                                        </div>
-                                                    </div>
-                                                    <span class="c-grey-600 fsz-sm">
-                                Want to create your own customized data generator for your app...
-                              </span>
+                            <li class="nav-item dropdown">
+                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-mail"></i></span></a>
+                                <div role="menu" class="dropdown-menu message-dd animated zoomIn">
+                                    <div class="hd-mg-tt">
+                                        <h2>Messages</h2>
+                                    </div>
+                                    <div class="hd-message-info">
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/1.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>David Belle</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
                                                 </div>
                                             </div>
                                         </a>
-                                    </li>
-                                    <li>
-                                        <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
-                                            <div class="peer mR-15">
-                                                <img class="w-3r bdrs-50p"
-                                                     src="https://randomuser.me/api/portraits/men/2.jpg" alt="">
-                                            </div>
-                                            <div class="peer peer-greed">
-                                                <div>
-                                                    <div class="peers jc-sb fxw-nw mB-5">
-                                                        <div class="peer">
-                                                            <p class="fw-500 mB-0">Moo Doe</p>
-                                                        </div>
-                                                        <div class="peer">
-                                                            <small class="fsz-xs">15 mins ago</small>
-                                                        </div>
-                                                    </div>
-                                                    <span class="c-grey-600 fsz-sm">
-                                Want to create your own customized data generator for your app...
-                              </span>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/2.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>Jonathan Morris</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
                                                 </div>
                                             </div>
                                         </a>
-                                    </li>
-                                    <li>
-                                        <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
-                                            <div class="peer mR-15">
-                                                <img class="w-3r bdrs-50p"
-                                                     src="https://randomuser.me/api/portraits/men/3.jpg" alt="">
-                                            </div>
-                                            <div class="peer peer-greed">
-                                                <div>
-                                                    <div class="peers jc-sb fxw-nw mB-5">
-                                                        <div class="peer">
-                                                            <p class="fw-500 mB-0">Lee Doe</p>
-                                                        </div>
-                                                        <div class="peer">
-                                                            <small class="fsz-xs">25 mins ago</small>
-                                                        </div>
-                                                    </div>
-                                                    <span class="c-grey-600 fsz-sm">
-                                Want to create your own customized data generator for your app...
-                              </span>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/4.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>Fredric Mitchell</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
                                                 </div>
                                             </div>
                                         </a>
-                                    </li>
-                                </ul>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/1.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>David Belle</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/2.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>Glenn Jecobs</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="hd-mg-va">
+                                        <a href="#">View All</a>
+                                    </div>
+                                </div>
                             </li>
-                            <li class="pX-20 pY-15 ta-c bdT">
-                    <span>
-                      <a href="email.html" class="c-grey-600 cH-blue fsz-sm td-n">View All Email <i
-                                  class="fs-xs ti-angle-right mL-10"></i></a>
-                    </span>
+                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div></a>
+                                <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
+                                    <div class="hd-mg-tt">
+                                        <h2>Notification</h2>
+                                    </div>
+                                    <div class="hd-message-info">
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/1.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>David Belle</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/2.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>Jonathan Morris</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/4.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>Fredric Mitchell</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/1.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>David Belle</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/2.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>Glenn Jecobs</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="hd-mg-va">
+                                        <a href="#">View All</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-menus"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>2</span></div></a>
+                                <div role="menu" class="dropdown-menu message-dd task-dd animated zoomIn">
+                                    <div class="hd-mg-tt">
+                                        <h2>Tasks</h2>
+                                    </div>
+                                    <div class="hd-message-info hd-task-info">
+                                        <div class="skill">
+                                            <div class="progress">
+                                                <div class="lead-content">
+                                                    <p>HTML5 Validation Report</p>
+                                                </div>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="95%" style="width: 95%;" data-wow-duration="1.5s" data-wow-delay="1.2s"> <span>95%</span>
+                                                </div>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="lead-content">
+                                                    <p>Google Chrome Extension</p>
+                                                </div>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="85%" style="width: 85%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>85%</span> </div>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="lead-content">
+                                                    <p>Social Internet Projects</p>
+                                                </div>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="75%" style="width: 75%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>75%</span> </div>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="lead-content">
+                                                    <p>Bootstrap Admin</p>
+                                                </div>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="93%" style="width: 65%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>65%</span> </div>
+                                            </div>
+                                            <div class="progress progress-bt">
+                                                <div class="lead-content">
+                                                    <p>Youtube App</p>
+                                                </div>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="55%" style="width: 55%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>55%</span> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hd-mg-va">
+                                        <a href="#">View All</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-chat"></i></span></a>
+                                <div role="menu" class="dropdown-menu message-dd chat-dd animated zoomIn">
+                                    <div class="hd-mg-tt">
+                                        <h2>Chat</h2>
+                                    </div>
+                                    <div class="search-people">
+                                        <i class="notika-icon notika-left-arrow"></i>
+                                        <input type="text" placeholder="Search People" />
+                                    </div>
+                                    <div class="hd-message-info">
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img chat-img">
+                                                    <img src="img/post/1.jpg" alt="" />
+                                                    <div class="chat-avaible"><i class="notika-icon notika-dot"></i></div>
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>David Belle</h3>
+                                                    <p>Available</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img chat-img">
+                                                    <img src="img/post/2.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>Jonathan Morris</h3>
+                                                    <p>Last seen 3 hours ago</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img chat-img">
+                                                    <img src="img/post/4.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>Fredric Mitchell</h3>
+                                                    <p>Last seen 2 minutes ago</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img chat-img">
+                                                    <img src="img/post/1.jpg" alt="" />
+                                                    <div class="chat-avaible"><i class="notika-icon notika-dot"></i></div>
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>David Belle</h3>
+                                                    <p>Available</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img chat-img">
+                                                    <img src="img/post/2.jpg" alt="" />
+                                                    <div class="chat-avaible"><i class="notika-icon notika-dot"></i></div>
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>Glenn Jecobs</h3>
+                                                    <p>Available</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="hd-mg-va">
+                                        <a href="#">View All</a>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" data-toggle="dropdown">
-                            <div class="peer mR-10">
-                                <img class="w-2r bdrs-50p" src="https://randomuser.me/api/portraits/men/10.jpg" alt="">
-                            </div>
-                            <div class="peer">
-                                <span class="fsz-sm c-grey-900">John Doe</span>
-                            </div>
-                        </a>
-                        <ul class="dropdown-menu fsz-sm">
-                            <li>
-                                <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
-                                    <i class="ti-settings mR-10"></i>
-                                    <span>Setting</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
-                                    <i class="ti-user mR-10"></i>
-                                    <span>Profile</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="email.html" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
-                                    <i class="ti-email mR-10"></i>
-                                    <span>Messages</span>
-                                </a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
-                                    <i class="ti-power-off mR-10"></i>
-                                    <span>Logout</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <!-- ### $App Screen Content ### -->
-        <main class='main-content bgc-grey-100'>
-            <div id='mainContent'>
-                <div class="row gap-20 masonry pos-r">
-                    <div class="masonry-sizer col-md-6"></div>
-                    <div class="masonry-item  w-100">
-                        <div class="row gap-20">
-                            <!-- #Toatl Visits ==================== -->
-                            <div class='col-md-3'>
-                                <div class="layers bd bgc-white p-20">
-                                    <div class="layer w-100 mB-10">
-                                        <h6 class="lh-1">Total Visits</h6>
+    </div>
+    <!-- End Header Top Area -->
+    <!-- Mobile Menu start -->
+    <div class="mobile-menu-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="mobile-menu">
+                        <nav id="dropdown">
+                            <ul class="mobile-menu-nav">
+                                <li><a data-toggle="collapse" data-target="#Charts" href="#">Home</a>
+                                    <ul class="collapse dropdown-header-top">
+                                        <li><a href="index.html">Dashboard One</a></li>
+                                        <li><a href="index-2.html">Dashboard Two</a></li>
+                                        <li><a href="index-3.html">Dashboard Three</a></li>
+                                        <li><a href="index-4.html">Dashboard Four</a></li>
+                                        <li><a href="analytics.html">Analytics</a></li>
+                                        <li><a href="widgets.html">Widgets</a></li>
+                                    </ul>
+                                </li>
+                                <li><a data-toggle="collapse" data-target="#demoevent" href="#">Email</a>
+                                    <ul id="demoevent" class="collapse dropdown-header-top">
+                                        <li><a href="inbox.html">Inbox</a></li>
+                                        <li><a href="view-email.html">View Email</a></li>
+                                        <li><a href="compose-email.html">Compose Email</a></li>
+                                    </ul>
+                                </li>
+                                <li><a data-toggle="collapse" data-target="#democrou" href="#">Interface</a>
+                                    <ul id="democrou" class="collapse dropdown-header-top">
+                                        <li><a href="animations.html">Animations</a></li>
+                                        <li><a href="google-map.html">Google Map</a></li>
+                                        <li><a href="data-map.html">Data Maps</a></li>
+                                        <li><a href="code-editor.html">Code Editor</a></li>
+                                        <li><a href="image-cropper.html">Images Cropper</a></li>
+                                        <li><a href="wizard.html">Wizard</a></li>
+                                    </ul>
+                                </li>
+                                <li><a data-toggle="collapse" data-target="#demolibra" href="#">Charts</a>
+                                    <ul id="demolibra" class="collapse dropdown-header-top">
+                                        <li><a href="flot-charts.html">Flot Charts</a></li>
+                                        <li><a href="bar-charts.html">Bar Charts</a></li>
+                                        <li><a href="line-charts.html">Line Charts</a></li>
+                                        <li><a href="area-charts.html">Area Charts</a></li>
+                                    </ul>
+                                </li>
+                                <li><a data-toggle="collapse" data-target="#demodepart" href="#">Tables</a>
+                                    <ul id="demodepart" class="collapse dropdown-header-top">
+                                        <li><a href="normal-table.html">Normal Table</a></li>
+                                        <li><a href="data-table.html">Data Table</a></li>
+                                    </ul>
+                                </li>
+                                <li><a data-toggle="collapse" data-target="#demo" href="#">Forms</a>
+                                    <ul id="demo" class="collapse dropdown-header-top">
+                                        <li><a href="form-elements.html">Form Elements</a></li>
+                                        <li><a href="form-components.html">Form Components</a></li>
+                                        <li><a href="form-examples.html">Form Examples</a></li>
+                                    </ul>
+                                </li>
+                                <li><a data-toggle="collapse" data-target="#Miscellaneousmob" href="#">App views</a>
+                                    <ul id="Miscellaneousmob" class="collapse dropdown-header-top">
+                                        <li><a href="notification.html">Notifications</a>
+                                        </li>
+                                        <li><a href="alert.html">Alerts</a>
+                                        </li>
+                                        <li><a href="modals.html">Modals</a>
+                                        </li>
+                                        <li><a href="buttons.html">Buttons</a>
+                                        </li>
+                                        <li><a href="tabs.html">Tabs</a>
+                                        </li>
+                                        <li><a href="accordion.html">Accordion</a>
+                                        </li>
+                                        <li><a href="dialog.html">Dialogs</a>
+                                        </li>
+                                        <li><a href="popovers.html">Popovers</a>
+                                        </li>
+                                        <li><a href="tooltips.html">Tooltips</a>
+                                        </li>
+                                        <li><a href="dropdown.html">Dropdowns</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a data-toggle="collapse" data-target="#Pagemob" href="#">Pages</a>
+                                    <ul id="Pagemob" class="collapse dropdown-header-top">
+                                        <li><a href="contact.html">Contact</a>
+                                        </li>
+                                        <li><a href="invoice.html">Invoice</a>
+                                        </li>
+                                        <li><a href="typography.html">Typography</a>
+                                        </li>
+                                        <li><a href="color.html">Color</a>
+                                        </li>
+                                        <li><a href="login-register.html">Login Register</a>
+                                        </li>
+                                        <li><a href="404.html">404 Page</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Mobile Menu end -->
+    <!-- Main Menu area start-->
+    <div class="main-menu-area mg-tb-40">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
+                        <li class="active"><a data-toggle="tab" href="#Home"><i class="notika-icon notika-house"></i> Home</a>
+                        </li>
+                        <li><a data-toggle="tab" href="#mailbox"><i class="notika-icon notika-mail"></i> Email</a>
+                        </li>
+                        <li><a data-toggle="tab" href="#Interface"><i class="notika-icon notika-edit"></i> Interface</a>
+                        </li>
+                        <li><a data-toggle="tab" href="#Charts"><i class="notika-icon notika-bar-chart"></i> Charts</a>
+                        </li>
+                        <li><a data-toggle="tab" href="#Tables"><i class="notika-icon notika-windows"></i> Tables</a>
+                        </li>
+                        <li><a data-toggle="tab" href="#Forms"><i class="notika-icon notika-form"></i> Forms</a>
+                        </li>
+                        <li><a data-toggle="tab" href="#Appviews"><i class="notika-icon notika-app"></i> App views</a>
+                        </li>
+                        <li><a data-toggle="tab" href="#Page"><i class="notika-icon notika-support"></i> Pages</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content custom-menu-content">
+                        <div id="Home" class="tab-pane in active notika-tab-menu-bg animated flipInX">
+                            <ul class="notika-main-menu-dropdown">
+                                <li><a href="index.html">Dashboard One</a>
+                                </li>
+                                <li><a href="index-2.html">Dashboard Two</a>
+                                </li>
+                                <li><a href="index-3.html">Dashboard Three</a>
+                                </li>
+                                <li><a href="index-4.html">Dashboard Four</a>
+                                </li>
+                                <li><a href="analytics.html">Analytics</a>
+                                </li>
+                                <li><a href="widgets.html">Widgets</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="mailbox" class="tab-pane notika-tab-menu-bg animated flipInX">
+                            <ul class="notika-main-menu-dropdown">
+                                <li><a href="inbox.html">Inbox</a>
+                                </li>
+                                <li><a href="view-email.html">View Email</a>
+                                </li>
+                                <li><a href="compose-email.html">Compose Email</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="Interface" class="tab-pane notika-tab-menu-bg animated flipInX">
+                            <ul class="notika-main-menu-dropdown">
+                                <li><a href="animations.html">Animations</a>
+                                </li>
+                                <li><a href="google-map.html">Google Map</a>
+                                </li>
+                                <li><a href="data-map.html">Data Maps</a>
+                                </li>
+                                <li><a href="code-editor.html">Code Editor</a>
+                                </li>
+                                <li><a href="image-cropper.html">Images Cropper</a>
+                                </li>
+                                <li><a href="wizard.html">Wizard</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="Charts" class="tab-pane notika-tab-menu-bg animated flipInX">
+                            <ul class="notika-main-menu-dropdown">
+                                <li><a href="flot-charts.html">Flot Charts</a>
+                                </li>
+                                <li><a href="bar-charts.html">Bar Charts</a>
+                                </li>
+                                <li><a href="line-charts.html">Line Charts</a>
+                                </li>
+                                <li><a href="area-charts.html">Area Charts</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="Tables" class="tab-pane notika-tab-menu-bg animated flipInX">
+                            <ul class="notika-main-menu-dropdown">
+                                <li><a href="normal-table.html">Normal Table</a>
+                                </li>
+                                <li><a href="data-table.html">Data Table</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="Forms" class="tab-pane notika-tab-menu-bg animated flipInX">
+                            <ul class="notika-main-menu-dropdown">
+                                <li><a href="form-elements.html">Form Elements</a>
+                                </li>
+                                <li><a href="form-components.html">Form Components</a>
+                                </li>
+                                <li><a href="form-examples.html">Form Examples</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="Appviews" class="tab-pane notika-tab-menu-bg animated flipInX">
+                            <ul class="notika-main-menu-dropdown">
+                                <li><a href="notification.html">Notifications</a>
+                                </li>
+                                <li><a href="alert.html">Alerts</a>
+                                </li>
+                                <li><a href="modals.html">Modals</a>
+                                </li>
+                                <li><a href="buttons.html">Buttons</a>
+                                </li>
+                                <li><a href="tabs.html">Tabs</a>
+                                </li>
+                                <li><a href="accordion.html">Accordion</a>
+                                </li>
+                                <li><a href="dialog.html">Dialogs</a>
+                                </li>
+                                <li><a href="popovers.html">Popovers</a>
+                                </li>
+                                <li><a href="tooltips.html">Tooltips</a>
+                                </li>
+                                <li><a href="dropdown.html">Dropdowns</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="Page" class="tab-pane notika-tab-menu-bg animated flipInX">
+                            <ul class="notika-main-menu-dropdown">
+                                <li><a href="contact.html">Contact</a>
+                                </li>
+                                <li><a href="invoice.html">Invoice</a>
+                                </li>
+                                <li><a href="typography.html">Typography</a>
+                                </li>
+                                <li><a href="color.html">Color</a>
+                                </li>
+                                <li><a href="login-register.html">Login Register</a>
+                                </li>
+                                <li><a href="404.html">404 Page</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main Menu area End-->
+    <!-- Start Status area -->
+    <div class="notika-status-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                        <div class="website-traffic-ctn">
+                            <h2><span class="counter">50,000</span></h2>
+                            <p>Total Website Traffics</p>
+                        </div>
+                        <div class="sparkline-bar-stats1">9,4,8,6,5,6,4,8,3,5,9,5</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                        <div class="website-traffic-ctn">
+                            <h2><span class="counter">90,000</span>k</h2>
+                            <p>Website Impressions</p>
+                        </div>
+                        <div class="sparkline-bar-stats2">1,4,8,3,5,6,4,8,3,3,9,5</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
+                        <div class="website-traffic-ctn">
+                            <h2>$<span class="counter">40,000</span></h2>
+                            <p>Total Online Sales</p>
+                        </div>
+                        <div class="sparkline-bar-stats3">4,2,8,2,5,6,3,8,3,5,9,5</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
+                        <div class="website-traffic-ctn">
+                            <h2><span class="counter">1,000</span></h2>
+                            <p>Total Support Tickets</p>
+                        </div>
+                        <div class="sparkline-bar-stats4">2,4,8,4,5,7,4,7,3,5,7,5</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Status area-->
+    <!-- Start Sale Statistic area-->
+    <div class="sale-statistic-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-8 col-sm-7 col-xs-12">
+                    <div class="sale-statistic-inner notika-shadow mg-tb-30">
+                        <div class="curved-inner-pro">
+                            <div class="curved-ctn">
+                                <h2>Sales Statistics</h2>
+                                <p>Vestibulum purus quam scelerisque, mollis nonummy metus</p>
+                            </div>
+                        </div>
+                        <div id="curved-line-chart" class="flot-chart-sts flot-chart"></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-5 col-xs-12">
+                    <div class="statistic-right-area notika-shadow mg-tb-30 sm-res-mg-t-0">
+                        <div class="past-day-statis">
+                            <h2>For The Past 30 Days</h2>
+                            <p>Fusce eget dolor id justo luctus the commodo vel pharetra nisi. Donec velit of libero.</p>
+                        </div>
+                        <div class="dash-widget-visits"></div>
+                        <div class="past-statistic-an">
+                            <div class="past-statistic-ctn">
+                                <h3><span class="counter">3,20,000</span></h3>
+                                <p>Page Views</p>
+                            </div>
+                            <div class="past-statistic-graph">
+                                <div class="stats-bar"></div>
+                            </div>
+                        </div>
+                        <div class="past-statistic-an">
+                            <div class="past-statistic-ctn">
+                                <h3><span class="counter">1,03,000</span></h3>
+                                <p>Total Clicks</p>
+                            </div>
+                            <div class="past-statistic-graph">
+                                <div class="stats-line"></div>
+                            </div>
+                        </div>
+                        <div class="past-statistic-an">
+                            <div class="past-statistic-ctn">
+                                <h3><span class="counter">24,00,000</span></h3>
+                                <p>Site Visitors</p>
+                            </div>
+                            <div class="past-statistic-graph">
+                                <div class="stats-bar-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Sale Statistic area-->
+    <!-- Start Email Statistic area-->
+    <div class="notika-email-post-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="email-statis-inner notika-shadow">
+                        <div class="email-ctn-round">
+                            <div class="email-rdn-hd">
+                                <h2>Email Statistics</h2>
+                            </div>
+                            <div class="email-statis-wrap">
+                                <div class="email-round-nock">
+                                    <input type="text" class="knob" value="0" data-rel="55" data-linecap="round" data-width="130" data-bgcolor="#E4E4E4" data-fgcolor="#00c292" data-thickness=".10" data-readonly="true">
+                                </div>
+                                <div class="email-ctn-nock">
+                                    <p>Total Emails Sent</p>
+                                </div>
+                            </div>
+                            <div class="email-round-gp">
+                                <div class="email-round-pro">
+                                    <div class="email-signle-gp">
+                                        <input type="text" class="knob" value="0" data-rel="75" data-linecap="round" data-width="90" data-bgcolor="#E4E4E4" data-fgcolor="#00c292" data-thickness=".10" data-readonly="true" disabled>
                                     </div>
-                                    <div class="layer w-100">
-                                        <div class="peers ai-sb fxw-nw">
-                                            <div class="peer peer-greed">
-                                                <span id="sparklinedash"></span>
-                                            </div>
-                                            <div class="peer">
-                                                <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-green-50 c-green-500">+10%</span>
-                                            </div>
-                                        </div>
+                                    <div class="email-ctn-nock">
+                                        <p>Bounce Rate</p>
+                                    </div>
+                                </div>
+                                <div class="email-round-pro">
+                                    <div class="email-signle-gp">
+                                        <input type="text" class="knob" value="0" data-rel="35" data-linecap="round" data-width="90" data-bgcolor="#E4E4E4" data-fgcolor="#00c292" data-thickness=".10" data-readonly="true" disabled>
+                                    </div>
+                                    <div class="email-ctn-nock">
+                                        <p>Total Opened</p>
+                                    </div>
+                                </div>
+                                <div class="email-round-pro sm-res-ds-n lg-res-mg-bl">
+                                    <div class="email-signle-gp">
+                                        <input type="text" class="knob" value="0" data-rel="45" data-linecap="round" data-width="90" data-bgcolor="#E4E4E4" data-fgcolor="#00c292" data-thickness=".10" data-readonly="true" disabled>
+                                    </div>
+                                    <div class="email-ctn-nock">
+                                        <p>Total Ignored</p>
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- #Total Page Views ==================== -->
-                            <div class='col-md-3'>
-                                <div class="layers bd bgc-white p-20">
-                                    <div class="layer w-100 mB-10">
-                                        <h6 class="lh-1">Total Page Views</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="recent-post-wrapper notika-shadow sm-res-mg-t-30 tb-res-ds-n dk-res-ds">
+                        <div class="recent-post-ctn">
+                            <div class="recent-post-title">
+                                <h2>Recent Posts</h2>
+                            </div>
+                        </div>
+                        <div class="recent-post-items">
+                            <div class="recent-post-signle rct-pt-mg-wp">
+                                <a href="#">
+                                    <div class="recent-post-flex">
+                                        <div class="recent-post-img">
+                                            <img src="img/post/2.jpg" alt="" />
+                                        </div>
+                                        <div class="recent-post-it-ctn">
+                                            <h2>Smith</h2>
+                                            <p>Nunc quis diam diamurabitur at dolor elementum, dictum turpis vel</p>
+                                        </div>
                                     </div>
-                                    <div class="layer w-100">
-                                        <div class="peers ai-sb fxw-nw">
-                                            <div class="peer peer-greed">
-                                                <span id="sparklinedash2"></span>
-                                            </div>
-                                            <div class="peer">
-                                                <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-red-50 c-red-500">-7%</span>
-                                            </div>
+                                </a>
+                            </div>
+                            <div class="recent-post-signle">
+                                <a href="#">
+                                    <div class="recent-post-flex rct-pt-mg">
+                                        <div class="recent-post-img">
+                                            <img src="img/post/1.jpg" alt="" />
+                                        </div>
+                                        <div class="recent-post-it-ctn">
+                                            <h2>John Deo</h2>
+                                            <p>Nunc quis diam diamurabitur at dolor elementum, dictum turpis vel</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="recent-post-signle">
+                                <a href="#">
+                                    <div class="recent-post-flex rct-pt-mg">
+                                        <div class="recent-post-img">
+                                            <img src="img/post/4.jpg" alt="" />
+                                        </div>
+                                        <div class="recent-post-it-ctn">
+                                            <h2>Malika</h2>
+                                            <p>Nunc quis diam diamurabitur at dolor elementum, dictum turpis vel</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="recent-post-signle">
+                                <a href="#">
+                                    <div class="recent-post-flex rct-pt-mg">
+                                        <div class="recent-post-img">
+                                            <img src="img/post/2.jpg" alt="" />
+                                        </div>
+                                        <div class="recent-post-it-ctn">
+                                            <h2>Smith</h2>
+                                            <p>Nunc quis diam diamurabitur at dolor elementum, dictum turpis vel</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="recent-post-signle">
+                                <a href="#">
+                                    <div class="recent-post-flex rct-pt-mg">
+                                        <div class="recent-post-img">
+                                            <img src="img/post/1.jpg" alt="" />
+                                        </div>
+                                        <div class="recent-post-it-ctn">
+                                            <h2>John Deo</h2>
+                                            <p>Nunc quis diam diamurabitur at dolor elementum, dictum turpis vel</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="recent-post-signle">
+                                <a href="#">
+                                    <div class="recent-post-flex rc-ps-vw">
+                                        <div class="recent-post-line rct-pt-mg">
+                                            <p>View All</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="recent-items-wp notika-shadow sm-res-mg-t-30">
+                        <div class="rc-it-ltd">
+                            <div class="recent-items-ctn">
+                                <div class="recent-items-title">
+                                    <h2>Recent Items</h2>
+                                </div>
+                            </div>
+                            <div class="recent-items-inn">
+                                <table class="table table-inner table-vmiddle">
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th style="width: 60px">Price</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="f-500 c-cyan">4555</td>
+                                        <td>Samsung Galaxy Mega</td>
+                                        <td class="f-500 c-cyan">$921</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="f-500 c-cyan">4556</td>
+                                        <td>Huawei Ascend P6</td>
+                                        <td class="f-500 c-cyan">$240</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="f-500 c-cyan">8778</td>
+                                        <td>HTC One M8</td>
+                                        <td class="f-500 c-cyan">$400</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="f-500 c-cyan">5667</td>
+                                        <td>Samsung Galaxy Alpha</td>
+                                        <td class="f-500 c-cyan">$870</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="f-500 c-cyan">7886</td>
+                                        <td>LG G3</td>
+                                        <td class="f-500 c-cyan">$790</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="recent-items-chart" class="flot-chart-items flot-chart vt-ct-it tb-rc-it-res"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Email Statistic area-->
+    <!-- Start Realtime sts area-->
+    <div class="realtime-statistic-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="realtime-wrap notika-shadow mg-t-30">
+                        <div class="realtime-ctn">
+                            <div class="realtime-title">
+                                <h2>Realtime Visitors</h2>
+                            </div>
+                        </div>
+                        <div class="realtime-visitor-ctn">
+                            <div class="realtime-vst-sg">
+                                <h4><span class="counter">4,35,456</span></h4>
+                                <p>Visitors last 24h</p>
+                            </div>
+                            <div class="realtime-vst-sg">
+                                <h4><span class="counter">4,566</span></h4>
+                                <p>Visitors last 30m</p>
+                            </div>
+                        </div>
+                        <div class="realtime-map">
+                            <div class="vectorjsmarp" id="world-map"></div>
+                        </div>
+                        <div class="realtime-country-ctn realtime-ltd-mg">
+                            <h5>September 4, 21:44:02 (2 Mins 56 Seconds)</h5>
+                            <div class="realtime-ctn-bw">
+                                <div class="realtime-ctn-st">
+                                    <span><img src="img/country/1.png" alt="" /></span> <span>United States</span>
+                                </div>
+                                <div class="realtime-bw">
+                                    <span>Firefox</span>
+                                </div>
+                                <div class="realtime-bw">
+                                    <span>Mac OSX</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="realtime-country-ctn">
+                            <h5>September 7, 20:44:02 (5 Mins 56 Seconds)</h5>
+                            <div class="realtime-ctn-bw">
+                                <div class="realtime-ctn-st">
+                                    <span><img src="img/country/2.png" alt="" /></span> <span>Australia</span>
+                                </div>
+                                <div class="realtime-bw">
+                                    <span>Firefox</span>
+                                </div>
+                                <div class="realtime-bw">
+                                    <span>Mac OSX</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="realtime-country-ctn">
+                            <h5>September 9, 19:44:02 (10 Mins 56 Seconds)</h5>
+                            <div class="realtime-ctn-bw">
+                                <div class="realtime-ctn-st">
+                                    <span><img src="img/country/3.png" alt="" /></span> <span>Brazil</span>
+                                </div>
+                                <div class="realtime-bw">
+                                    <span>Firefox</span>
+                                </div>
+                                <div class="realtime-bw">
+                                    <span>Mac OSX</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="add-todo-list notika-shadow mg-t-30">
+                        <div class="realtime-ctn">
+                            <div class="realtime-title">
+                                <h2>Add Todo</h2>
+                            </div>
+                        </div>
+                        <div class="card-box">
+                            <div class="todoapp">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-6 col-sm-6 col-xs-12">
+                                        <h4 id="todo-message"><span id="todo-remaining"></span> of <span id="todo-total"></span> remaining</h4>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="notika-todo-btn">
+                                            <a href="#" class="pull-right btn btn-primary btn-sm" id="btn-archive">Archive</a>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <!-- #Unique Visitors ==================== -->
-                            <div class='col-md-3'>
-                                <div class="layers bd bgc-white p-20">
-                                    <div class="layer w-100 mB-10">
-                                        <h6 class="lh-1">Unique Visitor</h6>
-                                    </div>
-                                    <div class="layer w-100">
-                                        <div class="peers ai-sb fxw-nw">
-                                            <div class="peer peer-greed">
-                                                <span id="sparklinedash3"></span>
-                                            </div>
-                                            <div class="peer">
-                                                <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-purple-50 c-purple-500">~12%</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="notika-todo-scrollbar">
+                                    <ul class="list-group no-margn todo-list" id="todo-list"></ul>
                                 </div>
-                            </div>
-
-                            <!-- #Bounce Rate ==================== -->
-                            <div class='col-md-3'>
-                                <div class="layers bd bgc-white p-20">
-                                    <div class="layer w-100 mB-10">
-                                        <h6 class="lh-1">Bounce Rate</h6>
-                                    </div>
-                                    <div class="layer w-100">
-                                        <div class="peers ai-sb fxw-nw">
-                                            <div class="peer peer-greed">
-                                                <span id="sparklinedash4"></span>
-                                            </div>
-                                            <div class="peer">
-                                                <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">33%</span>
+                                <div id="todo-form">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-12 col-sm-12 col-xs-12 todo-inputbar">
+                                            <div class="form-group todo-flex">
+                                                <div class="nk-int-st">
+                                                    <input type="text" id="todo-input-text" name="todo-input-text" class="form-control" placeholder="Add new todo">
+                                                </div>
+                                                <div class="todo-send">
+                                                    <button class="btn-primary btn-md btn-block btn notika-add-todo" type="button" id="todo-btn-submit">Add</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -322,532 +929,115 @@
                             </div>
                         </div>
                     </div>
-                    <div class="masonry-item col-12">
-                        <!-- #Site Visits ==================== -->
-                        <div class="bd bgc-white">
-                            <div class="peers fxw-nw@lg+ ai-s">
-                                <div class="peer peer-greed w-70p@lg+ w-100@lg- p-20">
-                                    <div class="layers">
-                                        <div class="layer w-100 mB-10">
-                                            <h6 class="lh-1">Site Visits</h6>
-                                        </div>
-                                        <div class="layer w-100">
-                                            <div id="world-map-marker"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="peer bdL p-20 w-30p@lg+ w-100p@lg-">
-                                    <div class="layers">
-                                        <div class="layer w-100">
-                                            <!-- Progress Bars -->
-                                            <div class="layers">
-                                                <div class="layer w-100">
-                                                    <h5 class="mB-5">100k</h5>
-                                                    <small class="fw-600 c-grey-700">Visitors From USA</small>
-                                                    <span class="pull-right c-grey-600 fsz-sm">50%</span>
-                                                    <div class="progress mT-10">
-                                                        <div class="progress-bar bgc-deep-purple-500" role="progressbar"
-                                                             aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"
-                                                             style="width:50%;"><span
-                                                                    class="sr-only">50% Complete</span></div>
-                                                    </div>
-                                                </div>
-                                                <div class="layer w-100 mT-15">
-                                                    <h5 class="mB-5">1M</h5>
-                                                    <small class="fw-600 c-grey-700">Visitors From Europe</small>
-                                                    <span class="pull-right c-grey-600 fsz-sm">80%</span>
-                                                    <div class="progress mT-10">
-                                                        <div class="progress-bar bgc-green-500" role="progressbar"
-                                                             aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"
-                                                             style="width:80%;"><span
-                                                                    class="sr-only">80% Complete</span></div>
-                                                    </div>
-                                                </div>
-                                                <div class="layer w-100 mT-15">
-                                                    <h5 class="mB-5">450k</h5>
-                                                    <small class="fw-600 c-grey-700">Visitors From Australia</small>
-                                                    <span class="pull-right c-grey-600 fsz-sm">40%</span>
-                                                    <div class="progress mT-10">
-                                                        <div class="progress-bar bgc-light-blue-500" role="progressbar"
-                                                             aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"
-                                                             style="width:40%;"><span
-                                                                    class="sr-only">40% Complete</span></div>
-                                                    </div>
-                                                </div>
-                                                <div class="layer w-100 mT-15">
-                                                    <h5 class="mB-5">1B</h5>
-                                                    <small class="fw-600 c-grey-700">Visitors From India</small>
-                                                    <span class="pull-right c-grey-600 fsz-sm">90%</span>
-                                                    <div class="progress mT-10">
-                                                        <div class="progress-bar bgc-blue-grey-500" role="progressbar"
-                                                             aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"
-                                                             style="width:90%;"><span
-                                                                    class="sr-only">90% Complete</span></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Pie Charts -->
-                                            <div class="peers pT-20 mT-20 bdT fxw-nw@lg+ jc-sb ta-c gap-10">
-                                                <div class="peer">
-                                                    <div class="easy-pie-chart" data-size='80' data-percent="75"
-                                                         data-bar-color='#f44336'>
-                                                        <span></span>
-                                                    </div>
-                                                    <h6 class="fsz-sm">New Users</h6>
-                                                </div>
-                                                <div class="peer">
-                                                    <div class="easy-pie-chart" data-size='80' data-percent="50"
-                                                         data-bar-color='#2196f3'>
-                                                        <span></span>
-                                                    </div>
-                                                    <h6 class="fsz-sm">New Purchases</h6>
-                                                </div>
-                                                <div class="peer">
-                                                    <div class="easy-pie-chart" data-size='80' data-percent="90"
-                                                         data-bar-color='#ff9800'>
-                                                        <span></span>
-                                                    </div>
-                                                    <h6 class="fsz-sm">Bounce Rate</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="notika-chat-list notika-shadow mg-t-30 tb-res-ds-n dk-res-ds">
+                        <div class="realtime-ctn">
+                            <div class="realtime-title">
+                                <h2>Chat Box</h2>
                             </div>
                         </div>
-                    </div>
-                    <div class="masonry-item col-md-6">
-                        <!-- #Monthly Stats ==================== -->
-                        <div class="bd bgc-white">
-                            <div class="layers">
-                                <div class="layer w-100 pX-20 pT-20">
-                                    <h6 class="lh-1">Monthly Stats</h6>
-                                </div>
-                                <div class="layer w-100 p-20">
-                                    <canvas id="line-chart" height="220"></canvas>
-                                </div>
-                                <div class="layer bdT p-20 w-100">
-                                    <div class="peers ai-c jc-c gapX-20">
-                                        <div class="peer">
-                                            <span class="fsz-def fw-600 mR-10 c-grey-800">10% <i
-                                                        class="fa fa-level-up c-green-500"></i></span>
-                                            <small class="c-grey-500 fw-600">APPL</small>
-                                        </div>
-                                        <div class="peer fw-600">
-                                            <span class="fsz-def fw-600 mR-10 c-grey-800">2% <i
-                                                        class="fa fa-level-down c-red-500"></i></span>
-                                            <small class="c-grey-500 fw-600">Average</small>
-                                        </div>
-                                        <div class="peer fw-600">
-                                            <span class="fsz-def fw-600 mR-10 c-grey-800">15% <i
-                                                        class="fa fa-level-up c-green-500"></i></span>
-                                            <small class="c-grey-500 fw-600">Sales</small>
-                                        </div>
-                                        <div class="peer fw-600">
-                                            <span class="fsz-def fw-600 mR-10 c-grey-800">8% <i
-                                                        class="fa fa-level-down c-red-500"></i></span>
-                                            <small class="c-grey-500 fw-600">Profit</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="masonry-item col-md-6">
-                        <!-- #Todo ==================== -->
-                        <div class="bd bgc-white p-20">
-                            <div class="layers">
-                                <div class="layer w-100 mB-10">
-                                    <h6 class="lh-1">Todo List</h6>
-                                </div>
-                                <div class="layer w-100">
-                                    <ul class="list-task list-group" data-role="tasklist">
-                                        <li class="list-group-item bdw-0" data-role="task">
-                                            <div class="checkbox checkbox-circle checkbox-info peers ai-c">
-                                                <input type="checkbox" id="inputCall1" name="inputCheckboxesCall"
-                                                       class="peer">
-                                                <label for="inputCall1" class=" peers peer-greed js-sb ai-c">
-                                                    <span class="peer peer-greed">Call John for Dinner</span>
-                                                </label>
+                        <div class="card-box">
+                            <div class="chat-conversation">
+                                <div class="widgets-chat-scrollbar">
+                                    <ul class="conversation-list">
+                                        <li class="clearfix">
+                                            <div class="chat-avatar">
+                                                <img src="img/post/1.jpg" alt="male">
+                                                <i>10:00</i>
+                                            </div>
+                                            <div class="conversation-text">
+                                                <div class="ctext-wrap">
+                                                    <i>John Deo</i>
+                                                    <p>
+                                                        Hello!
+                                                    </p>
+                                                </div>
                                             </div>
                                         </li>
-                                        <li class="list-group-item bdw-0" data-role="task">
-                                            <div class="checkbox checkbox-circle checkbox-info peers ai-c">
-                                                <input type="checkbox" id="inputCall2" name="inputCheckboxesCall"
-                                                       class="peer">
-                                                <label for="inputCall2" class=" peers peer-greed js-sb ai-c">
-                                                    <span class="peer peer-greed">Book Boss Flight</span>
-                                                    <span class="peer">
-                                <span class="badge badge-pill fl-r badge-success lh-0 p-10">2 Days</span>
-                              </span>
-                                                </label>
+                                        <li class="clearfix odd">
+                                            <div class="chat-avatar">
+                                                <img src="img/post/2.jpg" alt="Female">
+                                                <i>10:01</i>
+                                            </div>
+                                            <div class="conversation-text">
+                                                <div class="ctext-wrap chat-widgets-cn">
+                                                    <i>Smith</i>
+                                                    <p>
+                                                        Hi, How are you? What about our next meeting?
+                                                    </p>
+                                                </div>
                                             </div>
                                         </li>
-                                        <li class="list-group-item bdw-0" data-role="task">
-                                            <div class="checkbox checkbox-circle checkbox-info peers ai-c">
-                                                <input type="checkbox" id="inputCall3" name="inputCheckboxesCall"
-                                                       class="peer">
-                                                <label for="inputCall3" class=" peers peer-greed js-sb ai-c">
-                                                    <span class="peer peer-greed">Hit the Gym</span>
-                                                    <span class="peer">
-                                <span class="badge badge-pill fl-r badge-danger lh-0 p-10">3 Minutes</span>
-                              </span>
-                                                </label>
+                                        <li class="clearfix">
+                                            <div class="chat-avatar">
+                                                <img src="img/post/1.jpg" alt="male">
+                                                <i>10:01</i>
+                                            </div>
+                                            <div class="conversation-text">
+                                                <div class="ctext-wrap">
+                                                    <i>John Deo</i>
+                                                    <p>
+                                                        Yeah everything is fine
+                                                    </p>
+                                                </div>
                                             </div>
                                         </li>
-                                        <li class="list-group-item bdw-0" data-role="task">
-                                            <div class="checkbox checkbox-circle checkbox-info peers ai-c">
-                                                <input type="checkbox" id="inputCall4" name="inputCheckboxesCall"
-                                                       class="peer">
-                                                <label for="inputCall4" class=" peers peer-greed js-sb ai-c">
-                                                    <span class="peer peer-greed">Give Purchase Report</span>
-                                                    <span class="peer">
-                                <span class="badge badge-pill fl-r badge-warning lh-0 p-10">not important</span>
-                              </span>
-                                                </label>
+                                        <li class="clearfix odd">
+                                            <div class="chat-avatar">
+                                                <img src="img/post/2.jpg" alt="male">
+                                                <i>10:02</i>
+                                            </div>
+                                            <div class="conversation-text">
+                                                <div class="ctext-wrap chat-widgets-cn">
+                                                    <i>Smith</i>
+                                                    <p>
+                                                        Wow that's great
+                                                    </p>
+                                                </div>
                                             </div>
                                         </li>
-                                        <li class="list-group-item bdw-0" data-role="task">
-                                            <div class="checkbox checkbox-circle checkbox-info peers ai-c">
-                                                <input type="checkbox" id="inputCall5" name="inputCheckboxesCall"
-                                                       class="peer">
-                                                <label for="inputCall5" class=" peers peer-greed js-sb ai-c">
-                                                    <span class="peer peer-greed">Watch Game of Thrones Episode</span>
-                                                    <span class="peer">
-                                <span class="badge badge-pill fl-r badge-info lh-0 p-10">Tomorrow</span>
-                              </span>
-                                                </label>
+                                        <li class="clearfix">
+                                            <div class="chat-avatar">
+                                                <img src="img/post/1.jpg" alt="male">
+                                                <i>10:01</i>
+                                            </div>
+                                            <div class="conversation-text">
+                                                <div class="ctext-wrap">
+                                                    <i>John Deo</i>
+                                                    <p>
+                                                        Doing Better i am thinking about that..
+                                                    </p>
+                                                </div>
                                             </div>
                                         </li>
-                                        <li class="list-group-item bdw-0" data-role="task">
-                                            <div class="checkbox checkbox-circle checkbox-info peers ai-c">
-                                                <input type="checkbox" id="inputCall6" name="inputCheckboxesCall"
-                                                       class="peer">
-                                                <label for="inputCall6" class=" peers peer-greed js-sb ai-c">
-                                                    <span class="peer peer-greed">Give Purchase report</span>
-                                                    <span class="peer">
-                                <span class="badge badge-pill fl-r badge-success lh-0 p-10">Done</span>
-                              </span>
-                                                </label>
+                                        <li class="clearfix odd">
+                                            <div class="chat-avatar">
+                                                <img src="img/post/2.jpg" alt="male">
+                                                <i>10:02</i>
+                                            </div>
+                                            <div class="conversation-text">
+                                                <div class="ctext-wrap chat-widgets-cn">
+                                                    <i>Smith</i>
+                                                    <p>
+                                                        Wow, You also tallent man...
+                                                    </p>
+                                                </div>
                                             </div>
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="masonry-item col-md-6">
-                        <!-- #Sales Report ==================== -->
-                        <div class="bd bgc-white">
-                            <div class="layers">
-                                <div class="layer w-100 p-20">
-                                    <h6 class="lh-1">Sales Report</h6>
-                                </div>
-                                <div class="layer w-100">
-                                    <div class="bgc-light-blue-500 c-white p-20">
-                                        <div class="peers ai-c jc-sb gap-40">
-                                            <div class="peer peer-greed">
-                                                <h5>November 2017</h5>
-                                                <p class="mB-0">Sales Report</p>
-                                            </div>
-                                            <div class="peer">
-                                                <h3 class="text-right">$6,000</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="table-responsive p-20">
-                                        <table class="table">
-                                            <thead>
-                                            <tr>
-                                                <th class=" bdwT-0">Name</th>
-                                                <th class=" bdwT-0">Status</th>
-                                                <th class=" bdwT-0">Date</th>
-                                                <th class=" bdwT-0">Price</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td class="fw-600">Item #1 Name</td>
-                                                <td><span class="badge bgc-red-50 c-red-700 p-10 lh-0 tt-c badge-pill">Unavailable</span>
-                                                </td>
-                                                <td>Nov 18</td>
-                                                <td><span class="text-success">$12</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="fw-600">Item #2 Name</td>
-                                                <td><span
-                                                            class="badge bgc-deep-purple-50 c-deep-purple-700 p-10 lh-0 tt-c badge-pill">New</span>
-                                                </td>
-                                                <td>Nov 19</td>
-                                                <td><span class="text-info">$34</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="fw-600">Item #3 Name</td>
-                                                <td><span
-                                                            class="badge bgc-pink-50 c-pink-700 p-10 lh-0 tt-c badge-pill">New</span>
-                                                </td>
-                                                <td>Nov 20</td>
-                                                <td><span class="text-danger">-$45</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="fw-600">Item #4 Name</td>
-                                                <td><span
-                                                            class="badge bgc-green-50 c-green-700 p-10 lh-0 tt-c badge-pill">Unavailable</span>
-                                                </td>
-                                                <td>Nov 21</td>
-                                                <td><span class="text-success">$65</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="fw-600">Item #5 Name</td>
-                                                <td><span class="badge bgc-red-50 c-red-700 p-10 lh-0 tt-c badge-pill">Used</span>
-                                                </td>
-                                                <td>Nov 22</td>
-                                                <td><span class="text-success">$78</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="fw-600">Item #6 Name</td>
-                                                <td><span
-                                                            class="badge bgc-orange-50 c-orange-700 p-10 lh-0 tt-c badge-pill">Used</span>
-                                                </td>
-                                                <td>Nov 23</td>
-                                                <td><span class="text-danger">-$88</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="fw-600">Item #7 Name</td>
-                                                <td><span
-                                                            class="badge bgc-yellow-50 c-yellow-700 p-10 lh-0 tt-c badge-pill">Old</span>
-                                                </td>
-                                                <td>Nov 22</td>
-                                                <td><span class="text-success">$56</span></td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ta-c bdT w-100 p-20">
-                                <a href="#">Check all the sales</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="masonry-item col-md-6">
-                        <!-- #Weather ==================== -->
-                        <div class="bd bgc-white p-20">
-                            <div class="layers">
-                                <!-- Widget Title -->
-                                <div class="layer w-100 mB-20">
-                                    <h6 class="lh-1">Weather</h6>
-                                </div>
-
-                                <!-- Today Weather -->
-                                <div class="layer w-100">
-                                    <div class="peers ai-c jc-sb fxw-nw">
-                                        <div class="peer peer-greed">
-                                            <div class="layers">
-                                                <!-- Temprature -->
-                                                <div class="layer w-100">
-                                                    <div class="peers fxw-nw ai-c">
-                                                        <div class="peer mR-20">
-                                                            <h3>32<sup>°F</sup></h3>
-                                                        </div>
-                                                        <div class="peer">
-                                                            <canvas class="sleet" width="44" height="44"></canvas>
-                                                        </div>
-                                                    </div>
+                                <div class="chat-widget-input">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-12 col-sm-12 col-xs-12 chat-inputbar">
+                                            <div class="form-group todo-flex">
+                                                <div class="nk-int-st">
+                                                    <input type="text" class="form-control chat-input" placeholder="Enter your text">
                                                 </div>
-
-                                                <!-- Condition -->
-                                                <div class="layer w-100">
-                                                    <span class="fw-600 c-grey-600">Partly Clouds</span>
+                                                <div class="chat-send">
+                                                    <button type="submit" class="btn btn-md btn-primary btn-block notika-chat-btn">Send</button>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="peer">
-                                            <div class="layers ai-fe">
-                                                <div class="layer">
-                                                    <h5 class="mB-5">Monday</h5>
-                                                </div>
-                                                <div class="layer">
-                                                    <span class="fw-600 c-grey-600">Nov, 01 2017</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Today Weather Extended -->
-                                <div class="layer w-100 mY-30">
-                                    <div class="layers bdB">
-                                        <div class="layer w-100 bdT pY-5">
-                                            <div class="peers ai-c jc-sb fxw-nw">
-                                                <div class="peer">
-                                                    <span>Wind</span>
-                                                </div>
-                                                <div class="peer ta-r">
-                                                    <span class="fw-600 c-grey-800">10km/h</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="layer w-100 bdT pY-5">
-                                            <div class="peers ai-c jc-sb fxw-nw">
-                                                <div class="peer">
-                                                    <span>Sunrise</span>
-                                                </div>
-                                                <div class="peer ta-r">
-                                                    <span class="fw-600 c-grey-800">05:00 AM</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="layer w-100 bdT pY-5">
-                                            <div class="peers ai-c jc-sb fxw-nw">
-                                                <div class="peer">
-                                                    <span>Pressure</span>
-                                                </div>
-                                                <div class="peer ta-r">
-                                                    <span class="fw-600 c-grey-800">1B</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Week Forecast -->
-                                <div class="layer w-100">
-                                    <div class="peers peers-greed ai-fs ta-c">
-                                        <div class="peer">
-                                            <h6 class="mB-10">MON</h6>
-                                            <canvas class="sleet" width="30" height="30"></canvas>
-                                            <span class="d-b fw-600">32<sup>°F</sup></span>
-                                        </div>
-                                        <div class="peer">
-                                            <h6 class="mB-10">TUE</h6>
-                                            <canvas class="clear-day" width="30" height="30"></canvas>
-                                            <span class="d-b fw-600">30<sup>°F</sup></span>
-                                        </div>
-                                        <div class="peer">
-                                            <h6 class="mB-10">WED</h6>
-                                            <canvas class="partly-cloudy-day" width="30" height="30"></canvas>
-                                            <span class="d-b fw-600">28<sup>°F</sup></span>
-                                        </div>
-                                        <div class="peer">
-                                            <h6 class="mB-10">THR</h6>
-                                            <canvas class="cloudy" width="30" height="30"></canvas>
-                                            <span class="d-b fw-600">32<sup>°F</sup></span>
-                                        </div>
-                                        <div class="peer">
-                                            <h6 class="mB-10">FRI</h6>
-                                            <canvas class="snow" width="30" height="30"></canvas>
-                                            <span class="d-b fw-600">24<sup>°F</sup></span>
-                                        </div>
-                                        <div class="peer">
-                                            <h6 class="mB-10">SAT</h6>
-                                            <canvas class="wind" width="30" height="30"></canvas>
-                                            <span class="d-b fw-600">28<sup>°F</sup></span>
-                                        </div>
-                                        <div class="peer">
-                                            <h6 class="mB-10">SUN</h6>
-                                            <canvas class="sleet" width="30" height="30"></canvas>
-                                            <span class="d-b fw-600">32<sup>°F</sup></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="masonry-item col-md-6">
-                        <!-- #Chat ==================== -->
-                        <div class="bd bgc-white">
-                            <div class="layers">
-                                <div class="layer w-100 p-20">
-                                    <h6 class="lh-1">Quick Chat</h6>
-                                </div>
-                                <div class="layer w-100">
-                                    <!-- Chat Box -->
-                                    <div class="bgc-grey-200 p-20 gapY-15">
-                                        <!-- Chat Conversation -->
-                                        <div class="peers fxw-nw">
-                                            <div class="peer mR-20">
-                                                <img class="w-2r bdrs-50p"
-                                                     src="https://randomuser.me/api/portraits/men/11.jpg" alt="">
-                                            </div>
-                                            <div class="peer peer-greed">
-                                                <div class="layers ai-fs gapY-5">
-                                                    <div class="layer">
-                                                        <div class="peers fxw-nw ai-c pY-3 pX-10 bgc-white bdrs-2 lh-3/2">
-                                                            <div class="peer mR-10">
-                                                                <small>10:00 AM</small>
-                                                            </div>
-                                                            <div class="peer-greed">
-                                                                <span>Lorem Ipsum is simply dummy text of</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="layer">
-                                                        <div class="peers fxw-nw ai-c pY-3 pX-10 bgc-white bdrs-2 lh-3/2">
-                                                            <div class="peer mR-10">
-                                                                <small>10:00 AM</small>
-                                                            </div>
-                                                            <div class="peer-greed">
-                                                                <span>the printing and typesetting industry.</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="layer">
-                                                        <div class="peers fxw-nw ai-c pY-3 pX-10 bgc-white bdrs-2 lh-3/2">
-                                                            <div class="peer mR-10">
-                                                                <small>10:00 AM</small>
-                                                            </div>
-                                                            <div class="peer-greed">
-                                                                <span>Lorem Ipsum has been the industry's</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Chat Conversation -->
-                                        <div class="peers fxw-nw ai-fe">
-                                            <div class="peer ord-1 mL-20">
-                                                <img class="w-2r bdrs-50p"
-                                                     src="https://randomuser.me/api/portraits/men/12.jpg" alt="">
-                                            </div>
-                                            <div class="peer peer-greed ord-0">
-                                                <div class="layers ai-fe gapY-10">
-                                                    <div class="layer">
-                                                        <div class="peers fxw-nw ai-c pY-3 pX-10 bgc-white bdrs-2 lh-3/2">
-                                                            <div class="peer mL-10 ord-1">
-                                                                <small>10:00 AM</small>
-                                                            </div>
-                                                            <div class="peer-greed ord-0">
-                                                                <span>Heloo</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="layer">
-                                                        <div class="peers fxw-nw ai-c pY-3 pX-10 bgc-white bdrs-2 lh-3/2">
-                                                            <div class="peer mL-10 ord-1">
-                                                                <small>10:00 AM</small>
-                                                            </div>
-                                                            <div class="peer-greed ord-0">
-                                                                <span>??</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Chat Send -->
-                                    <div class="p-20 bdT bgc-white">
-                                        <div class="pos-r">
-                                            <input type="text" class="form-control bdrs-10em m-0"
-                                                   placeholder="Say something...">
-                                            <button type="button"
-                                                    class="btn btn-primary bdrs-50p w-2r p-0 h-2r pos-a r-1 t-1">
-                                                <i class="fa fa-paper-plane-o"></i>
-                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -856,14 +1046,23 @@
                     </div>
                 </div>
             </div>
-        </main>
-
-        <!-- ### $App Screen Footer ### -->
-        <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600">
-            <span>Copyright © 2017 Designed by <a href="https://colorlib.com" target='_blank'
-                                                  title="Colorlib">Colorlib</a>. All rights reserved.</span>
-        </footer>
+        </div>
     </div>
+    <!-- End Realtime sts area-->
+    <!-- Start Footer area-->
+    <div class="footer-copyright-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="footer-copy-right">
+                        <p>Copyright © 2018
+                            . All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Footer area-->
 
 @endsection
 
