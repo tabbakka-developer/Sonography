@@ -12,7 +12,7 @@ class LoginController extends Controller {
 
 	public function showForm() {
 		if (Auth::check()) {
-			return redirect()->to('Admin\DashBoardController@index');
+			return redirect()->action('Admin\DashBoardController@index');
 		} else {
 			return view('admin.auth.login');
 		}
@@ -24,21 +24,18 @@ class LoginController extends Controller {
 			'password' => 'required|min:3'
 		]);
 
-		dd($request);
-
 		if (Auth::guard()->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
-			return redirect()->action('Admin\DashboardController@index');
+			return redirect()->action('Admin\DashBoardController@index');
 		}
 
-		$errors = new MessageBag(['password' => ['Email или пароль неверные.']]);
+		$errors = new MessageBag(['password' => ['Неправильный логин или пароль.']]);
 		return redirect()->back()->withErrors($errors)->withInput($request->only('email', 'remember'));
 	}
 
 	public function logout(Request $request) {
-		Auth::guard('admin')->logout();
+		Auth::guard()->logout();
 		$request->session()->flush();
-
-		throw new AuthenticationException();
+		return redirect()->action('Admin\Auth\LoginController@showForm');
 	}
 
 }

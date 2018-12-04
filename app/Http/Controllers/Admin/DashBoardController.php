@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 class DashBoardController extends Controller
 {
     public function index() {
-    	dd(123);
+    	//todo: get all data for dashboard
+	    return view('admin.dashboard');
     }
 }

@@ -29,14 +29,17 @@ function checkAdminDomain() {
 }
 
 
+
 //admin
 
 Route::get('/login', "Admin\Auth\LoginController@showForm");
+Route::get('/logout', "Admin\Auth\LoginController@logout");
 Route::post('/login', "Admin\Auth\LoginController@login");
 
-Route::group(['middleware' => 'auth:admin'], function () {
+Route::group(['middleware' => 'auth'], function () {
 
 	Route::get('/dashboard', "Admin\DashBoardController@index");
+	Route::get('/products', "Admin\ProductsController@index");
 
 });
 
