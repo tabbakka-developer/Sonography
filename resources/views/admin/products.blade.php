@@ -21,6 +21,34 @@
                     </div>
                 </div>
 
+                <h2>Список товара</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Header</th>
+                            <th>Header</th>
+                            <th>Header</th>
+                            <th>Header</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        @foreach($products as $product)
+                            <tr>
+                                <td>{{ $product }}</td>
+                                <td>{{ $product }}</td>
+                                <td>{{ $product }}</td>
+                                <td>{{ $product }}</td>
+                                <td>{{ $product }}</td>
+                            </tr>
+                        @endforeach
+
+                        </tbody>
+                    </table>
+                </div>
+
             </main>
         </div>
     </div>
