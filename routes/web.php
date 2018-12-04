@@ -39,7 +39,7 @@ Route::post('/login', "Admin\Auth\LoginController@login");
 Route::group(['middleware' => 'auth'], function () {
 
 	Route::get('/dashboard', "Admin\DashBoardController@index");
-	Route::get('/products', "Admin\ProductsController@index");
+	Route::resource('products', "Admin\ProductsController");
 
 });
 

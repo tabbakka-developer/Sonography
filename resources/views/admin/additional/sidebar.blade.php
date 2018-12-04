@@ -25,7 +25,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{ action('Admin\ProductsController@index') }}">
                             <span data-feather="shopping-cart"></span>
                             Продукты
                         </a>

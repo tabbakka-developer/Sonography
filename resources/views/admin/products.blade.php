@@ -27,23 +27,53 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>Header</th>
-                            <th>Header</th>
-                            <th>Header</th>
-                            <th>Header</th>
+                            <th>Модель</th>
+                            <th>Производитель</th>
+                            <th>Код товара</th>
+                            <th>Страна</th>
+                            <th>Отображать</th>
+                            <th>Ветеринарное</th>
+                            <th>Цена</th>
+                            <th>Валюта</th>
+                            <th>Показывать цену</th>
+                            <th>Рекмоендуемое</th>
                         </tr>
                         </thead>
                         <tbody>
 
-                        @foreach($products as $product)
+                        @if ($products->count() > 0)
+
+                            @foreach($products as $product)
+                                <tr>
+                                    <td>{{ $product->id }}</td>
+                                    <td>{{ $product->model }}</td>
+                                    <td>{{ $product->brand }}</td>
+                                    <td>{{ $product->code }}</td>
+                                    <td>{{ $product->country }}</td>
+                                    <td>{{ $product->show_product }}</td>
+                                    <td>{{ $product->animals }}</td>
+                                    <td>{{ $product->price }}</td>
+                                    <td>{{ $product->currency }}</td>
+                                    <td>{{ $product->show_price }}</td>
+                                    <td>{{ $product->recommend }}</td>
+                                </tr>
+                            @endforeach
+
+                        @else
                             <tr>
-                                <td>{{ $product }}</td>
-                                <td>{{ $product }}</td>
-                                <td>{{ $product }}</td>
-                                <td>{{ $product }}</td>
-                                <td>{{ $product }}</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
                             </tr>
-                        @endforeach
+                        @endif
 
                         </tbody>
                     </table>
