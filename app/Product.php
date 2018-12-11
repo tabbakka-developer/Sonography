@@ -4,32 +4,44 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
+use phpDocumentor\Reflection\Types\Integer;
 
-class Product extends Model {
+class Product extends Model implements Interfaces\Product {
 
-	public static function endoscopes() {
-		return Endoscope::get();
+	public static function store(Array $data) {
+		$endoscope = self::create($data);
+		return $endoscope->id;
 	}
 
-	public static function uzi() {
-		return UziApparat::get();
+	public static function get($id = null) {
+		if ($id !== null) {
+			return self::find($id);
+		} else {
+			return self::all();
+		}
 	}
 
-	public static function rentgen() {
-		return Rentgen::get();
+	public static function remove(Integer $id) {
+		try {
+			/** @var Endoscope $endoscope */
+			$endoscope = self::findOrFail($id);
+			$endoscope->delete();
+		} catch (\Exception $exception) {
+			return $exception;
+		}
+		return true;
 	}
 
-	public static function reanims() {
-		return Reanims::get();
-	}
-
-	public static function all() {
-		return [
-			'endoscopes' => self::endoscopes(),
-			'uzi' => self::uzi(),
-			'rentgen' => self::rentgen(),
-			'reanims' => self::reanims()
-		];
+	public static function edit(Integer $id, Array $data) {
+		try {
+			/** @var Endoscope $endoscope */
+			$endoscope = self::findOrFail($id);
+			$endoscope->update($data);
+			$endoscope->save();
+			return $endoscope;
+		} catch (\Exception $exception) {
+			return $exception;
+		}
 	}
 
 }

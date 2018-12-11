@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Endoscope;
-use App\Product;
+use App\ProductHelper;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -11,12 +10,12 @@ class ProductsController extends Controller {
 
 
 	public function index() {
-		$products = Product::all();
+		$products = ProductHelper::all();
 		return view('admin.products')->with('products', $products);
 	}
 
 	public function create() {
-		//
+
 	}
 
 	public function store(Request $request) {
