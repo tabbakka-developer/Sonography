@@ -35,7 +35,7 @@ class CreateReanimsTable extends Migration
 	        $table->boolean('rasrochka');
 	        //
 	        $table->string('sub_category');
-	        $table->integer('user_friendly');
+	        $table->integer('friendly_interface');
 	        $table->integer('economy');
 	        $table->integer('complect');
 	        $table->integer('make_quality');
