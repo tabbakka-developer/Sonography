@@ -7,30 +7,29 @@
  */
 ?>
 
-<!DOCTYPE html>
-<html >
+        <!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Loading</title>
+    <meta charset="UTF-8">
+    <title>Loading</title>
 
 
-
-      <link rel="stylesheet" href="{{ asset('css/pre/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pre/index.css') }}">
 
 
 </head>
 
 <body>
-  <div id="load">
-  <div>С</div>
-  <div>О</div>
-  <div>Н</div>
-  <div>О</div>
-  <div>Г</div>
-  <div>Р</div>
-  <div>А</div>
-  <div>Ф</div>
-  <div>И</div>
+<div id="load">
+    <div>И</div>
+    <div>Ф</div>
+    <div>А</div>
+    <div>Р</div>
+    <div>Г</div>
+    <div>О</div>
+    <div>Н</div>
+    <div>О</div>
+    <div>С</div>
 </div>
 
 
