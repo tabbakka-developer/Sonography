@@ -59,13 +59,7 @@ function checkAdminDomain() {
 	}
 }
 
-
-
-//admin
-
-
-
-//checkAdminDomain();
+checkAdminDomain();
 
 
 //Route::get('/admin', function () {
