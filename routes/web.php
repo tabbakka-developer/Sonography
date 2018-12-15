@@ -15,6 +15,16 @@ function checkAdminDomain() {
 	$host = Request::getHost();
 	if ($host === 'xn--80aimpg.xn--80afqrebpd7a.xn--p1ai') {
 
+		Route::get('/', function () {
+
+			if (\Illuminate\Support\Facades\Auth::guest()) {
+				return redirect()->action("Admin\Auth\LoginController@showForm");
+			} else {
+				return redirect()->action("Admin\DashBoardController@index");
+			}
+
+		});
+
 		Route::get('/login', "Admin\Auth\LoginController@showForm");
 		Route::get('/logout', "Admin\Auth\LoginController@logout");
 		Route::post('/login', "Admin\Auth\LoginController@login");
