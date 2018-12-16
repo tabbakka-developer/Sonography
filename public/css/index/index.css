@@ -56,12 +56,13 @@ body .wrapper {
   display: grid;
   grid-template-columns: repeat(12, [col-start] 1fr);
   grid-gap: 0px;
+  width: 100%;
 }
 
 body .wrapper .item {
   height: auto;
   text-align: center;
-  width: 350px;
+  width: 300px;
 }
 
 body .wrapper .item .item-header {
@@ -118,7 +119,7 @@ body .wrapper .item:hover {
 }
 
 body .wrapper .item-2 {
-  grid-column: col-start 2 / span 1;
+  grid-column: col-start 3 / span 1;
 }
 
 body .wrapper .item-2 .item-header {
@@ -138,7 +139,7 @@ body .wrapper .item-2 .item-header {
 }
 
 body .wrapper .item-3 {
-  grid-column: col-start 6 / span 1;
+  grid-column: col-start 5 / span 1;
 }
 
 body .wrapper .item-3 .item-header {
@@ -158,10 +159,30 @@ body .wrapper .item-3 .item-header {
 }
 
 body .wrapper .item-4 {
-  grid-column: col-start 9 / span 1;
+  grid-column: col-start 8 / span 1;
 }
 
 body .wrapper .item-4 .item-header {
+  /* fallback/image non-cover color */
+  background-color: #7884A7;
+  /* Firefox 3.6+ */
+  /* Safari 4+, Chrome 1+ */
+  /* Safari 5.1+, Chrome 10+ */
+  /* Opera 11.10+ */
+  background-image: -o-linear-gradient(left, #7884A7 0%, #8D6BA6 100%);
+  /* IE10+ */
+  /* Standard */
+  background: -webkit-gradient(linear, left top, right top, from(#7884A7), to(#8D6BA6));
+  background: linear-gradient(to right, #7884A7 0%, #8D6BA6 100%);
+  /* IE6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$from', endColorstr='$to', GradientType=1);
+}
+
+body .wrapper .item-5 {
+  grid-column: col-start 10 / span 1;
+}
+
+body .wrapper .item-5 .item-header {
   /* fallback/image non-cover color */
   background-color: #7884A7;
   /* Firefox 3.6+ */

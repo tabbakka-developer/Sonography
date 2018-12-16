@@ -42,6 +42,15 @@
             </div>
         </div>
 
+        <div class="item item-5"  data-url="/category">
+            <div class="item-header">
+                Реанимация
+            </div>
+            <div class="item-image">
+                <img src="{{ asset('img/reanim_logo.png') }}">
+            </div>
+        </div>
+
         {{--<div class="item item-5">--}}
             {{--Отступ и кнопка--}}
         {{--</div>--}}

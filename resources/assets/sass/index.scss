@@ -43,11 +43,12 @@ body {
 		display: grid;
 		grid-template-columns: repeat(12, [col-start] 1fr);
 		grid-gap: 0px;
+		width: 100%;
 
 		.item {
 			height: auto;
 			text-align: center;
-			width: 350px;
+			width: 300px;
 
 			.item-header {
 				@include gradient(#49BDA9, #8D6BA6);
@@ -84,21 +85,28 @@ body {
 		}
 
 		.item-2 {
-			grid-column: col-start 2 / span 1;
+			grid-column: col-start 3 / span 1;
 			.item-header {
 				@include gradient(#49BDA9, #6B94A7);
 			}
 		}
 
 		.item-3 {
-			grid-column: col-start 6 / span 1;
+			grid-column: col-start 5 / span 1;
 			.item-header {
 				@include gradient(#629FA8, #7786A7);
 			}
 		}
 
 		.item-4 {
-			grid-column: col-start 9 / span 1;
+			grid-column: col-start 8 / span 1;
+			.item-header {
+				@include gradient(#7884A7, #8D6BA6);
+			}
+		}
+
+		.item-5 {
+			grid-column: col-start 10 / span 1;
 			.item-header {
 				@include gradient(#7884A7, #8D6BA6);
 			}
