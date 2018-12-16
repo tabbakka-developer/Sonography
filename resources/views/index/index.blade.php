@@ -20,7 +20,7 @@
                 УЗИ Аппараты
             </div>
             <div class="item-image">
-                <img src="{{ asset('img/equip34.png') }}">
+                <img src="{{ asset('img/logo_uzi.png') }}">
             </div>
         </div>
 
@@ -29,7 +29,7 @@
                 Рентгены
             </div>
             <div class="item-image">
-                <img src="{{ asset('img/global_DGR-C2BB2J-US_001_Front_white.png') }}">
+                <img src="{{ asset('img/rent_logo.png') }}">
             </div>
         </div>
 
@@ -38,7 +38,7 @@
                 Эндоскопы
             </div>
             <div class="item-image">
-                <img src="{{ asset('img/toshibamedicalaplioi600ultrasound-2.png') }}">
+                <img src="{{ asset('img/logo_endo.png') }}">
             </div>
         </div>
 
