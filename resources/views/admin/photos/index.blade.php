@@ -9,7 +9,9 @@
 
     <div class="container-fluid">
         <div class="row">
-            @include('admin.additional.sidebar')
+            @include('admin.additional.sidebar', [
+                'photos' => true
+            ])
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                 <div class="row">
                     <h1 class="h2">Фото-галлерея</h1>
@@ -38,43 +40,43 @@
                         <span class="text-muted">Категории</span>
                         <span class="badge badge-secondary badge-pill">4</span>
                     </h4>
-                    <ul class="list-group mb-3">
-                        <li class="list-group-item list-group-item-action d-flex justify-content-between lh-condensed">
+                    <div class="list-group mb-3">
+                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between lh-condensed">
                             <div>
                                 <h6 class="my-0">УЗИ</h6>
                                 {{--<small class="text-muted">Brief description</small>--}}
                             </div>
                             <span class="text-muted">{{ $uzi->count() }}</span>
-                        </li>
+                        </a>
 
-                        <li class="list-group-item list-group-item-action d-flex justify-content-between lh-condensed">
+                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between lh-condensed">
                             <div>
                                 <h6 class="my-0">Рентгены</h6>
                                 {{--<small class="text-muted">Brief description</small>--}}
                             </div>
                             <span class="text-muted">{{ $rentgens->count() }}</span>
-                        </li>
+                        </a>
 
-                        <li class="list-group-item list-group-item-action d-flex justify-content-between lh-condensed">
+                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between lh-condensed">
                             <div>
                                 <h6 class="my-0">Эндоскопы</h6>
                                 {{--<small class="text-muted">Brief description</small>--}}
                             </div>
                             <span class="text-muted">{{ $endoscopes->count() }}</span>
-                        </li>
+                        </a>
 
-                        <li class="list-group-item list-group-item-action d-flex justify-content-between lh-condensed">
+                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between lh-condensed">
                             <div>
                                 <h6 class="my-0">Реанимация</h6>
                                 {{--<small class="text-muted">Brief description</small>--}}
                             </div>
                             <span class="text-muted">{{ $reanim->count() }}</span>
-                        </li>
-                        <li class="list-group-item list-group-item-action d-flex justify-content-between">
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between">
                             <span>Всего фото</span>
                             <strong>{{ $total }}</strong>
-                        </li>
-                    </ul>
+                        </a>
+                    </div>
 
                     <form enctype="multipart/form-data" class="card p-2" action="{{ action('Admin\PhotosController@store') }}" method="POST">
 
@@ -127,6 +129,12 @@
                         </button>
                     </form>
                 </div>
+
+                {{--<div class="row">--}}
+                    {{--<div class="col-md-5">--}}
+                        {{----}}
+                    {{--</div>--}}
+                {{--</div>--}}
 
             </main>
         </div>

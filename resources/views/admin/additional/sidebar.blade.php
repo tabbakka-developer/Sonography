@@ -13,31 +13,31 @@
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">
+                        <a class="nav-link {{ request()->is('dashboard') ? 'active' : '' }}" href="{{ action('Admin\DashBoardController@index') }}">
                             <span data-feather="home"></span>
                             Панель <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link {{ request()->is('orders') ? 'active' : '' }}" href="#">
                             <span data-feather="file"></span>
                             Заказы
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ action('Admin\ProductsController@index') }}">
+                        <a class="nav-link {{ request()->is('products') ? 'active' : '' }}" href="{{ action('Admin\ProductsController@index') }}">
                             <span data-feather="shopping-cart"></span>
                             Продукты
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ action('Admin\PhotosController@index') }}">
+                        <a class="nav-link {{ request()->is('photos') ? 'active' : '' }}" href="{{ action('Admin\PhotosController@index') }}">
                             <span data-feather="camera"></span>
                             Фото
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link {{ request()->is('customers') ? 'active' : '' }}" href="#">
                             <span data-feather="users"></span>
                             Покупатели
                         </a>
