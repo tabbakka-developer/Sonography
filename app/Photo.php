@@ -6,7 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Photo extends Model {
 
-	protected $table = "Photos";
+	protected $table = "photos";
+
+	protected $fillable = [
+		'maker',
+		'category',
+		'path'
+	];
 
 	public static function view() {
 
@@ -14,7 +20,8 @@ class Photo extends Model {
 			'total' => self::all()->count(),
 			'uzi' => self::uzi(),
 			'endoscopes' => self::endoscopes(),
-			'reanim' => self::reanim()
+			'reanim' => self::reanim(),
+			'rentgens' => self::rentgens()
 		];
 
 	}
