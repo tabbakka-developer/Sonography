@@ -35,8 +35,12 @@ class PhotosController extends Controller {
 				]);
 			}
 			DB::commit();
+			return redirect()->back()->with([
+				'success' => 'Фотографии успешно добавлены!'
+			]);
 		} catch (\Exception $exception) {
 			DB::rollBack();
+			return redirect()->back()->withErrors($exception->getMessage(). " " . $exception->getFile());
 		}
 	}
 

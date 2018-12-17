@@ -25,8 +25,14 @@
                     @endif
                 </div>
 
+                <div class="row">
+                    @if(isset($success))
+                        <div class="alert alert-success" role="alert">
+                            {{ $success }}
+                        </div>
+                    @endif
+                </div>
 
-                <div class="col-12"><br></div>
                 <div class="col-md-5 mb-5">
                     <h4 class="d-flex justify-content-between align-items-center mb-3">
                         <span class="text-muted">Категории</span>
