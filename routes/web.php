@@ -100,6 +100,11 @@ if (env("APP_ENV") == 'local') {
 		return view('index.item');
 	});
 
+//	Route::get('/pwd', function () {
+//		echo \Illuminate\Support\Facades\Hash::make('Qwerty123');
+//		return;
+//	});
+
 	//admin
 
 	Route::get('/login', "Admin\Auth\LoginController@showForm");
@@ -110,6 +115,8 @@ if (env("APP_ENV") == 'local') {
 
 		Route::get('/dashboard', "Admin\DashBoardController@index");
 		Route::resource('products', "Admin\ProductsController");
+
+		Route::resource('photos', "Admin\PhotosController");
 
 	});
 

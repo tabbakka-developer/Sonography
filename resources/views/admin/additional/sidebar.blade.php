@@ -32,6 +32,12 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
+                            <span data-feather="camera"></span>
+                            Фото
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
                             <span data-feather="users"></span>
                             Покупатели
                         </a>
