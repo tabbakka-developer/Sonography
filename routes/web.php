@@ -34,6 +34,8 @@ function checkAdminDomain() {
 			Route::get('/dashboard', "Admin\DashBoardController@index");
 			Route::resource('products', "Admin\ProductsController");
 
+			Route::resource('photos', "Admin\PhotosController");
+
 		});
 
 	} elseif ($host === 'xn--80afqrebpd7a.xn--p1ai') {
@@ -69,7 +71,7 @@ function checkAdminDomain() {
 	}
 }
 
-if (env("APP_ENV") == 'local') {
+if (env("APP_ENV") === 'local') {
 	//dev
 
 	Route::get('/admin', function () {
