@@ -1,12 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Photo;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class PhotosController extends Controller {
+
 	public function index() {
-		//
+		$data = Photo::view();
+		return view('admin.photos.index')->with($data);
 	}
 
 	public function create() {

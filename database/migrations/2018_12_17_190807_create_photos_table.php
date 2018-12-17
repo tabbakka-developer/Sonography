@@ -16,6 +16,10 @@ class CreatePhotosTable extends Migration
         Schema::create('photos', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->string('path');
+            $table->string('category');
+            $table->string('product_id')->nullable();
+            $table->string('maker')->nullable();
         });
     }
 

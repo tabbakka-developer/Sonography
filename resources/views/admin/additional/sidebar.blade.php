@@ -31,7 +31,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{ action('Admin\PhotosController@index') }}">
                             <span data-feather="camera"></span>
                             Фото
                         </a>
