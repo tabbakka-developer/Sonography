@@ -26,9 +26,9 @@
                 </div>
 
                 <div class="row">
-                    @if(isset($success))
+                    @if(session('success-message'))
                         <div class="alert alert-success" role="alert">
-                            {{ $success }}
+                            {!! session('success-message') !!}
                         </div>
                     @endif
                 </div>
@@ -39,7 +39,7 @@
                         <span class="badge badge-secondary badge-pill">4</span>
                     </h4>
                     <ul class="list-group mb-3">
-                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <li class="list-group-item list-group-item-action d-flex justify-content-between lh-condensed">
                             <div>
                                 <h6 class="my-0">УЗИ</h6>
                                 {{--<small class="text-muted">Brief description</small>--}}
@@ -47,7 +47,7 @@
                             <span class="text-muted">{{ $uzi->count() }}</span>
                         </li>
 
-                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <li class="list-group-item list-group-item-action d-flex justify-content-between lh-condensed">
                             <div>
                                 <h6 class="my-0">Рентгены</h6>
                                 {{--<small class="text-muted">Brief description</small>--}}
@@ -55,7 +55,7 @@
                             <span class="text-muted">{{ $rentgens->count() }}</span>
                         </li>
 
-                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <li class="list-group-item list-group-item-action d-flex justify-content-between lh-condensed">
                             <div>
                                 <h6 class="my-0">Эндоскопы</h6>
                                 {{--<small class="text-muted">Brief description</small>--}}
@@ -63,14 +63,14 @@
                             <span class="text-muted">{{ $endoscopes->count() }}</span>
                         </li>
 
-                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <li class="list-group-item list-group-item-action d-flex justify-content-between lh-condensed">
                             <div>
                                 <h6 class="my-0">Реанимация</h6>
                                 {{--<small class="text-muted">Brief description</small>--}}
                             </div>
                             <span class="text-muted">{{ $reanim->count() }}</span>
                         </li>
-                        <li class="list-group-item d-flex justify-content-between">
+                        <li class="list-group-item list-group-item-action d-flex justify-content-between">
                             <span>Всего фото</span>
                             <strong>{{ $total }}</strong>
                         </li>
