@@ -14,8 +14,7 @@ class PhotosRequest extends FormRequest
      */
     public function authorize()
     {
-//        return Auth::check();
-	    return true;
+        return Auth::check();
     }
 
     /**
@@ -28,7 +27,7 @@ class PhotosRequest extends FormRequest
 	    $rules = [
 		    'category' => 'required|string',
 		    'maker' => 'nullable|string',
-		    'photos.*' => 'image'
+		    'photos.*' => 'image|required|mimes:jpeg,bmp,png'
 	    ];
 
 	    return $rules;
