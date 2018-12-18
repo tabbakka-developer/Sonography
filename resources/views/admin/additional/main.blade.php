@@ -12,6 +12,7 @@
 
 @include('admin.additional.include_footer')
 @yield('custom-js')
+@stack('scripts')
 
 </body>
 </html>

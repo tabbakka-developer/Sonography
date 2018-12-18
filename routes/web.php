@@ -34,10 +34,11 @@ function checkAdminDomain() {
 			Route::get('/dashboard', "Admin\DashBoardController@index");
 			Route::resource('products', "Admin\ProductsController");
 
-			Route::get('photos/uzi', "Admin\PhotoController@uzi");
-			Route::get('photos/rentgen', "Admin\PhotoController@rentgen");
-			Route::get('photos/reanim', "Admin\PhotoController@reanim");
-			Route::get('photos/endoscopes', "Admin\PhotoController@endoscopes");
+			Route::get('photos/uzi', "Admin\PhotosController@uzi");
+			Route::get('photos/rentgen', "Admin\PhotosController@rentgen");
+			Route::get('photos/reanim', "Admin\PhotosController@reanim");
+			Route::get('photos/endoscopes', "Admin\PhotosController@endoscopes");
+			Route::get('photos/makers', "Admin\PhotosController@makers");
 
 			Route::resource('photos', "Admin\PhotosController");
 		});
@@ -123,6 +124,12 @@ if (env("APP_ENV") === 'local') {
 
 		Route::get('/dashboard', "Admin\DashBoardController@index");
 		Route::resource('products', "Admin\ProductsController");
+
+		Route::get('photos/uzi', "Admin\PhotosController@uzi");
+		Route::get('photos/rentgen', "Admin\PhotosController@rentgen");
+		Route::get('photos/reanim', "Admin\PhotosController@reanim");
+		Route::get('photos/endoscopes', "Admin\PhotosController@endoscopes");
+		Route::get('photos/makers', "Admin\PhotosController@makers");
 		Route::resource('photos', "Admin\PhotosController");
 
 	});

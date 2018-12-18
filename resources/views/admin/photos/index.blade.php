@@ -142,3 +142,9 @@
 
 
 @endsection
+
+@push('scripts')
+
+    <script src="{{ asset('js/photos.js') }}"></script>
+
+@endpush

@@ -20,6 +20,11 @@ class PhotosController extends Controller {
 		//
 	}
 
+	public function makers() {
+		$makers = Photo::makers();
+		return response()->json($makers->toArray());
+	}
+
 	public function store(PhotosRequest $request) {
 		DB::beginTransaction();
 		try {

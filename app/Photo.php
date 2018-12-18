@@ -41,4 +41,8 @@ class Photo extends Model {
 	public static function reanim() {
 		return self::where('category', 'reanim')->get();
 	}
+
+	public static function makers() {
+		return self::select('maker')->where('maker', '!=', null)->distinct('maker')->get();
+	}
 }
