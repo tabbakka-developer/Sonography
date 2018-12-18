@@ -21,6 +21,7 @@ class PhotosController extends Controller {
 	}
 
 	public function store(PhotosRequest $request) {
+		dd($request->all());
 		DB::beginTransaction();
 		try {
 			foreach ($request->photos as $photo) {
