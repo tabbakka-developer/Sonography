@@ -25,11 +25,10 @@ class PhotosRequest extends FormRequest
      */
     public function rules()
     {
-    	dd($this->request->all());
 	    $rules = [
 		    'category' => 'required|string',
 		    'maker' => 'nullable|string',
-		    'photos.*' => 'required'
+		    'photos.*' => 'image'
 	    ];
 
 	    return $rules;
