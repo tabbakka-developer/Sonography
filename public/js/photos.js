@@ -8,8 +8,10 @@ $(document).ready(function () {
             url:'/photos/makers',
             dataType: 'JSON',
             success: function (data) {
-                console.log(data);
-                let makers = data[0];
+                let makers = [];
+                for (maker in data) {
+                    makers.push(maker['maker']);
+                }
                 console.log(makers);
             },
             error: function (data) {
