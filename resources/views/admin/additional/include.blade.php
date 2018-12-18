@@ -6,3 +6,6 @@
       crossorigin="anonymous">
 <link rel="stylesheet"
       href="{{ asset('css/admin/dashboard.css') }}">
+
+<link rel="stylesheet"
+      href="{{ asset('css/admin/photo.css') }}">

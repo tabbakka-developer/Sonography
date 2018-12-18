@@ -106,7 +106,7 @@
                                         Производитель
                                     </span>
                                 </div>
-                                <input type="text" class="form-control" name="maker">
+                                <input id="prod_maker" type="text" class="form-control" name="maker">
                             </div>
                         </div>
 
