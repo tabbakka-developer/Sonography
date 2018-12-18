@@ -23,7 +23,7 @@ class PhotosController extends Controller {
 		DB::beginTransaction();
 		try {
 			foreach ($request->photos as $photo) {
-				$pathToSave = 'photos/' . $request->category;
+				$pathToSave = 'public/photos/' . $request->category;
 				if ($request->maker != null) {
 					$pathToSave .= '/' . $request->maker;
 				}
@@ -37,11 +37,11 @@ class PhotosController extends Controller {
 			DB::commit();
 		} catch (\Exception $exception) {
 			DB::rollBack();
-			return redirect()->back()->withErrors($exception->getMessage(). " " . $exception->getFile());
+			return redirect()->back()->withErrors($exception->getMessage() . " " . $exception->getFile());
 		}
 		return redirect()
 			->back()
-			->with('success-message','Фотографии успешно добавлены!');
+			->with('success-message', 'Фотографии успешно добавлены!');
 	}
 
 	public function show($id) {
@@ -58,5 +58,23 @@ class PhotosController extends Controller {
 
 	public function destroy($id) {
 		//
+	}
+
+	//additional
+
+	public function uzi() {
+
+	}
+
+	public function reanim() {
+
+	}
+
+	public function endoscopes() {
+
+	}
+
+	public function rentgen() {
+
 	}
 }
