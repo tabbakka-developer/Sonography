@@ -43,6 +43,6 @@ class Photo extends Model {
 	}
 
 	public static function makers() {
-		return self::select('maker')->where('maker', '!=', null)->distinct('maker')->get();
+		return self::select('maker')->distinct()->get();
 	}
 }
