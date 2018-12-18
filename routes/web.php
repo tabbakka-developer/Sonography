@@ -34,15 +34,15 @@ function checkAdminDomain() {
 			Route::get('/dashboard', "Admin\DashBoardController@index");
 			Route::resource('products', "Admin\ProductsController");
 
-//			Route::get('photos/uzi', "Admin\PhotoController@uzi");
-//			Route::get('photos/rentgen', "Admin\PhotoController@rentgen");
-//			Route::get('photos/reanim', "Admin\PhotoController@reanim");
-//			Route::get('photos/endoscopes', "Admin\PhotoController@endoscopes");
+			Route::get('photos/uzi', "Admin\PhotoController@uzi");
+			Route::get('photos/rentgen', "Admin\PhotoController@rentgen");
+			Route::get('photos/reanim', "Admin\PhotoController@reanim");
+			Route::get('photos/endoscopes', "Admin\PhotoController@endoscopes");
 
+			Route::resource('photos', "Admin\PhotosController");
 		});
 
 
-		Route::resource('photos', "Admin\PhotosController");
 
 	} elseif ($host === 'xn--80afqrebpd7a.xn--p1ai') {
 
@@ -123,10 +123,10 @@ if (env("APP_ENV") === 'local') {
 
 		Route::get('/dashboard', "Admin\DashBoardController@index");
 		Route::resource('products', "Admin\ProductsController");
+		Route::resource('photos', "Admin\PhotosController");
 
 	});
 
-	Route::resource('photos', "Admin\PhotosController");
 
 
 } else {
