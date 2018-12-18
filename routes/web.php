@@ -34,10 +34,10 @@ function checkAdminDomain() {
 			Route::get('/dashboard', "Admin\DashBoardController@index");
 			Route::resource('products', "Admin\ProductsController");
 
-			Route::get('photos/uzi', "Admin\PhotoController@uzi");
-			Route::get('photos/rentgen', "Admin\PhotoController@rentgen");
-			Route::get('photos/reanim', "Admin\PhotoController@reanim");
-			Route::get('photos/endoscopes', "Admin\PhotoController@endoscopes");
+//			Route::get('photos/uzi', "Admin\PhotoController@uzi");
+//			Route::get('photos/rentgen', "Admin\PhotoController@rentgen");
+//			Route::get('photos/reanim', "Admin\PhotoController@reanim");
+//			Route::get('photos/endoscopes', "Admin\PhotoController@endoscopes");
 
 		});
 
