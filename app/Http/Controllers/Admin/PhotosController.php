@@ -6,6 +6,7 @@ use App\Http\Requests\PhotosRequest;
 use App\Photo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
 class PhotosController extends Controller {
@@ -62,19 +63,41 @@ class PhotosController extends Controller {
 
 	//additional
 
-	public function uzi() {
+	public function ajaxResponse($data) {
+		try {
+			$response = [
+				'success' => true,
+				'data' => $data,
+				'error' => null
+			];
+			return response()->json($response);
+		} catch (\Exception $exception) {
+			return response()->json([
+				'success' => false,
+				'data' => null,
+				'error' => $exception->getMessage()
+			]);
+		}
+	}
 
+	public function uzi() {
+		/** @var Collection $uzi */
+		$uzi = Photo::uzi();
+		$this->ajaxResponse($uzi->toArray());
 	}
 
 	public function reanim() {
-
+		$reanim = Photo::reanim();
+		$this->ajaxResponse($reanim->toArray());
 	}
 
 	public function endoscopes() {
-
+		$endo = Photo::endoscopes();
+		$this->ajaxResponse($endo->toArray());
 	}
 
 	public function rentgen() {
-
+		$rent = Photo::rentgens();
+		$this->ajaxResponse($rent->toArray());
 	}
 }

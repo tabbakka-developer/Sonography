@@ -25,7 +25,7 @@ function checkAdminDomain() {
 
 		});
 
-		Route::get('/login', "Admin\Auth\LoginController@showForm");
+		Route::get('/login', "Admin\Auth\LoginController@showForm")->name('login');
 		Route::get('/logout', "Admin\Auth\LoginController@logout");
 		Route::post('/login', "Admin\Auth\LoginController@login");
 
@@ -113,7 +113,7 @@ if (env("APP_ENV") === 'local') {
 
 	//admin
 
-	Route::get('/login', "Admin\Auth\LoginController@showForm");
+	Route::get('/login', "Admin\Auth\LoginController@showForm")->name('login');
 	Route::get('/logout', "Admin\Auth\LoginController@logout");
 	Route::post('/login', "Admin\Auth\LoginController@login");
 
