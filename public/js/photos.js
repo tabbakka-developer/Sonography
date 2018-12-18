@@ -9,8 +9,8 @@ $(document).ready(function () {
             dataType: 'JSON',
             success: function (data) {
                 let makers = [];
-                for (maker in data) {
-                    makers.push(maker['maker']);
+                for (let i = 0; i < data.length; i++) {
+                    makers.push(data[i].maker);
                 }
                 console.log(makers);
             },
