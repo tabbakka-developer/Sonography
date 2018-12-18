@@ -28,7 +28,7 @@ class PhotosRequest extends FormRequest
 	    $rules = [
 		    'category' => 'required|string',
 		    'maker' => 'nullable|string',
-		    'photos.*' => 'image|required'
+		    'photos.*' => 'required'
 	    ];
 
 	    return $rules;
