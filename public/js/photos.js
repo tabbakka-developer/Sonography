@@ -8,7 +8,8 @@ $(document).ready(function () {
             url:'/photos/makers',
             dataType: 'JSON',
             success: function (data) {
-                console.log(data);
+                let makers = JSON.parse(data);
+                console.log(makers);
             },
             error: function (data) {
                 console.log(data);
