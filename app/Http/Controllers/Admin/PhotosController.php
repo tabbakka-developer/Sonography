@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\PhotosRequest;
 use App\Photo;
+use Illuminate\Http\File;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Collection;
@@ -33,7 +34,7 @@ class PhotosController extends Controller {
 				if ($request->maker != null) {
 					$pathToSave .= '/' . $request->maker;
 				}
-				$filePath = $photo->store($pathToSave);
+				$filePath = $photo->storeAs($pathToSave, $photo->getClientOriginalName());
 				Photo::create([
 					'category' => $request->category,
 					'maker' => $request->maker,
