@@ -92,7 +92,9 @@ class PhotosController extends Controller {
 		/** @var Collection $uzi */
 		$uzi = Photo::uzi();
 //		$this->ajaxResponse($uzi->toArray());
-		return view('admin.photos.specific')->with($uzi->toArray());
+		return view('admin.photos.specific')->with([
+			'photos' => $uzi->toArray()
+		]);
 	}
 
 	public function reanim() {
