@@ -93,7 +93,7 @@ class PhotosController extends Controller {
 		$uzi = Photo::uzi();
 //		$this->ajaxResponse($uzi->toArray());
 		return view('admin.photos.specific')->with([
-			'photos' => $uzi->toArray()
+			'photos' => $uzi
 		]);
 	}
 
