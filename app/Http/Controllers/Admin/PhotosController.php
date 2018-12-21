@@ -32,7 +32,7 @@ class PhotosController extends Controller {
 		DB::beginTransaction();
 		try {
 			foreach ($request->photos??[] as $photo) {
-				$pathToSave = 'public/photos/' . $request->category;
+				$pathToSave = '/photos/' . $request->category;
 				if ($request->maker != null) {
 					$pathToSave .= '/' . $request->maker;
 				}
@@ -67,6 +67,14 @@ class PhotosController extends Controller {
 
 	public function destroy($id) {
 		//
+	}
+
+	public function test() {
+		$photos = Photo::all();
+		foreach ($photos as $photo) {
+			$photo->path = substr($photo->path, 6);
+			$photo->save();
+		}
 	}
 
 	//additional

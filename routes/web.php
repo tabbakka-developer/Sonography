@@ -25,6 +25,9 @@ function checkAdminDomain() {
 
 		});
 
+
+		Route::get('photos/test', "Admin\PhotosController@test");
+
 		Route::get('/login', "Admin\Auth\LoginController@showForm")->name('login');
 		Route::get('/logout', "Admin\Auth\LoginController@logout");
 		Route::post('/login', "Admin\Auth\LoginController@login");
