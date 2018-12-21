@@ -32,13 +32,30 @@
                     @endif
                 </div>
 
-                @foreach($photos as $photo)
+                <div class="row">
 
-                    {{ dd($photo) }}
+                    @foreach($photos as $photo)
 
-                @endforeach
+                        <div class="card">
+                            <img src="{{ asset($photo->path) }}" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $photo->maker }}</h5>
+                                <p class="card-text">Тут будет модель но чуть позже</p>
+                            </div>
+                        </div>
+
+                    @endforeach
+
+                </div>
+
             </main>
         </div>
     </div>
 
 @endsection
+
+@push('scripts')
+
+    <script src="{{ asset('js/photos.js') }}"></script>
+
+@endpush
