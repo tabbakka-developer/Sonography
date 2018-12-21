@@ -72,7 +72,7 @@ class PhotosController extends Controller {
 	public function test() {
 		$photos = Photo::all();
 		foreach ($photos as $photo) {
-			$photo->path = substr($photo->path, 6);
+			$photo->path = substr($photo->path, 1);
 			$photo->save();
 		}
 	}
