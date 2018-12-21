@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\PhotosRequest;
 use App\Photo;
+use DemeterChain\C;
 use Illuminate\Http\File;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -22,6 +23,7 @@ class PhotosController extends Controller {
 	}
 
 	public function makers() {
+		/** @var Collection $makers */
 		$makers = Photo::makers();
 		return response()->json($makers->toArray());
 	}
@@ -93,17 +95,25 @@ class PhotosController extends Controller {
 	}
 
 	public function reanim() {
+		/** @var Collection $reanim */
 		$reanim = Photo::reanim();
 		$this->ajaxResponse($reanim->toArray());
 	}
 
 	public function endoscopes() {
+		/** @var Collection $endo */
 		$endo = Photo::endoscopes();
 		$this->ajaxResponse($endo->toArray());
 	}
 
 	public function rentgen() {
+		/** @var Collection $rent */
 		$rent = Photo::rentgens();
 		$this->ajaxResponse($rent->toArray());
+	}
+
+	public function all() {
+		$photos = Photo::all();
+		$this->ajaxResponse($photos);
 	}
 }

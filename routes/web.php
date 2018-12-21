@@ -39,6 +39,7 @@ function checkAdminDomain() {
 			Route::get('photos/reanim', "Admin\PhotosController@reanim");
 			Route::get('photos/endoscopes', "Admin\PhotosController@endoscopes");
 			Route::get('photos/makers', "Admin\PhotosController@makers");
+			Route::get('photos/all', "Admin\PhotosController@all");
 
 			Route::resource('photos', "Admin\PhotosController");
 		});
