@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
+use Intervention\Image\Facades\Image;
 
 class PhotosController extends Controller {
 
@@ -31,7 +32,7 @@ class PhotosController extends Controller {
 	public function store(PhotosRequest $request) {
 		DB::beginTransaction();
 		try {
-			foreach ($request->photos??[] as $photo) {
+			foreach ($request->photos ?? [] as $photo) {
 				$pathToSave = '/photos/' . $request->category;
 				if ($request->maker != null) {
 					$pathToSave .= '/' . $request->maker;
@@ -42,6 +43,9 @@ class PhotosController extends Controller {
 					'maker' => $request->maker,
 					'path' => $filePath
 				]);
+				$img = Image::make($filePath);
+				$img->resize(320, 240);
+				$img->save('/thumbs/' . $filePath);
 			}
 			DB::commit();
 		} catch (\Exception $exception) {
