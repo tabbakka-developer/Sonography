@@ -36,7 +36,7 @@
 
                     @foreach($photos as $photo)
 
-                        <div class="card" style="width: 18rem">
+                        <div class="card" style="width: 15rem">
                             <img src="{{ asset('storage/' . $photo->path) }}" class="card-img-top">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $photo->maker }}</h5>
