@@ -43,8 +43,9 @@ class PhotosController extends Controller {
 					'maker' => $request->maker,
 					'path' => $filePath
 				]);
+				list($width, $height) = getimagesize($filePath);
 				$img = Image::make($filePath);
-				$img->resize(320, 240);
+				$img->resize((int)$width/10, (int)$height/10);
 				$img->save('/thumbs/' . $filePath);
 			}
 			DB::commit();
