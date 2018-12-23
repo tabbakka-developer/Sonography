@@ -44,7 +44,7 @@ class PhotosController extends Controller {
 					'path' => $filePath
 				]);
 
-				dd($filePath);
+//				dd($filePath);
 //				list($width, $height) = getimagesize(public_path('/photos/' . $filePath));
 				$img = Image::make(public_path($filePath));
 				$img->resize(320, 240); //(int)$width/10, (int)$height/10
