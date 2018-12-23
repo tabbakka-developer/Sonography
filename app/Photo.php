@@ -8,11 +8,23 @@ class Photo extends Model {
 
 	protected $table = "photos";
 
+	protected $appends = [
+		'thumb'
+	];
+
 	protected $fillable = [
 		'maker',
 		'category',
 		'path'
 	];
+
+	public function setPathAttribute() {
+		return substr($this->path, 7);
+	}
+
+	public function getThumbAttribute() {
+		return substr(str_replace("/public/photos/", "/public/thumbs", $this->path), 7);
+	}
 
 	public static function view() {
 
