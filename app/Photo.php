@@ -23,9 +23,10 @@ class Photo extends Model {
 	}
 
 	public function getThumbAttribute() {
-		$thumb = str_replace("/public/photos/", "/public/thumbs/", $this->path);
-		dd($thumb);
-		return substr($thumb, 7);
+		$thumb = str_replace("photos", "thumbs", $this->path);
+//		dd($thumb);
+		return $thumb;
+//		return substr($thumb, 7);
 	}
 
 	public static function view() {
