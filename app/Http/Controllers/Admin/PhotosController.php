@@ -34,8 +34,10 @@ class PhotosController extends Controller {
 		try {
 			foreach ($request->photos ?? [] as $photo) {
 				$pathToSave = '/photos/' . $request->category;
+				$thumbPath = '/storage/thumbs/' . $request->category;
 				if ($request->maker != null) {
 					$pathToSave .= '/' . $request->maker;
+					$thumbPath .= '/' . $request->maker;
 				}
 				$filePath = $photo->storeAs($pathToSave, $photo->getClientOriginalName());
 				Photo::create([
@@ -48,7 +50,7 @@ class PhotosController extends Controller {
 //				list($width, $height) = getimagesize(public_path('/photos/' . $filePath));
 				$img = Image::make($photo->getRealPath());
 				$img->resize(320, 240); //(int)$width/10, (int)$height/10
-				$img->save(public_path('/storage/thumbs/' . $filePath));
+				$img->save(public_path($thumbPath));
 			}
 			DB::commit();
 		} catch (\Exception $exception) {
