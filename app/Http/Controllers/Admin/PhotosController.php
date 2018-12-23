@@ -37,7 +37,7 @@ class PhotosController extends Controller {
 		try {
 			foreach ($request->photos ?? [] as $photo) {
 				$pathToSave = '/public/photos/' . $request->category;
-				$thumbPath = '/public/thumbs/' . $request->category;
+				$thumbPath = 'public/thumbs/' . $request->category;
 				if ($request->maker != null) {
 					$pathToSave .= '/' . $request->maker;
 					$thumbPath .= '/' . $request->maker . '/';
