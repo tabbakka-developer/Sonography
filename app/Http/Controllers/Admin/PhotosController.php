@@ -34,7 +34,7 @@ class PhotosController extends Controller {
 		try {
 			foreach ($request->photos ?? [] as $photo) {
 				$pathToSave = '/public/photos/' . $request->category;
-				$thumbPath = '/storage/thumbs/' . $request->category;
+				$thumbPath = '/storage/app/public/thumbs/' . $request->category;
 				if ($request->maker != null) {
 					$pathToSave .= '/' . $request->maker;
 					$thumbPath .= '/' . $request->maker;
@@ -45,12 +45,9 @@ class PhotosController extends Controller {
 					'maker' => $request->maker,
 					'path' => $filePath
 				]);
-
-//				dd($filePath);
-//				list($width, $height) = getimagesize(public_path('/photos/' . $filePath));
 				$img = Image::make($photo->getRealPath());
-				$img->resize(320, 240); //(int)$width/10, (int)$height/10
-				$img->save(public_path($thumbPath));
+				$img->resize(320, 240);
+				$img->save($thumbPath);
 			}
 			DB::commit();
 		} catch (\Exception $exception) {
