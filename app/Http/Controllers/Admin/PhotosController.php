@@ -10,7 +10,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Intervention\Image\Facades\Image;
+use Symfony\Component\Debug\Debug;
 
 class PhotosController extends Controller {
 
@@ -52,6 +54,7 @@ class PhotosController extends Controller {
 			DB::commit();
 		} catch (\Exception $exception) {
 			DB::rollBack();
+			Log::debug($exception);
 			return redirect()->back()->withErrors($exception->getMessage() . " " . $exception->getFile());
 		}
 		return redirect()
