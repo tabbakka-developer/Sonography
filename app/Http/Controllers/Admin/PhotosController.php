@@ -47,7 +47,7 @@ class PhotosController extends Controller {
 				]);
 				$img = Image::make($photo->getRealPath());
 				$img->resize(320, 240);
-				$img->save($thumbPath);
+				$img->save(public_path('img/thumbs/' . $request->category . '/' . $request->maker));
 			}
 			DB::commit();
 		} catch (\Exception $exception) {
