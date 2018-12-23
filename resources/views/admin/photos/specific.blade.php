@@ -35,7 +35,7 @@
                 <div class="row">
 
                     @foreach($photos as $photo)
-                        {{ dd($photo) }}
+                        {{ dd($photo->thumb) }}
                         <div class="card" style="width: 15rem">
                             <img src="{{ asset('storage/' . $photo->thumb) }}" class="card-img-top">
                             <div class="card-body">
