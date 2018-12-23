@@ -8,9 +8,9 @@ class Photo extends Model {
 
 	protected $table = "photos";
 
-	protected $appends = [
-		'thumb'
-	];
+//	protected $appends = [
+//		'thumb'
+//	];
 
 	protected $fillable = [
 		'maker',
