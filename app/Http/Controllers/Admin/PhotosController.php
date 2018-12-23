@@ -33,7 +33,7 @@ class PhotosController extends Controller {
 		DB::beginTransaction();
 		try {
 			foreach ($request->photos ?? [] as $photo) {
-				$pathToSave = '/photos/' . $request->category;
+				$pathToSave = '/public/photos/' . $request->category;
 				$thumbPath = '/storage/thumbs/' . $request->category;
 				if ($request->maker != null) {
 					$pathToSave .= '/' . $request->maker;
