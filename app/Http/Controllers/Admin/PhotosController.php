@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 use Symfony\Component\Debug\Debug;
 
@@ -36,10 +37,10 @@ class PhotosController extends Controller {
 		try {
 			foreach ($request->photos ?? [] as $photo) {
 				$pathToSave = '/public/photos/' . $request->category;
-				$thumbPath = '/storage/app/public/thumbs/' . $request->category;
+				$thumbPath = '/public/thumbs/' . $request->category;
 				if ($request->maker != null) {
 					$pathToSave .= '/' . $request->maker;
-					$thumbPath .= '/' . $request->maker;
+					$thumbPath .= '/' . $request->maker . '/';
 				}
 				$filePath = $photo->storeAs($pathToSave, $photo->getClientOriginalName());
 				Photo::create([
@@ -48,8 +49,10 @@ class PhotosController extends Controller {
 					'path' => $filePath
 				]);
 				$img = Image::make($photo->getRealPath());
-				$img->resize(320, 240);
-				$img->save(public_path('img/thumbs'));
+				$img->fit(320, 240, function ($constraint) {
+					$constraint->aspectRatio();
+				});
+				Storage::put($thumbPath . $photo->getClientOriginalName(), $img->encode());
 			}
 			DB::commit();
 		} catch (\Exception $exception) {
