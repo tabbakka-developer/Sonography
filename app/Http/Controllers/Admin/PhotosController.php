@@ -49,7 +49,7 @@ class PhotosController extends Controller {
 					'path' => $filePath
 				]);
 				$img = Image::make($photo->getRealPath());
-				$img->fit(320, 240, function ($constraint) {
+				$img->fit(250, 250, function ($constraint) {
 					$constraint->aspectRatio();
 				});
 				Storage::put($thumbPath . $photo->getClientOriginalName(), $img->encode());
