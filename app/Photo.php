@@ -53,7 +53,7 @@ class Photo extends Model {
 		return self::create([
 			'category' => $category,
 			'maker' => $maker,
-			'path' => $imagePath
+			'path' => (string)$imagePath
 		]);
 	}
 
@@ -88,4 +88,5 @@ class Photo extends Model {
 	public static function makers() {
 		return self::select('maker')->distinct()->get();
 	}
+
 }
