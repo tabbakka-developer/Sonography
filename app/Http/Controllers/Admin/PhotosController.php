@@ -50,8 +50,9 @@ class PhotosController extends Controller {
 				]);
 				$img = Image::make($photo->getRealPath());
 				$img->fit(250, 250, function ($constraint) {
-					$constraint->aspectRatio();
+					$constraint->upsize();
 				});
+				$img->insert(public_path('img/watermark.png'));
 				Storage::put($thumbPath . $photo->getClientOriginalName(), $img->encode());
 			}
 			DB::commit();

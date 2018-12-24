@@ -8,10 +8,6 @@ class Photo extends Model {
 
 	protected $table = "photos";
 
-//	protected $appends = [
-//		'thumb'
-//	];
-
 	protected $fillable = [
 		'maker',
 		'category',
@@ -24,8 +20,6 @@ class Photo extends Model {
 
 	public function getThumbAttribute() {
 		$thumb = str_replace("photos", "thumbs", $this->path);
-//		dd($thumb);
-//		return $thumb;
 		return substr($thumb, 7);
 	}
 
