@@ -53,7 +53,7 @@ class Photo extends Model {
 		return self::create([
 			'category' => $category,
 			'maker' => $maker,
-			'path' => (string)$imagePath
+			'path' => (string)$imagePath . $photo->getClientOriginalName()
 		]);
 	}
 
