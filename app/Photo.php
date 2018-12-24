@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class Photo extends Model {
 
@@ -21,6 +23,32 @@ class Photo extends Model {
 	public function getThumbAttribute() {
 		$thumb = str_replace("photos", "thumbs", $this->path);
 		return substr($thumb, 7);
+	}
+
+	public static function createWithThumbsAndWatermarks($photo, $category, $maker) {
+		$imagePath = 'public/photos/' . $category;
+		$thumbPath = 'public/thumbs/' . $category;
+		if ($maker != null) {
+			$imagePath .= '/' . $maker . '/';
+			$thumbPath .= '/' . $maker . '/';
+		}
+
+		$imageWithWaterMark = Image::make($photo);
+		$imageWithWaterMark->insert(public_path('img/watermark.png'));
+		Storage::put($imagePath . $photo->getClientOriginalName(), $imageWithWaterMark->encode());
+
+		$img = Image::make($photo->getRealPath());
+		$img->fit(250, 250, function ($constraint) {
+			$constraint->upsize();
+		});
+		$img->insert(public_path('img/watermark.png'));
+		Storage::put($thumbPath . $photo->getClientOriginalName(), $img->encode());
+
+		self::create([
+			'category' => $category,
+			'maker' => $maker,
+			'path' => $imagePath
+		]);
 	}
 
 	public static function view() {

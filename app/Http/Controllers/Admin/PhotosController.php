@@ -36,24 +36,7 @@ class PhotosController extends Controller {
 		DB::beginTransaction();
 		try {
 			foreach ($request->photos ?? [] as $photo) {
-				$pathToSave = '/public/photos/' . $request->category;
-				$thumbPath = 'public/thumbs/' . $request->category;
-				if ($request->maker != null) {
-					$pathToSave .= '/' . $request->maker;
-					$thumbPath .= '/' . $request->maker . '/';
-				}
-				$filePath = $photo->storeAs($pathToSave, $photo->getClientOriginalName());
-				Photo::create([
-					'category' => $request->category,
-					'maker' => $request->maker,
-					'path' => $filePath
-				]);
-				$img = Image::make($photo->getRealPath());
-				$img->fit(250, 250, function ($constraint) {
-					$constraint->upsize();
-				});
-				$img->insert(public_path('img/watermark.png'));
-				Storage::put($thumbPath . $photo->getClientOriginalName(), $img->encode());
+				Photo::createWithThumbsAndWatermarks($photo, $request->request, $request->maker);
 			}
 			DB::commit();
 		} catch (\Exception $exception) {
