@@ -11,9 +11,9 @@ class Photo extends Model {
 	protected $table = "photos";
 
 	protected $fillable = [
+		'path',
 		'maker',
-		'category',
-		'path'
+		'category'
 	];
 
 	public function setPathAttribute() {
