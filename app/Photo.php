@@ -44,6 +44,8 @@ class Photo extends Model {
 		$img->insert(public_path('img/watermark.png'));
 		Storage::put($thumbPath . $photo->getClientOriginalName(), $img->encode());
 
+		$imagePath .= $photo->getClientOriginalName();
+
 		dd([
 			'category' => $category,
 			'maker' => $maker,
@@ -53,7 +55,7 @@ class Photo extends Model {
 		return self::create([
 			'category' => $category,
 			'maker' => $maker,
-			'path' => (string)$imagePath . $photo->getClientOriginalName()
+			'path' => (string)$imagePath
 		]);
 	}
 
