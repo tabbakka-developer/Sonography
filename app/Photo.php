@@ -25,7 +25,7 @@ class Photo extends Model {
 		return substr($thumb, 7);
 	}
 
-	public static function createWithThumbsAndWatermarks($photo, $category, $maker) {
+	public static function withThumbsAndWatermarks($photo, $category, $maker) {
 		$imagePath = 'public/photos/' . $category;
 		$thumbPath = 'public/thumbs/' . $category;
 		if ($maker != null) {
@@ -52,13 +52,11 @@ class Photo extends Model {
 //			'path' => $imagePath
 //		]);
 
-		$data = [
+		return $data = [
 			'path' => (string)$imagePath,
 			'category' => $category,
 			'maker' => $maker
 		];
-
-		return Photo::create($data);
 	}
 
 	public static function view() {

@@ -36,7 +36,8 @@ class PhotosController extends Controller {
 		DB::beginTransaction();
 		try {
 			foreach ($request->photos ?? [] as $photo) {
-				Photo::createWithThumbsAndWatermarks($photo, $request->category, $request->maker);
+				$data = Photo::withThumbsAndWatermarks($photo, $request->category, $request->maker);
+				$storedPhoto = Photo::create($data);
 			}
 			DB::commit();
 		} catch (\Exception $exception) {
