@@ -52,11 +52,13 @@ class Photo extends Model {
 //			'path' => $imagePath
 //		]);
 
-		return self::create([
+		$data = [
 			'path' => (string)$imagePath,
 			'category' => $category,
 			'maker' => $maker
-		]);
+		];
+
+		return Photo::create($data);
 	}
 
 	public static function view() {
