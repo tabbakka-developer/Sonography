@@ -46,11 +46,11 @@ class Photo extends Model {
 
 		$imagePath .= $photo->getClientOriginalName();
 
-		dd([
-			'category' => $category,
-			'maker' => $maker,
-			'path' => $imagePath
-		]);
+//		dd([
+//			'category' => $category,
+//			'maker' => $maker,
+//			'path' => $imagePath
+//		]);
 
 		return self::create([
 			'category' => $category,
