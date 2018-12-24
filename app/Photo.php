@@ -53,9 +53,9 @@ class Photo extends Model {
 //		]);
 
 		return self::create([
+			'path' => (string)$imagePath,
 			'category' => $category,
-			'maker' => $maker,
-			'path' => (string)$imagePath
+			'maker' => $maker
 		]);
 	}
 
