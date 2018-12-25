@@ -46,13 +46,7 @@ class Photo extends Model {
 
 		$imagePath .= $photo->getClientOriginalName();
 
-//		dd([
-//			'category' => $category,
-//			'maker' => $maker,
-//			'path' => $imagePath
-//		]);
-
-		return $data = [
+		return [
 			'path' => (string)$imagePath,
 			'category' => $category,
 			'maker' => $maker
