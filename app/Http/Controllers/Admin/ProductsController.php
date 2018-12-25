@@ -28,10 +28,10 @@ class ProductsController extends Controller {
 		$path = 'public/excel/' . $request->category . '/' . $request->excel->getClientOriginalName();
 		Storage::put($path, $request->excel);
 		$success = false;
-		dd([
-			'path' => $path,
-			'public_path' => substr($path, 7)
-		]);
+//		dd([
+//			'path' => $path,
+//			'public_path' => substr($path, 7)
+//		]);
 		switch ($request->category) {
 			case 'uzi':
 				$success = $this->importUzi(public_path(substr($path, 7)));
