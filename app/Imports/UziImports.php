@@ -38,7 +38,7 @@ class UziImports implements ToModel, WithHeadingRow {
 			}
 		}
 
-		dd($row);
+//		dd($row);
 
 		return new UziApparat([
 			'model' => $row['marka_apparata'],
