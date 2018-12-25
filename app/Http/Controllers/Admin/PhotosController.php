@@ -37,17 +37,20 @@ class PhotosController extends Controller {
 		try {
 			foreach ($request->photos ?? [] as $photo) {
 				$data = Photo::withThumbsAndWatermarks($photo, $request->category, $request->maker);
-				$storedPhoto = new Photo();
-				$storedPhoto->path = $data['path'];
-				$storedPhoto->category = $data['category'];
-				$storedPhoto->maker = $data['maker'];
-				$storedPhoto->save();
+//				$storedPhoto = new Photo();
+//				$storedPhoto->path = $data['path'];
+//				$storedPhoto->category = $data['category'];
+//				$storedPhoto->maker = $data['maker'];
+//				$storedPhoto->save();
 
-//				$storedPhoto = Photo::create([
-//					'path' => $data['path'],
-//					'category' => $data['category'],
-//					'maker' => $data['maker']
-//				]);
+				var_dump($data);
+				dd($data);
+
+				$storedPhoto = Photo::create([
+					'path' => $data['path'],
+					'category' => $data['category'],
+					'maker' => $data['maker']
+				]);
 			}
 			DB::commit();
 		} catch (\Exception $exception) {
