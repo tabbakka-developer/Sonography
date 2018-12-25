@@ -28,7 +28,7 @@ class ProductHelper extends Model {
 			'endoscopes' => self::endoscopes(),
 			'uzi' => self::uzi(),
 			'rentgens' => self::rentgen(),
-			'reanims' => self::reanims()
+			'reanim' => self::reanims()
 		];
 	}
 }
