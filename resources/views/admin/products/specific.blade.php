@@ -81,7 +81,7 @@
                                     <td>{{ $prod->price }}</td>
                                     <td>{{ $prod->currency }}</td>
                                     <td>{{ $prod->is_have }}</td>
-                                    <td>{{ $prod->description }}</td>
+                                    <td>{{ str_limit($prod->description, $limit = 10, $end = "...") }}</td>
                                     <td>{{ $prod->free_delivery }}</td>
                                     <td>{{ $prod->free_engineer }}</td>
                                 </tr>
