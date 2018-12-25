@@ -27,7 +27,6 @@ class UziImports implements ToModel, WithHeadingRow {
 	 * @return \Illuminate\Database\Eloquent\Model|null
 	 */
 	public function model(array $row) {
-//    	dd($row);
 
 		foreach ($row as &$cell) {
 			if ($cell == "+") {
@@ -36,6 +35,8 @@ class UziImports implements ToModel, WithHeadingRow {
 				$cell = false;
 			}
 		}
+
+		dd($row);
 
 		return new UziApparat([
 			'model' => $row['marka_apparata'],
