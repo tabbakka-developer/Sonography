@@ -9,6 +9,7 @@ use App\UziApparat;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
 
 class ProductsController extends Controller {
@@ -24,10 +25,16 @@ class ProductsController extends Controller {
 	}
 
 	public function store(StoreProductRequest $request) {
+		$path = 'public/excel/' . $request->category . '/' . $request->excel->getClientOriginalName();
+		Storage::put($path, $request->excel);
 		$success = false;
+		dd([
+			'path' => $path,
+			'public_path' => substr($path, 7)
+		]);
 		switch ($request->category) {
 			case 'uzi':
-				$success = $this->importUzi('');
+				$success = $this->importUzi(public_path(substr($path, 7)));
 				break;
 
 			case 'rentgens':
