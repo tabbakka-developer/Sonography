@@ -16,9 +16,9 @@ class Photo extends Model {
 		'category'
 	];
 
-	public function getPathAttribute() {
-		return substr($this->path, 7);
-	}
+//	public function getPathAttribute() {
+//		return substr($this->path, 7);
+//	}
 
 	public function getThumbAttribute() {
 		$thumb = str_replace("photos", "thumbs", $this->path);
