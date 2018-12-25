@@ -4,8 +4,9 @@ namespace App\Imports;
 
 use App\UziApparat;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class UziImports implements ToModel
+class UziImports implements ToModel, WithHeadingRow
 {
     /**
     * @param array $row
@@ -14,6 +15,7 @@ class UziImports implements ToModel
     */
     public function model(array $row)
     {
+    	dd($row);
         return new UziApparat([
         	'model' => $row[0],
             'brand' => $row[1],
