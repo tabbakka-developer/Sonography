@@ -15,7 +15,7 @@ class UziImports implements ToModel, WithHeadingRow
     */
     public function model(array $row)
     {
-//    	dd($row);
+    	dd($row);
         return new UziApparat([
         	'model' => $row[0],
             'brand' => $row[1],
