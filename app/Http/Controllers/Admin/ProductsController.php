@@ -10,7 +10,8 @@ class ProductsController extends Controller {
 
 
 	public function index() {
-		$products = ProductHelper::all();
+//		$products = ProductHelper::all();
+		$products = [];
 		return view('admin.products.index')->with('products', $products);
 	}
 
