@@ -33,6 +33,8 @@ class UziImports implements ToModel, WithHeadingRow {
 				$cell = true;
 			} elseif ($cell == "-") {
 				$cell = false;
+			} elseif ($cell == null) {
+				$cell = false;
 			}
 		}
 
