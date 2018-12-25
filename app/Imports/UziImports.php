@@ -17,28 +17,28 @@ class UziImports implements ToModel, WithHeadingRow
     {
     	dd($row);
         return new UziApparat([
-        	'model' => $row[0],
-            'brand' => $row[1],
-            'code' => $row[2],
-			'sub_category' => $row[3],
-	        'sub_category_more' => $row[4],
-	        'quality' => $row[5],
-	        'show_product' => $row[6],
-	        'animals' => $row[7],
+        	'model' => $row['marka_apparata'],
+            'brand' => $row['proizvoditel'],
+            'code' => $row['kod_tovara'],
+			'sub_category' => $row['podkategoriya'],
+//	        'sub_category_more' => $row[4],
+	        'quality' => $row['sostoyanie'],
+	        'show_product' => $row['otobrazhat_na_sayte'],
+	        'animals' => $row['veterinarnoe'],
 
-	        'country' => $row[9],
-	        'level' => $row[10],
-	        'screen_size' => $row[11],
-	        'memory' => $row[12],
-	        'warranty' => $row[13],
+	        'country' => $row['strana_proizvodstva'],
+	        'level' => $row['klass_apparata'],
+	        'screen_size' => $row['razmer_ekrana_v_dyuymakh'],
+	        'memory' => $row['obem_pamyati'],
+	        'warranty' => $row['srok_garantii_mes'],
 
-	        'price' => $row[75],
-	        'currency' => $row[76],
-	        'is_have' => $row[81],
-	        'description' => $row[103],
+	        'price' => $row['tsena'],
+	        'currency' => $row['valyuta'],
+	        'is_have' => $row['v_nalichii'],
+	        'description' => $row['opisanie'],
 
-	        'free_delivery' => $row[125],
-	        'free_engineer' => $row[126]
+	        'free_delivery' => $row['besplatnaya_dostavka'],
+	        'free_engineer' => $row['besplatnyy_vyezd_inzhenera']
         ]);
     }
 }
