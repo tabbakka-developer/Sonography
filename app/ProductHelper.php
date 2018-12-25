@@ -7,23 +7,24 @@ use Illuminate\Database\Eloquent\Model;
 class ProductHelper extends Model {
 
 	public static function endoscopes() {
-		return Endoscope::get();
+		return Endoscope::all();
 	}
 
 	public static function uzi() {
-		return UziApparat::get();
+		return UziApparat::all();
 	}
 
 	public static function rentgen() {
-		return Rentgen::get();
+		return Rentgen::all();
 	}
 
 	public static function reanims() {
-		return Reanims::get();
+		return Reanims::all();
 	}
 
 	public static function allCategories() {
 		return [
+			'total' => (self::endoscopes()->count() + self::uzi()->count() + self::rentgen()->count() + self::reanims()->count()),
 			'endoscopes' => self::endoscopes(),
 			'uzi' => self::uzi(),
 			'rentgen' => self::rentgen(),
