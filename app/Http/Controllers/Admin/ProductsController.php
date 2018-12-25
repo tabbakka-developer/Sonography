@@ -37,4 +37,43 @@ class ProductsController extends Controller {
 	public function destroy($id) {
 		//
 	}
+
+	#additional
+
+	public function uzi() {
+//		/** @var Collection $uzi */
+//		$uzi = Photo::uzi();
+////		$this->ajaxResponse($uzi->toArray());
+//		return view('admin.photos.specific')->with([
+//			'photos' => $uzi
+//		]);
+		dd("in dev");
+	}
+
+	public function reanim() {
+//		/** @var Collection $reanim */
+//		$reanim = Photo::reanim();
+//		$this->ajaxResponse($reanim->toArray());
+		dd("in dev");
+	}
+
+	public function endoscopes() {
+//		/** @var Collection $endo */
+//		$endo = Photo::endoscopes();
+//		$this->ajaxResponse($endo->toArray());
+		dd("in dev");
+	}
+
+	public function rentgen() {
+//		/** @var Collection $rent */
+//		$rent = Photo::rentgens();
+//		$this->ajaxResponse($rent->toArray());
+		dd("in dev");
+	}
+
+	public function all() {
+//		$photos = Photo::all();
+//		$this->ajaxResponse($photos);
+		dd("in dev");
+	}
 }

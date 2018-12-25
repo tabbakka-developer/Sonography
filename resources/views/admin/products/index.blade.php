@@ -41,7 +41,7 @@
                         <span class="badge badge-secondary badge-pill">4</span>
                     </h4>
                     <div class="list-group mb-3">
-                        <a href="{{ action('Admin\PhotosController@uzi') }}" class="list-group-item list-group-item-action d-flex justify-content-between lh-condensed">
+                        <a href="{{ action('Admin\ProductsController@uzi') }}" class="list-group-item list-group-item-action d-flex justify-content-between lh-condensed">
                             <div>
                                 <h6 class="my-0">УЗИ</h6>
                                 {{--<small class="text-muted">Brief description</small>--}}
@@ -49,7 +49,7 @@
                             <span class="text-muted">{{ $uzi->count() }}</span>
                         </a>
 
-                        <a href="{{ action('Admin\PhotosController@rentgen') }}" class="list-group-item list-group-item-action d-flex justify-content-between lh-condensed">
+                        <a href="{{ action('Admin\ProductsController@rentgen') }}" class="list-group-item list-group-item-action d-flex justify-content-between lh-condensed">
                             <div>
                                 <h6 class="my-0">Рентгены</h6>
                                 {{--<small class="text-muted">Brief description</small>--}}
@@ -57,7 +57,7 @@
                             <span class="text-muted">{{ $rentgens->count() }}</span>
                         </a>
 
-                        <a href="{{ action('Admin\PhotosController@endoscopes') }}" class="list-group-item list-group-item-action d-flex justify-content-between lh-condensed">
+                        <a href="{{ action('Admin\ProductsController@endoscopes') }}" class="list-group-item list-group-item-action d-flex justify-content-between lh-condensed">
                             <div>
                                 <h6 class="my-0">Эндоскопы</h6>
                                 {{--<small class="text-muted">Brief description</small>--}}
@@ -65,14 +65,14 @@
                             <span class="text-muted">{{ $endoscopes->count() }}</span>
                         </a>
 
-                        <a href="{{ action('Admin\PhotosController@reanim') }}" class="list-group-item list-group-item-action d-flex justify-content-between lh-condensed">
+                        <a href="{{ action('Admin\ProductsController@reanim') }}" class="list-group-item list-group-item-action d-flex justify-content-between lh-condensed">
                             <div>
                                 <h6 class="my-0">Реанимация</h6>
                                 {{--<small class="text-muted">Brief description</small>--}}
                             </div>
                             <span class="text-muted">{{ $reanim->count() }}</span>
                         </a>
-                        <a href="{{ action('Admin\PhotosController@all') }}" class="list-group-item list-group-item-action d-flex justify-content-between">
+                        <a href="{{ action('Admin\ProductsController@all') }}" class="list-group-item list-group-item-action d-flex justify-content-between">
                             <span>Всего товаров</span>
                             <strong>{{ $total }}</strong>
                         </a>
