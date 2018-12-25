@@ -11,6 +11,7 @@ class ProductsController extends Controller {
 
 	public function index() {
 		$products = ProductHelper::allCategories();
+		dd($products);
 		return view('admin.products.index')->with('products', $products);
 	}
 
