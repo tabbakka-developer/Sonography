@@ -54,24 +54,29 @@ class ProductsController extends Controller {
 				break;
 		}
 
-		if ($success) {
+		if ($success === true) {
 			return redirect()
 				->back()
 				->with('success-message', 'Товары успешно добавлены!');
 		} else {
 			return redirect()
 				->back()
-				->withErrors('Ошибка загрузки товара!');
+				->withErrors($success->getMessage() . " -> " . $success->getFile()
+					. " -> " . $success->getLine());
 		}
 	}
 
+	/**
+	 * @param $filePath
+	 * @return bool|\Exception
+	 */
 	private function importUzi($filePath) {
 		try {
 			Excel::import(new UziImports, $filePath);
 			return true;
 		} catch (\Exception $exception) {
 			Log::debug($exception);
-			return false;
+			return $exception;
 		}
 	}
 
