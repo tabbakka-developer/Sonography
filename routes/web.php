@@ -32,6 +32,13 @@ function checkAdminDomain() {
 		Route::group(['middleware' => 'auth'], function () {
 
 			Route::get('/dashboard', "Admin\DashBoardController@index");
+
+			Route::get('products/uzi', "Admin\ProductsController@uzi");
+			Route::get('products/rentgen', "Admin\ProductsController@rentgen");
+			Route::get('products/reanim', "Admin\ProductsController@reanim");
+			Route::get('products/endoscopes', "Admin\ProductsController@endoscopes");
+//			Route::get('products/makers', "Admin\ProductsController@makers");
+			Route::get('products/all', "Admin\ProductsController@all");
 			Route::resource('products', "Admin\ProductsController");
 
 			Route::get('photos/uzi', "Admin\PhotosController@uzi");
@@ -124,6 +131,14 @@ if (env("APP_ENV") === 'local') {
 	Route::group(['middleware' => 'auth'], function () {
 
 		Route::get('/dashboard', "Admin\DashBoardController@index");
+
+		Route::get('products/uzi', "Admin\ProductsController@uzi");
+		Route::get('products/rentgen', "Admin\ProductsController@rentgen");
+		Route::get('products/reanim', "Admin\ProductsController@reanim");
+		Route::get('products/endoscopes', "Admin\ProductsController@endoscopes");
+//			Route::get('products/makers', "Admin\ProductsController@makers");
+		Route::get('products/all', "Admin\ProductsController@all");
+		Route::resource('products', "Admin\ProductsController");
 		Route::resource('products', "Admin\ProductsController");
 
 		Route::get('photos/uzi', "Admin\PhotosController@uzi");
