@@ -27,7 +27,7 @@ class ProductHelper extends Model {
 			'total' => (self::endoscopes()->count() + self::uzi()->count() + self::rentgen()->count() + self::reanims()->count()),
 			'endoscopes' => self::endoscopes(),
 			'uzi' => self::uzi(),
-			'rentgen' => self::rentgen(),
+			'rentgens' => self::rentgen(),
 			'reanims' => self::reanims()
 		];
 	}
