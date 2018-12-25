@@ -56,7 +56,7 @@ class UziImports implements ToModel, WithHeadingRow {
 			'memory' => $row['obem_pamyati'],
 			'warranty' => $row['srok_garantii_mes'],
 
-			'price' => $row['tsena'],
+			'price' => intval($row['tsena']),
 			'currency' => $row['valyuta'],
 			'is_have' => $row['v_nalichii'],
 			'description' => $row['opisanie'],
