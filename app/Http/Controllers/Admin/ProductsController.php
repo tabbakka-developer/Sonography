@@ -8,6 +8,7 @@ use App\ProductHelper;
 use App\UziApparat;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
@@ -111,13 +112,11 @@ class ProductsController extends Controller {
 	#additional
 
 	public function uzi() {
-//		/** @var Collection $uzi */
-//		$uzi = Photo::uzi();
-////		$this->ajaxResponse($uzi->toArray());
-//		return view('admin.photos.specific')->with([
-//			'photos' => $uzi
-//		]);
-		dd("in dev");
+		/** @var Collection $uzi */
+		$uzi = UziApparat::all();
+		return view('admin.products.specific')->with([
+			'uzi' => $uzi
+		]);
 	}
 
 	public function reanim() {

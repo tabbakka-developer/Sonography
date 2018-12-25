@@ -1,7 +1,7 @@
 @extends('admin.additional.main')
 
 @section('title')
-    Фото-галлерея
+    Менеджер товаров
 @endsection
 
 @section('app-content')
