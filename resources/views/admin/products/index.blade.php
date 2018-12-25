@@ -73,12 +73,12 @@
                             <span class="text-muted">{{ $reanim->count() }}</span>
                         </a>
                         <a href="{{ action('Admin\PhotosController@all') }}" class="list-group-item list-group-item-action d-flex justify-content-between">
-                            <span>Всего фото</span>
+                            <span>Всего товаров</span>
                             <strong>{{ $total }}</strong>
                         </a>
                     </div>
 
-                    <form enctype="multipart/form-data" class="card p-2" action="{{ action('Admin\PhotosController@store') }}" method="POST">
+                    <form enctype="multipart/form-data" class="card p-2" action="{{ action('Admin\ProductsController@store') }}" method="POST">
 
                         @csrf
 
@@ -102,23 +102,12 @@
                         <div class="form-group">
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                        Производитель
-                                    </span>
-                                </div>
-                                <input id="prod_maker" type="text" class="form-control" name="maker">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">Фото</span>
+                                    <span class="input-group-text">Таблица</span>
                                 </div>
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="photos" name="photos[]" multiple
+                                    <input type="file" class="custom-file-input" id="excel" name="excel"
                                            required>
-                                    <label class="custom-file-label" for="photos">Выбрать</label>
+                                    <label class="custom-file-label" for="excel">Выбрать</label>
                                 </div>
                             </div>
                         </div>

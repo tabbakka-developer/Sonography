@@ -22,7 +22,7 @@ class ProductHelper extends Model {
 		return Reanims::get();
 	}
 
-	public static function all() {
+	public static function allCategories() {
 		return [
 			'endoscopes' => self::endoscopes(),
 			'uzi' => self::uzi(),
@@ -30,5 +30,4 @@ class ProductHelper extends Model {
 			'reanims' => self::reanims()
 		];
 	}
-
 }
