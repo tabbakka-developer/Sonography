@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\StoreProductRequest;
+use App\Imports\UziImports;
 use App\ProductHelper;
+use App\UziApparat;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Log;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ProductsController extends Controller {
 
@@ -18,7 +23,60 @@ class ProductsController extends Controller {
 
 	}
 
-	public function store(Request $request) {
+	public function store(StoreProductRequest $request) {
+		$success = false;
+		switch ($request->category) {
+			case 'uzi':
+				$success = $this->importUzi('');
+				break;
+
+			case 'rentgens':
+				$success = $this->importRentgens('');
+				break;
+
+			case 'endoscopes':
+				$success = $this->importEndo('');
+				break;
+
+			case 'reanim';
+				$success = $this->importReanim('');
+				break;
+
+			default:
+				$success = false;
+				break;
+		}
+
+		if ($success) {
+			return redirect()
+				->back()
+				->with('success-message', 'Товары успешно добавлены!');
+		} else {
+			return redirect()
+				->back()
+				->withErrors('Ошибка загрузки товара!');
+		}
+	}
+
+	private function importUzi($filePath) {
+		try {
+			Excel::import(new UziImports, $filePath);
+			return true;
+		} catch (\Exception $exception) {
+			Log::debug($exception);
+			return false;
+		}
+	}
+
+	private function importRentgens($filePath) {
+
+	}
+
+	private function importEndo($filePath) {
+
+	}
+
+	private function importReanim($filePath) {
 
 	}
 
