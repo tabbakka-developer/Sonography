@@ -34,7 +34,7 @@ class ProductsController extends Controller {
 //		]);
 		switch ($request->category) {
 			case 'uzi':
-				$success = $this->importUzi(public_path(str_replace("public", "storage", $path)));
+				$success = $this->importUzi($request->excel);
 				break;
 
 			case 'rentgens':
