@@ -4,8 +4,10 @@ namespace App;
 
 class UziApparat extends Product {
 
-	protected $fillable = [
-		'*'
-	];
+//	protected $fillable = [
+//		'*'
+//	];
+
+	protected $guarded = [];
 
 }
