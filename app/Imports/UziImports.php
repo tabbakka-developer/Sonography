@@ -33,7 +33,10 @@ class UziImports implements ToModel
 	        'price' => $row[75],
 	        'currency' => $row[76],
 	        'is_have' => $row[81],
-	        'description' => $row[103]
+	        'description' => $row[103],
+
+	        'free_delivery' => $row[125],
+	        'free_engineer' => $row[126]
         ]);
     }
 }
