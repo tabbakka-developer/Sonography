@@ -30,11 +30,11 @@ class ProductsController extends Controller {
 		$success = false;
 //		dd([
 //			'path' => $path,
-//			'public_path' => substr($path, 7)
+//			'public_path' => public_path(str_replace("public", "storage", $path))
 //		]);
 		switch ($request->category) {
 			case 'uzi':
-				$success = $this->importUzi(public_path(substr($path, 7)));
+				$success = $this->importUzi(public_path(str_replace("public", "storage", $path)));
 				break;
 
 			case 'rentgens':
