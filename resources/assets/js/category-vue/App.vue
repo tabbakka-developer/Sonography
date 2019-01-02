@@ -37,8 +37,7 @@
                     }
                 })
                 .then((json) => {
-                    console.log(json.data);
-                    this.products.push.apply(json.data);
+                    this.products.push.apply(this.products, json.data);
                     console.log(this.products.length);
                 })
                 .catch((error) => {
