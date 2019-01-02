@@ -12393,7 +12393,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -12419,9 +12419,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     name: "Product",
     props: {
         product: {
-            type: Object,
+            type: Array,
             required: true
         }
+    },
+    data: function data() {
+        return {
+            productName: this.product.brand + " " + this.product.model,
+            productThumb: "/"
+        };
     }
 });
 
@@ -12435,13 +12441,10 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "element" }, [
     _c("div", { staticClass: "element-name" }, [
-      _vm._v("\n        " + _vm._s(_vm.product.name) + "\n    ")
+      _vm._v("\n        " + _vm._s(_vm.productName) + "\n    ")
     ]),
     _vm._v(" "),
-    _c("img", {
-      staticClass: "element-img",
-      attrs: { src: _vm.product.thumb }
-    }),
+    _c("img", { staticClass: "element-img", attrs: { src: _vm.productThumb } }),
     _vm._v(" "),
     _c("a", { staticClass: "element-url", attrs: { href: "/item" } }, [
       _vm._v("Подробнее")
