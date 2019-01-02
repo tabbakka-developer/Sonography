@@ -45,7 +45,7 @@ class Product extends Model implements Interfaces\Product {
 	}
 
 	public static function prices() {
-		$prices = self::distinct('price')->get();
+		$prices = self::distinct()->get('price');
 		return $prices;
 	}
 
