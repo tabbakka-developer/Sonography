@@ -82,22 +82,24 @@ Vue.component('side-bar', {
     template: "<div class=\"sidebar\"></div>",
     data: function data() {
         return {
-            prices: []
+            prices_rub: [],
+            prices_usd: []
         };
     },
     created: function created() {
         var _this = this;
 
         fetch('/api/products/prices?category=uzi').then(function (response) {
-            console.log(response);
-            if (response.success) {
+            if (response.ok) {
                 return response.json();
             } else {
                 throw new Error('Error getting data');
             }
         }).then(function (json) {
-            _this.prices.push(json.prices);
-            console.log(_this.prices);
+            _this.prices_rub.push(json.prices.RUB);
+            _this.prices_usd.push(json.prices.USD);
+            console.log(_this.prices_rub);
+            console.log(_this.prices_usd);
         }).catch(function (error) {
             console.log(error);
         });
