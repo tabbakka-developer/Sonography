@@ -14,7 +14,7 @@ class ProductController extends Controller {
 
 			case 'uzi':
 				$prices =  UziApparat::prices();
-
+				dd($prices);
 				return response()->json([
 					'success' => true,
 					'prices' => count($prices)
