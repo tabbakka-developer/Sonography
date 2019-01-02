@@ -29,9 +29,4 @@ Vue.component('side-bar', {
     }
 });
 
-
-Vue.component('price-slider-block', {
-    template: ""
-});
-
 new Vue({ el: "#side-var-vue" });

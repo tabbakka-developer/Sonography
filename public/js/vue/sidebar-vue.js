@@ -74,8 +74,9 @@ module.exports = __webpack_require__(54);
 /***/ }),
 
 /***/ 54:
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__) {
 
+"use strict";
 
 
 Vue.component('side-bar', {
@@ -104,10 +105,6 @@ Vue.component('side-bar', {
             console.log(error);
         });
     }
-});
-
-Vue.component('price-slider-block', {
-    template: ""
 });
 
 new Vue({ el: "#side-var-vue" });

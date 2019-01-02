@@ -14,6 +14,7 @@ let mix = require('laravel-mix');
 mix
     .js('resources/assets/js/app.js', 'public/js')
     .js('resources/assets/js/vue/sidebar-vue.js', 'public/js/vue')
+    .js('resources/assets/js/vue/price-slide.vue', 'public/js/vue')
     .sass('resources/assets/sass/app.scss', 'public/css')
     .sass('resources/assets/sass/global.scss', 'public/css')
     .sass('resources/assets/sass/footer.scss', 'public/css/footer')
