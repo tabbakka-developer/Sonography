@@ -1,10 +1,14 @@
+
+
 Vue.component('side-bar', {
     template: "<div class=\"sidebar\"></div>",
-    data: {
-        prices: []
+    data() {
+        return {
+            prices: []
+        }
     },
     created() {
-        fetch('api/products/prices?category=uzi')
+        fetch('/api/products/prices?category=uzi')
             .then((response) => {
                 if (response.success) {
                     return response.json();
@@ -26,3 +30,5 @@ Vue.component('side-bar', {
 Vue.component('price-slider-block', {
     template: ""
 });
+
+new Vue({ el: "#side-var-vue" });

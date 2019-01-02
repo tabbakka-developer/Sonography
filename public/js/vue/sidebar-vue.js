@@ -76,15 +76,19 @@ module.exports = __webpack_require__(54);
 /***/ 54:
 /***/ (function(module, exports) {
 
+
+
 Vue.component('side-bar', {
     template: "<div class=\"sidebar\"></div>",
-    data: {
-        prices: []
+    data: function data() {
+        return {
+            prices: []
+        };
     },
     created: function created() {
         var _this = this;
 
-        fetch('api/products/prices?category=uzi').then(function (response) {
+        fetch('/api/products/prices?category=uzi').then(function (response) {
             if (response.success) {
                 return response.json();
             } else {
@@ -102,6 +106,8 @@ Vue.component('side-bar', {
 Vue.component('price-slider-block', {
     template: ""
 });
+
+new Vue({ el: "#side-var-vue" });
 
 /***/ })
 
