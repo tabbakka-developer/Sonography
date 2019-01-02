@@ -37,6 +37,7 @@
                     }
                 })
                 .then((json) => {
+                    console.log(json.data);
                     this.products.push(json.data[0]);
                 })
                 .catch((error) => {
