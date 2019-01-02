@@ -59,6 +59,9 @@ class Product extends Model implements Interfaces\Product {
 			array_push($usds, $price->price);
 		}
 
+		sort($rubs);
+		sort($usds);
+
 		return [
 			'USD' => $usds,
 			'RUB' => $rubs
