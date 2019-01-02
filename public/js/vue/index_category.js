@@ -12087,7 +12087,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -12172,8 +12172,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 throw new Error('Error getting data');
             }
         }).then(function (json) {
-            _this.products.push(json.data);
-            console.log(_this.products);
+            _this.products.push(json.data[0]);
         }).catch(function (error) {
             console.log(error);
         });
