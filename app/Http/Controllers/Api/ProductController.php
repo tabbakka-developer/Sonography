@@ -13,10 +13,11 @@ class ProductController extends Controller {
 		switch ($request->category) {
 
 			case 'uzi':
-//				dd(UziApparat::prices());
+				$prices =  UziApparat::prices();
+
 				return response()->json([
 					'success' => true,
-					'prices' => UziApparat::prices()
+					'prices' => count($prices)
 				]);
 				break;
 
