@@ -15,7 +15,7 @@
             {{--Отступ--}}
         {{--</div>--}}
 
-        <div class="item item-2" data-url="{{ action('') }}">
+        <div class="item item-2" data-url="{{ action('PageController@uzi') }}">
             <div class="item-header">
                 УЗИ Аппараты
             </div>
@@ -24,7 +24,7 @@
             </div>
         </div>
 
-        <div class="item item-3"  data-url="/category">
+        <div class="item item-3"  data-url="{{ action('PageController@rentgens') }}">
             <div class="item-header">
                 Рентгены
             </div>
@@ -33,7 +33,7 @@
             </div>
         </div>
 
-        <div class="item item-4"  data-url="/category">
+        <div class="item item-4"  data-url="{{ action('PageController@endoscopes') }}">
             <div class="item-header">
                 Эндоскопы
             </div>
@@ -42,7 +42,7 @@
             </div>
         </div>
 
-        <div class="item item-5"  data-url="/category">
+        <div class="item item-5"  data-url="{{ action('PageController@reanim') }}">
             <div class="item-header">
                 Реанимация
             </div>

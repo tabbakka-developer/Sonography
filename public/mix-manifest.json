@@ -9,5 +9,6 @@
     "/css/index/about.css": "/css/index/about.css",
     "/css/index/category.css": "/css/index/category.css",
     "/css/index/sidebar.css": "/css/index/sidebar.css",
-    "/css/index/ipage.css": "/css/index/ipage.css"
+    "/css/index/ipage.css": "/css/index/ipage.css",
+    "/js/vue/sidebar-vue.js": "/js/vue/sidebar-vue.js"
 }

@@ -9,6 +9,7 @@
 @endsection
 
 @section('scripts')
+    <script src="{{ asset('js/vue/sidebar-vue.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/sidebar.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/items_js/item.js') }}"></script>
 @endsection
