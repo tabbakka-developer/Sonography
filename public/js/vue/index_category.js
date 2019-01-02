@@ -12087,7 +12087,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -12135,6 +12135,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Menu___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_Menu__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Product__ = __webpack_require__(67);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Product___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Product__);
+//
+//
 //
 //
 //
@@ -12476,16 +12478,18 @@ var render = function() {
       _c("Menu"),
       _vm._v(" "),
       _vm.products.length
-        ? _c(
-            "div",
-            { staticClass: "stuff" },
-            _vm._l(_vm.products, function(product) {
-              return _c("Product", {
-                key: product.id,
-                attrs: { product: product }
+        ? _c("div", { staticClass: "stuff" }, [
+            _c(
+              "div",
+              { staticClass: "stuff-wrapper" },
+              _vm._l(_vm.products, function(product) {
+                return _c("Product", {
+                  key: product.id,
+                  attrs: { product: product }
+                })
               })
-            })
-          )
+            )
+          ])
         : _c("p", [_vm._v("В данной категории нет товара")])
     ],
     1

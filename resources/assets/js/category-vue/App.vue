@@ -2,11 +2,13 @@
     <div id="app" class="category-wrapper">
         <Menu></Menu>
         <div class="stuff" v-if="products.length">
-            <Product
-                v-for="product in products"
-                :key="product.id"
-                :product="product"
-            ></Product>
+            <div class="stuff-wrapper">
+                <Product
+                        v-for="product in products"
+                        :key="product.id"
+                        :product="product"
+                ></Product>
+            </div>
         </div>
         <p v-else>В данной категории нет товара</p>
     </div>
