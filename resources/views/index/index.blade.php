@@ -15,7 +15,7 @@
             {{--Отступ--}}
         {{--</div>--}}
 
-        <div class="item item-2" data-url="/category">
+        <div class="item item-2" data-url="{{ action('') }}">
             <div class="item-header">
                 УЗИ Аппараты
             </div>

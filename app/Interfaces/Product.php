@@ -19,4 +19,6 @@ interface Product {
 	public static function remove(Integer $id);
 	public static function edit(Integer $id, Array $data);
 
+	public static function prices();
+
 }

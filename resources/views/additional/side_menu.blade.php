@@ -49,8 +49,12 @@
         <i class="fas fa-plus"></i>
     </button>
     <div class="dropdown-container">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
+        <div class="price-block">
+            <span class="price-min"></span>
+            <span class="price-separ">-</span>
+            <span class="price-max"></span>
+        </div>
+
+        <div id="slider"></div>
     </div>
 </div>

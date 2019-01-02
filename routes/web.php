@@ -75,9 +75,10 @@ function checkAdminDomain() {
 			return view('index.about');
 		})->name('about');
 
-		Route::get('/category', function () {
-			return view('index.category');
-		});
+		Route::get('/category/uzi', "PageController@uzi");
+		Route::get('/category/rentgens', "PageController@rentgens");
+		Route::get('/category/endoscopes', "PageController@endoscopes");
+		Route::get('/category/reanim', "PageController@reanim");
 
 		Route::get('/item', function () {
 			return view('index.item');
@@ -109,9 +110,10 @@ if (env("APP_ENV") === 'local') {
 		return view('index.about');
 	})->name('about');
 
-	Route::get('/category', function () {
-		return view('index.category');
-	});
+	Route::get('/category/uzi', "PageController@uzi");
+	Route::get('/category/rentgens', "PageController@rentgens");
+	Route::get('/category/endoscopes', "PageController@endoscopes");
+	Route::get('/category/reanim', "PageController@reanim");
 
 	Route::get('/item', function () {
 		return view('index.item');
