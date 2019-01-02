@@ -19,7 +19,7 @@
 
 @section('scripts')
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
-    <script src="{{ asset('js/vue/sidebar-vue.js') }}"></script>
+    <script src="{{ asset('js/vue/index_category.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/sidebar.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/items_js/item.js') }}"></script>
 @endsection

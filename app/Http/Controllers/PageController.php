@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class PageController extends Controller {
 
 	public function uzi() {
-		return view('index.category')->with([
+		return view('index.vue-templates.category-inner')->with([
 			'category' => 'uzi'
 		]);
 	}

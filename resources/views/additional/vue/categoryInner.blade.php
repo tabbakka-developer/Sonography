@@ -7,12 +7,6 @@
  */
 ?>
 
-<div class="category-main">
-    <div class="category-wrapper">
-        {{--TODO vue template--}}
+<div id="app" class="category-main">
 
-        <div class="stuff">
-            {{--TODO vue template--}}
-        </div>
-    </div>
 </div>

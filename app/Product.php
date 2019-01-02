@@ -68,4 +68,7 @@ class Product extends Model implements Interfaces\Product {
 		];
 	}
 
+	public static function showed() {
+		return self::where('show_product', true)->get();
+	}
 }
