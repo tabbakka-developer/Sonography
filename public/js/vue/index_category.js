@@ -12419,7 +12419,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     name: "Product",
     props: {
         product: {
-            type: Array,
+            type: Object,
             required: true
         }
     },

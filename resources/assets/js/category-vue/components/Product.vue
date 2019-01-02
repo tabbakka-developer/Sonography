@@ -13,7 +13,7 @@
         name: "Product",
         props: {
             product: {
-                type: Array,
+                type: Object,
                 required: true
             }
         },
