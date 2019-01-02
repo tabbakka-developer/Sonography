@@ -12627,9 +12627,9 @@ var render = function() {
     [
       _c("Menu"),
       _vm._v(" "),
-      _vm.products.length
-        ? _c("div", { staticClass: "stuff" }, [
-            _c(
+      _c("div", { staticClass: "stuff" }, [
+        _vm.products.length
+          ? _c(
               "div",
               { staticClass: "stuff-wrapper" },
               _vm._l(_vm.products, function(product) {
@@ -12639,8 +12639,10 @@ var render = function() {
                 })
               })
             )
-          ])
-        : _c("p", [_vm._v("В данной категории нет товара")])
+          : _c("div", { staticClass: "stuff-wrapper" }, [
+              _vm._v("В данной категории нет товара")
+            ])
+      ])
     ],
     1
   )
