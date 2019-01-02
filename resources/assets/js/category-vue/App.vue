@@ -38,7 +38,8 @@
                 })
                 .then((json) => {
                     console.log(json.data);
-                    this.products.push(json.data[0]);
+                    this.products.push.apply(json.data);
+                    console.log(this.products.length);
                 })
                 .catch((error) => {
                     console.log(error);
