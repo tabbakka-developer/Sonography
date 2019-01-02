@@ -50,6 +50,23 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
+    .category-wrapper {
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+
+        .stuff {
+            width: 75%;
+            padding-top: 5px;
+
+            .stuff-wrapper {
+                padding: 0 0 0 15px;
+                height: calc(100% - 100px);
+                overflow-x: auto;
+            }
+        }
+    }
 
 </style>
