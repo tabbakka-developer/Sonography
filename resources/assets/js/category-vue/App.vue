@@ -36,6 +36,7 @@
                 })
                 .then((json) => {
                     this.products.push(json.data);
+                    console.log(this.products);
                 })
                 .catch((error) => {
                     console.log(error);
