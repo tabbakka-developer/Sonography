@@ -12269,7 +12269,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -12280,6 +12280,65 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -12297,9 +12356,99 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "sidebar" })
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "sidebar" }, [
+      _c("button", { staticClass: "dropdown-btn" }, [
+        _c("span", [_vm._v("Фирма")]),
+        _vm._v(" "),
+        _c("i", { staticClass: "fas fa-plus" })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "dropdown-container" }, [
+        _c("a", { attrs: { href: "#" } }, [_vm._v("Link 1")]),
+        _vm._v(" "),
+        _c("a", { attrs: { href: "#" } }, [_vm._v("Link 2")]),
+        _vm._v(" "),
+        _c("a", { attrs: { href: "#" } }, [_vm._v("Link 3")])
+      ]),
+      _vm._v(" "),
+      _c("button", { staticClass: "dropdown-btn" }, [
+        _vm._v("Статус\n        "),
+        _c("i", { staticClass: "fas fa-plus" })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "dropdown-container" }, [
+        _c("a", { attrs: { href: "#" } }, [_vm._v("Link 1")]),
+        _vm._v(" "),
+        _c("a", { attrs: { href: "#" } }, [_vm._v("Link 2")]),
+        _vm._v(" "),
+        _c("a", { attrs: { href: "#" } }, [_vm._v("Link 3")])
+      ]),
+      _vm._v(" "),
+      _c("button", { staticClass: "dropdown-btn" }, [
+        _vm._v("Качество\n        "),
+        _c("i", { staticClass: "fas fa-plus" })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "dropdown-container" }, [
+        _c("a", { attrs: { href: "#" } }, [_vm._v("Link 1")]),
+        _vm._v(" "),
+        _c("a", { attrs: { href: "#" } }, [_vm._v("Link 2")]),
+        _vm._v(" "),
+        _c("a", { attrs: { href: "#" } }, [_vm._v("Link 3")])
+      ]),
+      _vm._v(" "),
+      _c("button", { staticClass: "dropdown-btn" }, [
+        _vm._v("Страна\n        "),
+        _c("i", { staticClass: "fas fa-plus" })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "dropdown-container" }, [
+        _c("a", { attrs: { href: "#" } }, [_vm._v("Link 1")]),
+        _vm._v(" "),
+        _c("a", { attrs: { href: "#" } }, [_vm._v("Link 2")]),
+        _vm._v(" "),
+        _c("a", { attrs: { href: "#" } }, [_vm._v("Link 3")])
+      ]),
+      _vm._v(" "),
+      _c("button", { staticClass: "dropdown-btn" }, [
+        _vm._v("Сортировка\n        "),
+        _c("i", { staticClass: "fas fa-plus" })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "dropdown-container" }, [
+        _c("a", { attrs: { href: "#" } }, [_vm._v("Link 1")]),
+        _vm._v(" "),
+        _c("a", { attrs: { href: "#" } }, [_vm._v("Link 2")]),
+        _vm._v(" "),
+        _c("a", { attrs: { href: "#" } }, [_vm._v("Link 3")])
+      ]),
+      _vm._v(" "),
+      _c("button", { staticClass: "dropdown-btn" }, [
+        _vm._v("Диапозон цены\n        "),
+        _c("i", { staticClass: "fas fa-plus" })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "dropdown-container" }, [
+        _c("div", { staticClass: "price-block" }, [
+          _c("span", { staticClass: "price-min" }),
+          _vm._v(" "),
+          _c("span", { staticClass: "price-separ" }, [_vm._v("-")]),
+          _vm._v(" "),
+          _c("span", { staticClass: "price-max" })
+        ]),
+        _vm._v(" "),
+        _c("div", { attrs: { id: "slider" } })
+      ])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
