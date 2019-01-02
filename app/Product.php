@@ -46,8 +46,8 @@ class Product extends Model implements Interfaces\Product {
 	}
 
 	public static function prices() {
-		$prices_rub = self::selectRaw('DISTINCT price WHERE currency = RUB')->get();
-		$prices_usd = self::selectRaw('DISTINCT price WHERE currency = USD')->get();
+		$prices_rub = self::selectRaw("DISTINCT price WHERE currency = 'RUB'")->get();
+		$prices_usd = self::selectRaw("DISTINCT price WHERE currency = 'USD'")->get();
 		return [
 			'USD' => $prices_usd,
 			'RUB' => $prices_rub
