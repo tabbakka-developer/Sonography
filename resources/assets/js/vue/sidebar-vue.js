@@ -10,6 +10,7 @@ Vue.component('side-bar', {
     created() {
         fetch('/api/products/prices?category=uzi')
             .then((response) => {
+                console.log(response);
                 if (response.success) {
                     return response.json();
                 } else {

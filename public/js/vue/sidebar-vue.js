@@ -89,6 +89,7 @@ Vue.component('side-bar', {
         var _this = this;
 
         fetch('/api/products/prices?category=uzi').then(function (response) {
+            console.log(response);
             if (response.success) {
                 return response.json();
             } else {
