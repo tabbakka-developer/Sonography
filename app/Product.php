@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 use phpDocumentor\Reflection\Types\Integer;
 
 class Product extends Model implements Interfaces\Product {
@@ -45,7 +46,7 @@ class Product extends Model implements Interfaces\Product {
 	}
 
 	public static function prices() {
-		$prices = self::select('price')->distinct()->get();
+		$prices = self::selectRaw('DISTINCT price')->get();
 		return $prices;
 	}
 
