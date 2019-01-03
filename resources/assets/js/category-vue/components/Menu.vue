@@ -79,8 +79,6 @@
         created() {
             let firms = [];
 
-            console.log(this.products);
-
             for(let i = 0; i < this.products.length; i++) {
                 firms.push(product[i].brand);
             }
@@ -92,6 +90,7 @@
                     filteredFirms.push(el);
                 }
             });
+            console.log(filteredFirms);
             this.firms = filteredFirms;
 
         },

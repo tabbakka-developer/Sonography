@@ -12272,7 +12272,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -12366,8 +12366,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     created: function created() {
         var firms = [];
 
-        console.log(this.products);
-
         for (var i = 0; i < this.products.length; i++) {
             firms.push(product[i].brand);
         }
@@ -12379,6 +12377,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 filteredFirms.push(el);
             }
         });
+        console.log(filteredFirms);
         this.firms = filteredFirms;
     },
 
