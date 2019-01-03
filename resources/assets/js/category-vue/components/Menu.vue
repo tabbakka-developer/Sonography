@@ -85,7 +85,7 @@
                     }
                 })
                 .then((json) => {
-                    this.firms.push.apply(this.firms, json.data.brands.brand);
+                    this.firms.push.apply(this.firms, json.data.brands);
                 })
                 .catch((error) => {
                     console.log(error);

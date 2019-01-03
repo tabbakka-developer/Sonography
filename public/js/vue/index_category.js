@@ -12370,7 +12370,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 throw new Error('Error getting data');
             }
         }).then(function (json) {
-            _this.firms.push.apply(_this.firms, json.data.brands.brand);
+            _this.firms.push.apply(_this.firms, json.data.brands);
         }).catch(function (error) {
             console.log(error);
         });
