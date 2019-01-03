@@ -12428,7 +12428,7 @@ var render = function() {
       "div",
       { staticClass: "dropdown-container" },
       _vm._l(_vm.status, function(level, index) {
-        return _c("CheckBoxLevel", { key: index, attrs: { quality: level } })
+        return _c("CheckBoxLevel", { key: index, attrs: { level: level } })
       })
     ),
     _vm._v(" "),
@@ -12479,7 +12479,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("button", { staticClass: "dropdown-btn" }, [
-      _vm._v("Статус\n        "),
+      _vm._v("Уровень\n        "),
       _c("i", { staticClass: "fas fa-plus" })
     ])
   },

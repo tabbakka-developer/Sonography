@@ -14,14 +14,14 @@
             </CheckBox>
         </div>
 
-        <button class="dropdown-btn">Статус
+        <button class="dropdown-btn">Уровень
             <i class="fas fa-plus"></i>
         </button>
         <div class="dropdown-container">
             <CheckBoxLevel
                     v-for="(level, index) in status"
                     :key="index"
-                    :quality="level"
+                    :level="level"
                 ></CheckBoxLevel>
         </div>
 
