@@ -12270,7 +12270,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -12285,6 +12285,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__CheckBox___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__CheckBox__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__CheckBoxCountry__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__CheckBoxCountry___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__CheckBoxCountry__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__CheckBoxQuality__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__CheckBoxQuality___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__CheckBoxQuality__);
 //
 //
 //
@@ -12356,12 +12358,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "Menu",
-    components: { CheckBoxCountry: __WEBPACK_IMPORTED_MODULE_1__CheckBoxCountry___default.a, CheckBox: __WEBPACK_IMPORTED_MODULE_0__CheckBox___default.a },
+    components: { CheckBoxQuality: __WEBPACK_IMPORTED_MODULE_2__CheckBoxQuality___default.a, CheckBoxCountry: __WEBPACK_IMPORTED_MODULE_1__CheckBoxCountry___default.a, CheckBox: __WEBPACK_IMPORTED_MODULE_0__CheckBox___default.a },
     data: function data() {
         return {
             firms: [],
@@ -12416,9 +12423,18 @@ var render = function() {
     _vm._v(" "),
     _vm._m(3),
     _vm._v(" "),
-    _vm._m(4),
+    _c(
+      "div",
+      { staticClass: "dropdown-container" },
+      _vm._l(_vm.quality, function(quality_obj, index) {
+        return _c("CheckBoxQuality", {
+          key: index,
+          attrs: { quality: quality_obj }
+        })
+      })
+    ),
     _vm._v(" "),
-    _vm._m(5),
+    _vm._m(4),
     _vm._v(" "),
     _c(
       "div",
@@ -12431,13 +12447,13 @@ var render = function() {
       })
     ),
     _vm._v(" "),
+    _vm._m(5),
+    _vm._v(" "),
     _vm._m(6),
     _vm._v(" "),
     _vm._m(7),
     _vm._v(" "),
-    _vm._m(8),
-    _vm._v(" "),
-    _vm._m(9)
+    _vm._m(8)
   ])
 }
 var staticRenderFns = [
@@ -12479,18 +12495,6 @@ var staticRenderFns = [
     return _c("button", { staticClass: "dropdown-btn" }, [
       _vm._v("Качество\n        "),
       _c("i", { staticClass: "fas fa-plus" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "dropdown-container" }, [
-      _c("a", { attrs: { href: "#" } }, [_vm._v("Link 1")]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "#" } }, [_vm._v("Link 2")]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "#" } }, [_vm._v("Link 3")])
     ])
   },
   function() {
@@ -12705,6 +12709,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         });
         this.$root.$on('checkBoxCountryChecked', function (country) {
             if (_this.product.country === country) {
+                if (_this.isDisplay === 'flex') {
+                    _this.isDisplay = 'none';
+                } else {
+                    _this.isDisplay = 'flex';
+                }
+            }
+        });
+        this.$root.$on('checkBoxQualityChecked', function (quality) {
+            if (_this.product.quality === quality) {
                 if (_this.isDisplay === 'flex') {
                     _this.isDisplay = 'none';
                 } else {
@@ -13107,6 +13120,157 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-50f89e20", module.exports)
+  }
+}
+
+/***/ }),
+/* 95 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(96)
+}
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(98)
+/* template */
+var __vue_template__ = __webpack_require__(99)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-0e283dd9"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/category-vue/components/CheckBoxQuality.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-0e283dd9", Component.options)
+  } else {
+    hotAPI.reload("data-v-0e283dd9", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 96 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(97);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(9)("b29ab088", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0e283dd9\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CheckBoxQuality.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0e283dd9\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CheckBoxQuality.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 97 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(8)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n*[data-v-0e283dd9] {\n    font-family: \"Segoue UI\", sans-serif;\n    /*font-size: 14px;*/\n}\n\n/* Customize the label (the container) */\n.container[data-v-0e283dd9] {\n    display: block;\n    position: relative;\n    padding-left: 35px;\n    margin-bottom: 12px;\n    cursor: pointer;\n    font-size: 17px;\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none;\n}\n\n/* Hide the browser's default checkbox */\n.container input[data-v-0e283dd9] {\n    position: absolute;\n    opacity: 0;\n    cursor: pointer;\n    height: 0;\n    width: 0;\n}\n\n/* Create a custom checkbox */\n.checkmark[data-v-0e283dd9] {\n    position: absolute;\n    top: 5px;\n    left: 10px;\n    height: 10px;\n    width: 10px;\n    background-color: #eee;\n}\n\n/* On mouse-over, add a grey background color */\n.container:hover input ~ .checkmark[data-v-0e283dd9] {\n    background-color: #ccc;\n}\n\n/* When the checkbox is checked, add a blue background */\n.container input:checked ~ .checkmark[data-v-0e283dd9] {\n    background-color: black;\n}\n\n/* Create the checkmark/indicator (hidden when not checked) */\n.checkmark[data-v-0e283dd9]:after {\n    content: \"\";\n    position: absolute;\n    display: none;\n}\n\n/* Show the checkmark when checked */\n.container input:checked ~ .checkmark[data-v-0e283dd9]:after {\n    display: block;\n}\n\n/* Style the checkmark/indicator */\n.container .checkmark[data-v-0e283dd9]:after {\n    left: 9px;\n    top: 5px;\n    width: 5px;\n    height: 10px;\n    border: solid white;\n    border-width: 0 3px 3px 0;\n    -webkit-transform: rotate(45deg);\n    transform: rotate(45deg);\n}\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 98 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    name: "CheckBoxQuality",
+    props: {
+        quality: {
+            type: Object,
+            required: true
+        }
+    },
+    methods: {
+        handleCheck: function handleCheck() {
+            this.$root.$emit('checkBoxQualityChecked', this.quality.quality);
+        }
+    }
+});
+
+/***/ }),
+/* 99 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("label", { staticClass: "container" }, [
+    _vm._v(_vm._s(_vm.quality.quality) + "\n    "),
+    _c("input", {
+      attrs: { type: "checkbox", checked: "checked" },
+      on: { change: _vm.handleCheck }
+    }),
+    _vm._v(" "),
+    _c("span", { staticClass: "checkmark" })
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-0e283dd9", module.exports)
   }
 }
 

@@ -27,9 +27,13 @@
             <i class="fas fa-plus"></i>
         </button>
         <div class="dropdown-container">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+            <CheckBoxQuality
+                    v-for="(quality_obj, index) in quality"
+                    :key="index"
+                    :quality="quality_obj"
+            >
+
+            </CheckBoxQuality>
         </div>
 
         <button class="dropdown-btn">Страна
@@ -72,9 +76,10 @@
 <script>
     import CheckBox from "./CheckBox";
     import CheckBoxCountry from "./CheckBoxCountry";
+    import CheckBoxQuality from "./CheckBoxQuality";
     export default {
         name: "Menu",
-        components: {CheckBoxCountry, CheckBox},
+        components: {CheckBoxQuality, CheckBoxCountry, CheckBox},
         data: function () {
             return {
                 firms: [],
