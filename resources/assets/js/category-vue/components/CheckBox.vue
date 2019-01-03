@@ -1,5 +1,5 @@
 <template>
-    <label class="container">{{ name }}
+    <label class="container">{{ firm.brand }}
         <input type="checkbox" checked="checked">
         <span class="checkmark"></span>
     </label>
@@ -9,8 +9,8 @@
     export default {
         name: "CheckBox",
         props: {
-            name: {
-                type: String,
+            firm: {
+                type: Object,
                 required: true
             }
         }

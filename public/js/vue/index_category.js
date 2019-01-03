@@ -12270,7 +12270,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -12361,6 +12361,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
     created: function created() {
+        var _this = this;
+
         fetch('/api/products/brands?category=uzi').then(function (response) {
             if (response.ok) {
                 return response.json();
@@ -12368,10 +12370,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 throw new Error('Error getting data');
             }
         }).then(function (json) {
-            console.log(json.data);
-            $.each(json.data.brands, function (index, brand) {
-                this.firms.push(brand.brand);
-            });
+            _this.firms.push.apply(_this.firms, json.data.brands);
         }).catch(function (error) {
             console.log(error);
         });
@@ -12393,7 +12392,7 @@ var render = function() {
       "div",
       { staticClass: "dropdown-container" },
       _vm._l(_vm.firms, function(firm, index) {
-        return _c("CheckBox", { key: index, attrs: { name: firm } })
+        return _c("CheckBox", { key: index, attrs: { firm: firm } })
       })
     ),
     _vm._v(" "),
@@ -12876,8 +12875,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "CheckBox",
     props: {
-        name: {
-            type: String,
+        firm: {
+            type: Object,
             required: true
         }
     }
@@ -12892,7 +12891,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("label", { staticClass: "container" }, [
-    _vm._v(_vm._s(_vm.name) + "\n    "),
+    _vm._v(_vm._s(_vm.firm.brand) + "\n    "),
     _c("input", { attrs: { type: "checkbox", checked: "checked" } }),
     _vm._v(" "),
     _c("span", { staticClass: "checkmark" })

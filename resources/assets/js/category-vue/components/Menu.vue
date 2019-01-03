@@ -8,7 +8,7 @@
             <CheckBox
                 v-for="(firm, index) in firms"
                 :key="index"
-                :name="firm"
+                :firm="firm"
             >
 
             </CheckBox>
@@ -85,10 +85,7 @@
                     }
                 })
                 .then((json) => {
-                    console.log(json.data);
-                    $.each(json.data.brands, function (index, brand) {
-                        this.firms.push(brand.brand);
-                    });
+                    this.firms.push.apply(this.firms, json.data.brands);
                 })
                 .catch((error) => {
                     console.log(error);
