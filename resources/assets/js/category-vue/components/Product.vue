@@ -18,9 +18,16 @@
             }
         },
         data() {
+
+            let fPath = "";
+
+            if (this.product.photos.length) {
+                fPath = this.product.photos[0].path;
+            }
+
             return {
                 productName: this.product.brand + " " + this.product.model,
-                productThumb: this.product.photos[0].path
+                productThumb: fPath
             }
         }
     }
