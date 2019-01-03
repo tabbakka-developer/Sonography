@@ -6,7 +6,7 @@
         </button>
         <div class="dropdown-container">
             <CheckBox
-                v-for="(firm, index) in firmsArr"
+                v-for="(firm, index) in firms"
                 :key="index"
                 :name="firm"
             >

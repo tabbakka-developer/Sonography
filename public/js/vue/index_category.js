@@ -12405,7 +12405,7 @@ var render = function() {
     _c(
       "div",
       { staticClass: "dropdown-container" },
-      _vm._l(_vm.firmsArr, function(firm, index) {
+      _vm._l(_vm.firms, function(firm, index) {
         return _c("CheckBox", { key: index, attrs: { name: firm } })
       })
     ),
