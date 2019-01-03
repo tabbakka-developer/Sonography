@@ -22,7 +22,7 @@
             let fPath = "";
 
             if (this.product.photos.length) {
-                fPath = this.product.photos[0].path;
+                fPath = "https://сонографи.рф" + this.product.photos[0].path;
                 console.log(fPath);
             }
 
