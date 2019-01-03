@@ -47,8 +47,8 @@
         position: absolute;
         top: 0;
         left: 0;
-        height: 25px;
-        width: 25px;
+        height: 10px;
+        width: 10px;
         background-color: #eee;
     }
 
@@ -59,7 +59,7 @@
 
     /* When the checkbox is checked, add a blue background */
     .container input:checked ~ .checkmark {
-        background-color: #2196F3;
+        background-color: black;
     }
 
     /* Create the checkmark/indicator (hidden when not checked) */
