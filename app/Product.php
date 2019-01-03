@@ -69,6 +69,13 @@ class Product extends Model implements Interfaces\Product {
 	}
 
 	public static function showed() {
-		return self::where('show_product', true)->get();
+		return self::where('show_product', true)->with('photos')->get();
+	}
+
+	public function photos() {
+		$model = $this->model;
+		$brand = $this->brand;
+		$photos = Photo::where('maker', 'LIKE', '%' . $brand . '%')->where('path', 'LIKE', '%' . $model . '%');
+		return $photos;
 	}
 }
