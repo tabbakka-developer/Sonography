@@ -20,7 +20,7 @@
         data() {
             return {
                 productName: this.product.brand + " " + this.product.model,
-                productThumb: "/"
+                productThumb: this.product.photos.path
             }
         }
     }
