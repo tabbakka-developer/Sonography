@@ -24,6 +24,7 @@
             if (this.product.photos.length) {
                 fPath = this.product.photos[0].path;
                 fPath = fPath.replace('public', 'storage');
+                fPath = fPath.replace('photos', 'thumbs');
                 console.log(fPath);
             }
 
