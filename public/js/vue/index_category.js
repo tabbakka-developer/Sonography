@@ -12378,9 +12378,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
 
         return {
-            firms: firms,
-            qualities: qualities,
-            countries: countries
+            firmsArr: firms
+            // qualities,
+            // countries
         };
     }
 });
@@ -12399,7 +12399,7 @@ var render = function() {
     _c(
       "div",
       { staticClass: "dropdown-container" },
-      _vm._l(_vm.firms, function(firm, index) {
+      _vm._l(_vm.firmsArr, function(firm, index) {
         return _c("CheckBox", { key: index, attrs: { name: firm } })
       })
     ),
