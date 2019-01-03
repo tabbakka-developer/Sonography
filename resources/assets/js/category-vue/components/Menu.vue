@@ -70,38 +70,27 @@
     export default {
         name: "Menu",
         components: {CheckBox},
-        props: {
-            products: {
-                type: Array,
-                required: true
-            }
-        },
-        created() {
-            let firms = [];
-
-            for(let i = 0; i < this.products.length; i++) {
-                console.log(this.products[i]);
-                firms.push(this.products[i]['brand']);
-            }
-
-            let filteredFirms = [];
-
-            $.each(firms, function(i, el){
-                if ($.inArray(el, firms) === -1) {
-                    filteredFirms.push(el);
-                }
-            });
-            console.log(filteredFirms);
-            this.firms = filteredFirms;
-
-        },
         data: function () {
             return {
                 firms: []
-                // qualities,
-                // countries
             };
-        }
+        },
+        created() {
+            fetch('/api/products/brands?category=uzi')
+                .then((response) => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error('Error getting data');
+                    }
+                })
+                .then((json) => {
+                    this.firms.push.apply(this.firms, json.data.brands);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        },
     }
 </script>
 

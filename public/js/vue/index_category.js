@@ -12151,8 +12151,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 
@@ -12272,7 +12270,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -12357,37 +12355,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "Menu",
     components: { CheckBox: __WEBPACK_IMPORTED_MODULE_0__CheckBox___default.a },
-    props: {
-        products: {
-            type: Array,
-            required: true
-        }
-    },
-    created: function created() {
-        var firms = [];
-
-        for (var i = 0; i < this.products.length; i++) {
-            console.log(this.products[i]);
-            firms.push(this.products[i]['brand']);
-        }
-
-        var filteredFirms = [];
-
-        $.each(firms, function (i, el) {
-            if ($.inArray(el, firms) === -1) {
-                filteredFirms.push(el);
-            }
-        });
-        console.log(filteredFirms);
-        this.firms = filteredFirms;
-    },
-
     data: function data() {
         return {
             firms: []
-            // qualities,
-            // countries
         };
+    },
+    created: function created() {
+        var _this = this;
+
+        fetch('/api/products/brands?category=uzi').then(function (response) {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('Error getting data');
+            }
+        }).then(function (json) {
+            _this.firms.push.apply(_this.firms, json.data.brands);
+        }).catch(function (error) {
+            console.log(error);
+        });
     }
 });
 
@@ -12737,7 +12723,7 @@ var render = function() {
     "div",
     { staticClass: "category-wrapper", attrs: { id: "app" } },
     [
-      _c("Menu", { attrs: { products: _vm.products } }),
+      _c("Menu"),
       _vm._v(" "),
       _c("div", { staticClass: "stuff" }, [
         _vm.products.length

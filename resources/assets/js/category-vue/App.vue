@@ -1,8 +1,6 @@
 <template>
     <div id="app" class="category-wrapper">
-        <Menu
-            :products="products"
-        ></Menu>
+        <Menu></Menu>
         <div class="stuff">
             <div class="stuff-wrapper" v-if="products.length">
                 <Product
