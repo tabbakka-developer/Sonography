@@ -12363,7 +12363,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     created: function created() {
         var _this = this;
 
-        fetch('/api/products/brands?category=uzi').then(function (response) {
+        fetch('/api/products/info?category=uzi').then(function (response) {
             if (response.ok) {
                 return response.json();
             } else {

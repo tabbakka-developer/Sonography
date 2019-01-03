@@ -76,7 +76,7 @@
             };
         },
         created() {
-            fetch('/api/products/brands?category=uzi')
+            fetch('/api/products/info?category=uzi')
                 .then((response) => {
                     if (response.ok) {
                         return response.json();
