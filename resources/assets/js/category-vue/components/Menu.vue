@@ -86,7 +86,9 @@
                 })
                 .then((json) => {
                     console.log(json.data);
-                    this.firms.push.apply(this.firms, json.data.brands);
+                    $.each(json.data.brands, function (index, brand) {
+                        this.firms.push(brand.brand);
+                    });
                 })
                 .catch((error) => {
                     console.log(error);

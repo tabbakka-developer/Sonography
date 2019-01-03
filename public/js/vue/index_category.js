@@ -12270,7 +12270,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -12361,8 +12361,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
     created: function created() {
-        var _this = this;
-
         fetch('/api/products/brands?category=uzi').then(function (response) {
             if (response.ok) {
                 return response.json();
@@ -12371,7 +12369,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
         }).then(function (json) {
             console.log(json.data);
-            _this.firms.push.apply(_this.firms, json.data.brands);
+            $.each(json.data.brands, function (index, brand) {
+                this.firms.push(brand.brand);
+            });
         }).catch(function (error) {
             console.log(error);
         });
