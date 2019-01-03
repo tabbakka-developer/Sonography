@@ -36,9 +36,13 @@
             <i class="fas fa-plus"></i>
         </button>
         <div class="dropdown-container">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+            <CheckBoxCountry
+                    v-for="(country, index) in countries"
+                    :key="index"
+                    :country="country"
+            >
+
+            </CheckBoxCountry>
         </div>
 
         <button class="dropdown-btn">Сортировка
@@ -67,9 +71,10 @@
 
 <script>
     import CheckBox from "./CheckBox";
+    import CheckBoxCountry from "./CheckBoxCountry";
     export default {
         name: "Menu",
-        components: {CheckBox},
+        components: {CheckBoxCountry, CheckBox},
         data: function () {
             return {
                 firms: [],

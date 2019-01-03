@@ -43,7 +43,16 @@
                         this.isDisplay = 'flex';
                     }
                 }
-            })
+            });
+            this.$root.$on('checkBoxCountryChecked', (country) => {
+                if (this.product.country === country) {
+                    if (this.isDisplay === 'flex') {
+                        this.isDisplay = 'none';
+                    } else {
+                        this.isDisplay = 'flex';
+                    }
+                }
+            });
         }
     }
 </script>
