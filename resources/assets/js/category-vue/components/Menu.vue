@@ -101,11 +101,11 @@
                     }
                 })
                 .then((json) => {
-                    console.log(json.data);
                     this.firms.push.apply(this.firms, json.data.brands);
                     this.countries.push.apply(this.countries, json.data.countries);
                     this.quality.push.apply(this.quality, json.data.qualities);
                     this.status.push.apply(this.status, json.data.levels);
+                    console.log(this.status);
                 })
                 .catch((error) => {
                     console.log(error);
