@@ -22,5 +22,9 @@ interface Product {
 	public static function showed();
 	public function getPhotosAttribute();
 	public static function uniqueBrands();
+	public static function uniqueCountries();
+	public static function uniqueQuality();
+	public static function uniqueLevel();
+	public static function info();
 
 }

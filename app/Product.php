@@ -76,15 +76,40 @@ class Product extends Model implements Interfaces\Product {
 		return self::where('show_product', true)->get();
 	}
 
-	public static function uniqueBrands() {
-		$brands = self::select('brand')->distinct()->get();
-		return $brands;
-	}
-
 	public function getPhotosAttribute() {
 		$model = $this->model;
 		$brand = $this->brand;
 		$photos = Photo::where('maker', 'LIKE', '%' . $brand . '%')->where('path', 'LIKE', '%' . $model . '%')->get();
 		return $photos;
+	}
+
+	private static function _unique($field) {
+		$data = self::select($field)->distinct()->get();
+		return $data;
+	}
+
+	public static function uniqueCountries() {
+		return self::_unique('country');
+	}
+
+	public static function uniqueQuality() {
+		return self::_unique('quality');
+	}
+
+	public static function uniqueLevel() {
+		return self::_unique('level');
+	}
+
+	public static function uniqueBrands() {
+		return self::_unique('brand');
+	}
+
+	public static function info() {
+		return [
+			'brand' => self::uniqueBrands(),
+			'quality' => self::uniqueQuality(),
+			'level' => self::uniqueLevel(),
+			'country' => self::uniqueCountries(),
+		];
 	}
 }

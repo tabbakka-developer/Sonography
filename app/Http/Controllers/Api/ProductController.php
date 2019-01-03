@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Requests\Api\GetBrandsRequest;
+use App\Http\Requests\Api\InfoRequest;
 use App\Http\Requests\Api\ProductsPricesRequest;
 use App\UziApparat;
 use Illuminate\Http\Request;
@@ -58,6 +59,21 @@ class ProductController extends Controller {
 					'data' => [
 						'brands' => $brands
 					]
+				]);
+				break;
+
+			default:
+				break;
+		}
+	}
+
+	public function info(InfoRequest $request) {
+		switch ($request->category) {
+			case 'uzi':
+				$info = UziApparat::info();
+				return response()->json([
+					'success' => true,
+					'data' => $info
 				]);
 				break;
 
