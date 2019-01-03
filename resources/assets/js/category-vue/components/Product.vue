@@ -23,6 +23,7 @@
 
             if (this.product.photos.length) {
                 fPath = this.product.photos[0].path;
+                fPath = fPath.replace('public', 'storage');
                 console.log(fPath);
             }
 
