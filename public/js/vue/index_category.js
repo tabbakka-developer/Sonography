@@ -12367,7 +12367,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var firms = [];
 
         for (var i = 0; i < this.products.length; i++) {
-            firms.push(product[i]['brand']);
+            firms.push(this.products[i].brand);
         }
 
         var filteredFirms = [];
