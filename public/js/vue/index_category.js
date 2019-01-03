@@ -12587,7 +12587,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         return {
             productName: this.product.brand + " " + this.product.model,
-            productThumb: "https://сонографи.рф" + fPath
+            productThumb: "https://сонографи.рф/" + fPath
         };
     }
 });
