@@ -71,7 +71,7 @@
         components: {CheckBox},
         props: {
             products: {
-                type: Object,
+                type: Array,
                 required: true
             }
         },

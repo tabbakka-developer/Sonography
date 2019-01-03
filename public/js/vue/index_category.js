@@ -12358,7 +12358,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     components: { CheckBox: __WEBPACK_IMPORTED_MODULE_0__CheckBox___default.a },
     props: {
         products: {
-            type: Object,
+            type: Array,
             required: true
         }
     },
