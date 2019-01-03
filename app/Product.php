@@ -79,7 +79,7 @@ class Product extends Model implements Interfaces\Product {
 	public function getPhotosAttribute() {
 		$model = $this->model;
 		$brand = $this->brand;
-		$photos = Photo::where('maker', 'LIKE', '%' . $brand . '%')->where('path', 'LIKE', '%' . $model . '%');
+		$photos = Photo::where('maker', 'LIKE', '%' . $brand . '%')->where('path', 'LIKE', '%' . $model . '%')->get();
 		return $photos;
 	}
 }
