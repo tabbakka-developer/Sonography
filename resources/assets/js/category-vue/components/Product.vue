@@ -1,5 +1,5 @@
 <template>
-    <div class="element">
+    <div class="element" v-bind:style="{ display: isDisplay }">
         <div class="element-name">
             {{ productName }}
         </div>
@@ -30,13 +30,19 @@
 
             return {
                 productName: this.product.brand + " " + this.product.model,
-                productThumb: "https://сонографи.рф/" +  fPath
+                productThumb: "https://сонографи.рф/" +  fPath,
+                isDisplay: 'flex'
             }
         },
         mounted() {
             this.$root.$on('checkBoxChecked', (brand) => {
-                // console.log('checked!');
-                console.log(brand);
+                if (this.product.brand === brand) {
+                    if (this.isDisplay === 'flex') {
+                        this.isDisplay = 'none';
+                    } else {
+                        this.isDisplay = 'flex';
+                    }
+                }
             })
         }
     }

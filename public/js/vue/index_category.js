@@ -12676,13 +12676,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         return {
             productName: this.product.brand + " " + this.product.model,
-            productThumb: "https://сонографи.рф/" + fPath
+            productThumb: "https://сонографи.рф/" + fPath,
+            isDisplay: 'flex'
         };
     },
     mounted: function mounted() {
+        var _this = this;
+
         this.$root.$on('checkBoxChecked', function (brand) {
-            // console.log('checked!');
-            console.log(brand);
+            if (_this.product.brand === brand) {
+                if (_this.isDisplay === 'flex') {
+                    _this.isDisplay = 'none';
+                } else {
+                    _this.isDisplay = 'flex';
+                }
+            }
         });
     }
 });
@@ -12695,17 +12703,24 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "element" }, [
-    _c("div", { staticClass: "element-name" }, [
-      _vm._v("\n        " + _vm._s(_vm.productName) + "\n    ")
-    ]),
-    _vm._v(" "),
-    _c("img", { staticClass: "element-img", attrs: { src: _vm.productThumb } }),
-    _vm._v(" "),
-    _c("a", { staticClass: "element-url", attrs: { href: "/item" } }, [
-      _vm._v("Подробнее")
-    ])
-  ])
+  return _c(
+    "div",
+    { staticClass: "element", style: { display: _vm.isDisplay } },
+    [
+      _c("div", { staticClass: "element-name" }, [
+        _vm._v("\n        " + _vm._s(_vm.productName) + "\n    ")
+      ]),
+      _vm._v(" "),
+      _c("img", {
+        staticClass: "element-img",
+        attrs: { src: _vm.productThumb }
+      }),
+      _vm._v(" "),
+      _c("a", { staticClass: "element-url", attrs: { href: "/item" } }, [
+        _vm._v("Подробнее")
+      ])
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
