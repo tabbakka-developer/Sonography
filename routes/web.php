@@ -90,6 +90,10 @@ function checkAdminDomain() {
 if (env("APP_ENV") === 'local') {
 	//dev
 
+	Route::get('/app', function () {
+		return view('app_v2.index');
+	});
+
 	Route::get('/admin', function () {
 		return view('admin.dashboard');
 	});

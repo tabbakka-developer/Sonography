@@ -1,0 +1,103 @@
+<template>
+    <label class="container">{{ firm.brand }}
+        <input
+                type="checkbox"
+                checked="checked"
+                v-on:change="handleCheck">
+        <span class="checkmark"></span>
+    </label>
+</template>
+
+<script>
+    export default {
+        name: "CheckBox",
+        props: {
+            firm: {
+                type: Object,
+                required: true
+            }
+        },
+        methods: {
+            handleCheck: function () {
+                this.$root.$emit('checkBoxChecked', this.firm.brand);
+            }
+        }
+    }
+</script>
+
+<style scoped>
+
+    * {
+        font-family: "Segoue UI", sans-serif;
+        /*font-size: 14px;*/
+    }
+
+    /* Customize the label (the container) */
+    .container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 17px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    /* Hide the browser's default checkbox */
+    .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    /* Create a custom checkbox */
+    .checkmark {
+        position: absolute;
+        top: 5px;
+        left: 10px;
+        height: 10px;
+        width: 10px;
+        background-color: #eee;
+    }
+
+    /* On mouse-over, add a grey background color */
+    .container:hover input ~ .checkmark {
+        background-color: #ccc;
+    }
+
+    /* When the checkbox is checked, add a blue background */
+    .container input:checked ~ .checkmark {
+        background-color: black;
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    /* Show the checkmark when checked */
+    .container input:checked ~ .checkmark:after {
+        display: block;
+    }
+
+    /* Style the checkmark/indicator */
+    .container .checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+</style>

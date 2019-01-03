@@ -10,5 +10,6 @@
     "/css/index/category.css": "/css/index/category.css",
     "/css/index/sidebar.css": "/css/index/sidebar.css",
     "/css/index/ipage.css": "/css/index/ipage.css",
-    "/js/vue/index_category.js": "/js/vue/index_category.js"
+    "/js/vue/index_category.js": "/js/vue/index_category.js",
+    "/js/app_v2/index.js": "/js/app_v2/index.js"
 }

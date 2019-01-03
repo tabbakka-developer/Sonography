@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\GetProductPageRequest;
+use App\UziApparat;
 use Illuminate\Http\Request;
 
 class PageController extends Controller {
@@ -28,6 +30,18 @@ class PageController extends Controller {
 		return view('index.category')->with([
 			'category' => 'reanim'
 		]);
+	}
+
+	public function product(GetProductPageRequest $request) {
+		switch ($request->category) {
+			case 'uzi':
+				$product = UziApparat::get($request->id);
+				return view('index.vue-templates.item-inner');
+				break;
+
+			default:
+				break;
+		}
 	}
 
 }
