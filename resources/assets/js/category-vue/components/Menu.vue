@@ -72,7 +72,10 @@
         components: {CheckBox},
         data: function () {
             return {
-                firms: []
+                firms: [],
+                countries: [],
+                quality: [],
+                status: [],
             };
         },
         created() {
@@ -86,6 +89,9 @@
                 })
                 .then((json) => {
                     this.firms.push.apply(this.firms, json.data.brands);
+                    this.countries.push.apply(this.firms, json.data.countries);
+                    this.quality.push.apply(this.firms, json.data.qualities);
+                    this.status.push.apply(this.firms, json.data.levels);
                 })
                 .catch((error) => {
                     console.log(error);

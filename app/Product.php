@@ -106,10 +106,10 @@ class Product extends Model implements Interfaces\Product {
 
 	public static function info() {
 		return [
-			'brand' => self::uniqueBrands(),
-			'quality' => self::uniqueQuality(),
-			'level' => self::uniqueLevel(),
-			'country' => self::uniqueCountries(),
+			'brands' => self::uniqueBrands(),
+			'qualities' => self::uniqueQuality(),
+			'levels' => self::uniqueLevel(),
+			'countries' => self::uniqueCountries(),
 		];
 	}
 }

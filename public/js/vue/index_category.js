@@ -12270,7 +12270,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -12357,7 +12357,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     components: { CheckBox: __WEBPACK_IMPORTED_MODULE_0__CheckBox___default.a },
     data: function data() {
         return {
-            firms: []
+            firms: [],
+            countries: [],
+            quality: [],
+            status: []
         };
     },
     created: function created() {
@@ -12371,6 +12374,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
         }).then(function (json) {
             _this.firms.push.apply(_this.firms, json.data.brands);
+            _this.countries.push.apply(_this.firms, json.data.countries);
+            _this.quality.push.apply(_this.firms, json.data.qualities);
+            _this.status.push.apply(_this.firms, json.data.levels);
         }).catch(function (error) {
             console.log(error);
         });
