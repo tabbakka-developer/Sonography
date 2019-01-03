@@ -9,6 +9,10 @@ use phpDocumentor\Reflection\Types\Integer;
 
 class Product extends Model implements Interfaces\Product {
 
+	protected $appends = [
+		'photos'
+	];
+
 	public static function store(Array $data) {
 		$endoscope = self::create($data);
 		return $endoscope->id;
@@ -72,7 +76,7 @@ class Product extends Model implements Interfaces\Product {
 		return self::where('show_product', true)->with('photos')->get();
 	}
 
-	public function photos() {
+	public function getPhotosAttribute() {
 		$model = $this->model;
 		$brand = $this->brand;
 		$photos = Photo::where('maker', 'LIKE', '%' . $brand . '%')->where('path', 'LIKE', '%' . $model . '%');

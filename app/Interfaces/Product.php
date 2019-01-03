@@ -20,6 +20,6 @@ interface Product {
 	public static function edit(Integer $id, Array $data);
 	public static function prices();
 	public static function showed();
-	public function photos();
+	public function getPhotosAttribute();
 
 }
