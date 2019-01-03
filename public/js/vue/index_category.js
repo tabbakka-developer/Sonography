@@ -12375,9 +12375,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }).then(function (json) {
             console.log(json.data);
             _this.firms.push.apply(_this.firms, json.data.brands);
-            _this.countries.push.apply(_this.firms, json.data.countries);
-            _this.quality.push.apply(_this.firms, json.data.qualities);
-            _this.status.push.apply(_this.firms, json.data.levels);
+            _this.countries.push.apply(_this.countries, json.data.countries);
+            _this.quality.push.apply(_this.quality, json.data.qualities);
+            _this.status.push.apply(_this.status, json.data.levels);
         }).catch(function (error) {
             console.log(error);
         });
