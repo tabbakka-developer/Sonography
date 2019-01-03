@@ -3,7 +3,7 @@
         <div class="element-name">
             {{ productName }}
         </div>
-        <img v-bind:src="productThumb" class="element-img">
+        <img :src="productThumb" class="element-img">
         <a href="/item" class="element-url">Подробнее</a>
     </div>
 </template>
