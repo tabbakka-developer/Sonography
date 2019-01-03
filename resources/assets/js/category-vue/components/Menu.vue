@@ -88,6 +88,7 @@
                     }
                 })
                 .then((json) => {
+                    console.log(json.data);
                     this.firms.push.apply(this.firms, json.data.brands);
                     this.countries.push.apply(this.firms, json.data.countries);
                     this.quality.push.apply(this.firms, json.data.qualities);
