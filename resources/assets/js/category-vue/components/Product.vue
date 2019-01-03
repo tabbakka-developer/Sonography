@@ -22,13 +22,13 @@
             let fPath = "";
 
             if (this.product.photos.length) {
-                fPath = "https://сонографи.рф" + this.product.photos[0].path;
+                fPath = this.product.photos[0].path;
                 console.log(fPath);
             }
 
             return {
                 productName: this.product.brand + " " + this.product.model,
-                productThumb: fPath
+                productThumb: "https://сонографи.рф" +  fPath
             }
         }
     }
