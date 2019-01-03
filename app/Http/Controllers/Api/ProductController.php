@@ -30,7 +30,7 @@ class ProductController extends Controller {
 
 	public function uziPhotos() {
 		$uzi = UziApparat::showed();
-		dd($uzi->photos);
+		dd($uzi);
 	}
 
 	public function uzi() {
