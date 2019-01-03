@@ -23,5 +23,3 @@ use Illuminate\Http\Request;
 
 Route::get('products/prices', "Api\ProductController@prices");
 Route::get('products/uzi', "Api\ProductController@uzi");
-
-Route::get('products/uzi-photos', "Api\ProductController@uziPhotos");
