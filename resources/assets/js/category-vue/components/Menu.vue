@@ -78,16 +78,11 @@
         },
         created() {
             let firms = [];
-            // let qualities = [];
-            // let countries = [];
-            // let sorts = [];
-            // let prices = [];
+
+            console.log(this.products);
 
             for(let i = 0; i < this.products.length; i++) {
                 firms.push(product[i].brand);
-                // qualities.push(product[i].quality);
-                // countries.push(product[i].country);
-
             }
 
             let filteredFirms = [];
