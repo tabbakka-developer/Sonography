@@ -18,9 +18,11 @@
             <i class="fas fa-plus"></i>
         </button>
         <div class="dropdown-container">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+            <CheckBoxLevel
+                    v-for="(level, index) in status"
+                    :key="index"
+                    :quality="level"
+                ></CheckBoxLevel>
         </div>
 
         <button class="dropdown-btn">Качество
@@ -49,14 +51,14 @@
             </CheckBoxCountry>
         </div>
 
-        <button class="dropdown-btn">Сортировка
-            <i class="fas fa-plus"></i>
-        </button>
-        <div class="dropdown-container">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-        </div>
+        <!--<button class="dropdown-btn">Сортировка-->
+            <!--<i class="fas fa-plus"></i>-->
+        <!--</button>-->
+        <!--<div class="dropdown-container">-->
+            <!--<a href="#">Link 1</a>-->
+            <!--<a href="#">Link 2</a>-->
+            <!--<a href="#">Link 3</a>-->
+        <!--</div>-->
 
         <button class="dropdown-btn">Диапозон цены
             <i class="fas fa-plus"></i>
@@ -77,9 +79,10 @@
     import CheckBox from "./CheckBox";
     import CheckBoxCountry from "./CheckBoxCountry";
     import CheckBoxQuality from "./CheckBoxQuality";
+    import CheckBoxLevel from "./CheckBoxLevel";
     export default {
         name: "Menu",
-        components: {CheckBoxQuality, CheckBoxCountry, CheckBox},
+        components: {CheckBoxLevel, CheckBoxQuality, CheckBoxCountry, CheckBox},
         data: function () {
             return {
                 firms: [],

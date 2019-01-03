@@ -62,6 +62,15 @@
                     }
                 }
             });
+            this.$root.$on('checkBoxLevelChecked', (level) => {
+                if (this.product.level === level) {
+                    if (this.isDisplay === 'flex') {
+                        this.isDisplay = 'none';
+                    } else {
+                        this.isDisplay = 'flex';
+                    }
+                }
+            });
         }
     }
 </script>
