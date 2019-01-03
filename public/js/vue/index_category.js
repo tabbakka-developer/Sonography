@@ -12272,7 +12272,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -12363,22 +12363,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             required: true
         }
     },
-    data: function data() {
+    created: function created() {
         var firms = [];
-        // let statuses = [];
-        var qualities = [];
-        var countries = [];
-        var sorts = [];
-        var prices = [];
+        // let qualities = [];
+        // let countries = [];
+        // let sorts = [];
+        // let prices = [];
 
         for (var i = 0; i < this.products.length; i++) {
             firms.push(product[i].brand);
-            qualities.push(product[i].quality);
-            countries.push(product[i].country);
+            // qualities.push(product[i].quality);
+            // countries.push(product[i].country);
         }
 
+        var filteredFirms = [];
+
+        $.each(firms, function (i, el) {
+            if ($.inArray(el, firms) === -1) {
+                filteredFirms.push(el);
+            }
+        });
+        this.firms = filteredFirms;
+    },
+
+    data: function data() {
         return {
-            firmsArr: firms
+            firms: []
             // qualities,
             // countries
         };

@@ -76,23 +76,33 @@
                 required: true
             }
         },
-        data: function () {
+        created() {
             let firms = [];
-            // let statuses = [];
-            let qualities = [];
-            let countries = [];
-            let sorts = [];
-            let prices = [];
+            // let qualities = [];
+            // let countries = [];
+            // let sorts = [];
+            // let prices = [];
 
             for(let i = 0; i < this.products.length; i++) {
                 firms.push(product[i].brand);
-                qualities.push(product[i].quality);
-                countries.push(product[i].country);
+                // qualities.push(product[i].quality);
+                // countries.push(product[i].country);
 
             }
 
+            let filteredFirms = [];
+
+            $.each(firms, function(i, el){
+                if ($.inArray(el, firms) === -1) {
+                    filteredFirms.push(el);
+                }
+            });
+            this.firms = filteredFirms;
+
+        },
+        data: function () {
             return {
-                firmsArr: firms
+                firms: []
                 // qualities,
                 // countries
             };
