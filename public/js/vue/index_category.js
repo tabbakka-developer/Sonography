@@ -12456,11 +12456,7 @@ var render = function() {
           attrs: { country: country }
         })
       })
-    ),
-    _vm._v(" "),
-    _vm._m(4),
-    _vm._v(" "),
-    _vm._m(5)
+    )
   ])
 }
 var staticRenderFns = [
@@ -12499,31 +12495,6 @@ var staticRenderFns = [
     return _c("button", { staticClass: "dropdown-btn" }, [
       _vm._v("Страна\n        "),
       _c("i", { staticClass: "fas fa-plus" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("button", { staticClass: "dropdown-btn" }, [
-      _vm._v("Диапозон цены\n        "),
-      _c("i", { staticClass: "fas fa-plus" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "dropdown-container" }, [
-      _c("div", { staticClass: "price-block" }, [
-        _c("span", { staticClass: "price-min" }),
-        _vm._v(" "),
-        _c("span", { staticClass: "price-separ" }, [_vm._v("-")]),
-        _vm._v(" "),
-        _c("span", { staticClass: "price-max" })
-      ]),
-      _vm._v(" "),
-      _c("div", { attrs: { id: "slider" } })
     ])
   }
 ]
