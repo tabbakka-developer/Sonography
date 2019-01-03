@@ -12680,8 +12680,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
     mounted: function mounted() {
-        this.$root.$on('checkBoxChecked', function () {
+        this.$root.$on('checkBoxChecked', function (event) {
             console.log('checked!');
+            console.log(event);
         });
     }
 });

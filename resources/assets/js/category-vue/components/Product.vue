@@ -34,8 +34,9 @@
             }
         },
         mounted() {
-            this.$root.$on('checkBoxChecked', () => {
+            this.$root.$on('checkBoxChecked', (event) => {
                 console.log('checked!');
+                console.log(event);
             })
         }
     }
