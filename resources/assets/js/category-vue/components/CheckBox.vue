@@ -19,7 +19,7 @@
         },
         methods: {
             handleCheck: function () {
-                this.$root.$emit('checkBoxChecked', firm.brand);
+                this.$root.$emit('checkBoxChecked', this.firm.brand);
             }
         }
     }

@@ -12891,7 +12891,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     methods: {
         handleCheck: function handleCheck() {
-            this.$root.$emit('checkBoxChecked', firm.brand);
+            this.$root.$emit('checkBoxChecked', this.firm.brand);
         }
     }
 });
