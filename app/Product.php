@@ -73,7 +73,7 @@ class Product extends Model implements Interfaces\Product {
 	}
 
 	public static function showed() {
-		return self::where('show_product', true)->with('photos')->get();
+		return self::where('show_product', true)->get();
 	}
 
 	public function getPhotosAttribute() {
