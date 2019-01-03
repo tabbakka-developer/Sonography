@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Http\Requests\Api\GetBrandsRequest;
 use App\Http\Requests\Api\ProductsPricesRequest;
 use App\UziApparat;
 use Illuminate\Http\Request;
@@ -46,6 +47,23 @@ class ProductController extends Controller {
 
 	public function endo() {
 
+	}
+
+	public function brands(GetBrandsRequest $request) {
+		switch ($request->category) {
+			case 'uzi':
+				$brands = UziApparat::uniqueBrands();
+				return response()->json([
+					'success' => true,
+					'data' => [
+						'brands' => $brands
+					]
+				]);
+				break;
+
+			default:
+				break;
+		}
 	}
 
 }

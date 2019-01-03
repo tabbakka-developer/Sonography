@@ -21,5 +21,6 @@ interface Product {
 	public static function prices();
 	public static function showed();
 	public function getPhotosAttribute();
+	public static function uniqueBrands();
 
 }

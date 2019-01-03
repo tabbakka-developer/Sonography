@@ -76,6 +76,11 @@ class Product extends Model implements Interfaces\Product {
 		return self::where('show_product', true)->get();
 	}
 
+	public static function uniqueBrands() {
+		$brands = self::select('brand')->distinct()->get();
+		return $brands;
+	}
+
 	public function getPhotosAttribute() {
 		$model = $this->model;
 		$brand = $this->brand;
