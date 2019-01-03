@@ -80,7 +80,7 @@
             let firms = [];
 
             for(let i = 0; i < this.products.length; i++) {
-                firms.push(product[i].brand);
+                firms.push(product[i]['brand']);
             }
 
             let filteredFirms = [];
