@@ -5,9 +5,12 @@
             <i class="fas fa-plus"></i>
         </button>
         <div class="dropdown-container">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+            <CheckBox
+                v-for="firm in firms"
+                :name="firm"
+            >
+
+            </CheckBox>
         </div>
 
         <button class="dropdown-btn">Статус
@@ -62,8 +65,36 @@
 </template>
 
 <script>
+    import CheckBox from "./CheckBox";
     export default {
-        name: "Menu"
+        name: "Menu",
+        components: {CheckBox},
+        props: {
+            products: {
+                type: Object,
+                required: true
+            }
+        },
+        data: function () {
+            let firms = [];
+            // let statuses = [];
+            let qualities = [];
+            let countries = [];
+            let sorts = [];
+            let prices = [];
+
+            for (let product in this.products) {
+                firms.push(product.brand);
+                qualities.push(product.quality);
+                countries.push(product.country);
+            }
+
+            return {
+                firms,
+                qualities,
+                countries
+            };
+        }
     }
 </script>
 
