@@ -6,7 +6,8 @@
         </button>
         <div class="dropdown-container">
             <CheckBox
-                v-for="firm in firms"
+                v-for="(firm, index) in firms"
+                :key="index"
                 :name="firm"
             >
 
@@ -83,10 +84,11 @@
             let sorts = [];
             let prices = [];
 
-            for (let product in this.products) {
-                firms.push(product.brand);
-                qualities.push(product.quality);
-                countries.push(product.country);
+            for(let i = 0; i < this.products.length; i++) {
+                firms.push(product[i].brand);
+                qualities.push(product[i].quality);
+                countries.push(product[i].country);
+
             }
 
             return {

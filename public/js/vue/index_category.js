@@ -12272,7 +12272,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -12285,6 +12285,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__CheckBox__ = __webpack_require__(85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__CheckBox___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__CheckBox__);
+//
 //
 //
 //
@@ -12370,10 +12371,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var sorts = [];
         var prices = [];
 
-        for (var product in this.products) {
-            firms.push(product.brand);
-            qualities.push(product.quality);
-            countries.push(product.country);
+        for (var i = 0; i < this.products.length; i++) {
+            firms.push(product[i].brand);
+            qualities.push(product[i].quality);
+            countries.push(product[i].country);
         }
 
         return {
@@ -12398,8 +12399,8 @@ var render = function() {
     _c(
       "div",
       { staticClass: "dropdown-container" },
-      _vm._l(_vm.firms, function(firm) {
-        return _c("CheckBox", { attrs: { name: firm } })
+      _vm._l(_vm.firms, function(firm, index) {
+        return _c("CheckBox", { key: index, attrs: { name: firm } })
       })
     ),
     _vm._v(" "),
