@@ -12680,9 +12680,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
     mounted: function mounted() {
-        this.$root.$on('checkBoxChecked', function (event) {
-            console.log('checked!');
-            console.log(event);
+        this.$root.$on('checkBoxChecked', function (brand) {
+            // console.log('checked!');
+            console.log(brand);
         });
     }
 });
@@ -12891,7 +12891,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     methods: {
         handleCheck: function handleCheck() {
-            this.$root.$emit('checkBoxChecked');
+            this.$root.$emit('checkBoxChecked', firm.brand);
         }
     }
 });
