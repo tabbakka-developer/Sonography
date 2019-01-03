@@ -28,6 +28,11 @@ class ProductController extends Controller {
 		}
 	}
 
+	public function uziPhotos() {
+		$uzi = UziApparat::showed();
+		dd($uzi->photos);
+	}
+
 	public function uzi() {
 		$uzi = UziApparat::showed();
 		return response()->json([
