@@ -1,6 +1,9 @@
 <template>
     <label class="container">{{ firm.brand }}
-        <input type="checkbox" checked="checked">
+        <input
+                type="checkbox"
+                checked="checked"
+                v-on:change="handleCheck">
         <span class="checkmark"></span>
     </label>
 </template>
@@ -12,6 +15,11 @@
             firm: {
                 type: Object,
                 required: true
+            }
+        },
+        methods: {
+            handleCheck: function () {
+                this.$root.$emit('checkBoxChecked');
             }
         }
     }

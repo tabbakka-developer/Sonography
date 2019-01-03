@@ -12678,6 +12678,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             productName: this.product.brand + " " + this.product.model,
             productThumb: "https://сонографи.рф/" + fPath
         };
+    },
+    mounted: function mounted() {
+        this.$root.on('checkBoxChecked', function () {
+            console.log('checked!');
+        });
     }
 });
 
@@ -12853,7 +12858,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* Customize the label (the container) */\n.container[data-v-c5811a14] {\n    display: block;\n    position: relative;\n    padding-left: 35px;\n    margin-bottom: 12px;\n    cursor: pointer;\n    font-size: 22px;\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none;\n}\n\n/* Hide the browser's default checkbox */\n.container input[data-v-c5811a14] {\n    position: absolute;\n    opacity: 0;\n    cursor: pointer;\n    height: 0;\n    width: 0;\n}\n\n/* Create a custom checkbox */\n.checkmark[data-v-c5811a14] {\n    position: absolute;\n    top: 7px;\n    left: 10px;\n    height: 10px;\n    width: 10px;\n    background-color: #eee;\n}\n\n/* On mouse-over, add a grey background color */\n.container:hover input ~ .checkmark[data-v-c5811a14] {\n    background-color: #ccc;\n}\n\n/* When the checkbox is checked, add a blue background */\n.container input:checked ~ .checkmark[data-v-c5811a14] {\n    background-color: black;\n}\n\n/* Create the checkmark/indicator (hidden when not checked) */\n.checkmark[data-v-c5811a14]:after {\n    content: \"\";\n    position: absolute;\n    display: none;\n}\n\n/* Show the checkmark when checked */\n.container input:checked ~ .checkmark[data-v-c5811a14]:after {\n    display: block;\n}\n\n/* Style the checkmark/indicator */\n.container .checkmark[data-v-c5811a14]:after {\n    left: 9px;\n    top: 5px;\n    width: 5px;\n    height: 10px;\n    border: solid white;\n    border-width: 0 3px 3px 0;\n    -webkit-transform: rotate(45deg);\n    transform: rotate(45deg);\n}\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* Customize the label (the container) */\n.container[data-v-c5811a14] {\n    display: block;\n    position: relative;\n    padding-left: 35px;\n    margin-bottom: 12px;\n    cursor: pointer;\n    font-size: 22px;\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none;\n}\n\n/* Hide the browser's default checkbox */\n.container input[data-v-c5811a14] {\n    position: absolute;\n    opacity: 0;\n    cursor: pointer;\n    height: 0;\n    width: 0;\n}\n\n/* Create a custom checkbox */\n.checkmark[data-v-c5811a14] {\n    position: absolute;\n    top: 7px;\n    left: 10px;\n    height: 10px;\n    width: 10px;\n    background-color: #eee;\n}\n\n/* On mouse-over, add a grey background color */\n.container:hover input ~ .checkmark[data-v-c5811a14] {\n    background-color: #ccc;\n}\n\n/* When the checkbox is checked, add a blue background */\n.container input:checked ~ .checkmark[data-v-c5811a14] {\n    background-color: black;\n}\n\n/* Create the checkmark/indicator (hidden when not checked) */\n.checkmark[data-v-c5811a14]:after {\n    content: \"\";\n    position: absolute;\n    display: none;\n}\n\n/* Show the checkmark when checked */\n.container input:checked ~ .checkmark[data-v-c5811a14]:after {\n    display: block;\n}\n\n/* Style the checkmark/indicator */\n.container .checkmark[data-v-c5811a14]:after {\n    left: 9px;\n    top: 5px;\n    width: 5px;\n    height: 10px;\n    border: solid white;\n    border-width: 0 3px 3px 0;\n    -webkit-transform: rotate(45deg);\n    transform: rotate(45deg);\n}\n\n", ""]);
 
 // exports
 
@@ -12871,6 +12876,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "CheckBox",
@@ -12878,6 +12886,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         firm: {
             type: Object,
             required: true
+        }
+    },
+    methods: {
+        handleCheck: function handleCheck() {
+            this.$root.$emit('checkBoxChecked');
         }
     }
 });
@@ -12892,7 +12905,10 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("label", { staticClass: "container" }, [
     _vm._v(_vm._s(_vm.firm.brand) + "\n    "),
-    _c("input", { attrs: { type: "checkbox", checked: "checked" } }),
+    _c("input", {
+      attrs: { type: "checkbox", checked: "checked" },
+      on: { change: _vm.handleCheck }
+    }),
     _vm._v(" "),
     _c("span", { staticClass: "checkmark" })
   ])

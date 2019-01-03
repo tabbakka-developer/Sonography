@@ -32,6 +32,11 @@
                 productName: this.product.brand + " " + this.product.model,
                 productThumb: "https://сонографи.рф/" +  fPath
             }
+        },
+        mounted() {
+            this.$root.on('checkBoxChecked', () => {
+                console.log('checked!');
+            })
         }
     }
 </script>
